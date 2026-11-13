@@ -1,0 +1,36 @@
+name: Chercher de nouvelles profs
+
+on:
+  schedule:
+    - cron: '23 13 * * 1'   # chaque lundi (~8h23, heure de Montréal)
+  workflow_dispatch:         # bouton « Run workflow » pour lancer à la main
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  decouvrir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Chercher sur YouTube
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/discover.mjs
+      - name: Enregistrer l'historique
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/candidats.json
+          git diff --cached --quiet || (git commit -m "Nouvelles candidates trouvées" && git push)
+      - name: Créer la liste à valider
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s rapport.md ]; then
+            gh issue create --title "Nouvelles profs à vérifier — $(date +%Y-%m-%d)" --body-file rapport.md
+          fi
