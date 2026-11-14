@@ -8,6 +8,11 @@ if (config) {
   const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`);
   const A = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-auth.js`);
   const app = initializeApp(config);
+  // App Check : bloque les robots (reCAPTCHA Enterprise, clé de site publique)
+  try {
+    const AC = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app-check.js`);
+    AC.initializeAppCheck(app, { provider: new AC.ReCaptchaEnterpriseProvider('6LftfCAuAAAAAEI6HFYUeDR3UV86ya18YPAiHB2q'), isTokenAutoRefreshEnabled: true });
+  } catch (e) { console.warn('App Check', e); }
   const auth = A.getAuth(app);
   window.BabeK = { app, auth, A };
   auth.languageCode = 'fr';
