@@ -294,3 +294,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;op
 .socials span{color:var(--muet);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
 .socials a{color:var(--texte);text-decoration:none;font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--bord);transition:border-color .2s,background .2s,box-shadow .2s}
 .socials a:hover{border-color:#FF2E7E;background:rgba(255,46,126,.12);box-shadow:0 0 18px rgba(255,46,126,.35);color:#fff}
+
+/* ===== Challenge Babe K ===== */
+.nav nav a.nav-hot{color:#fff;background:linear-gradient(135deg,rgba(255,46,126,.22),rgba(255,77,61,.18));box-shadow:inset 0 0 0 1px rgba(255,46,126,.45)}
+.nav nav a.nav-hot:hover{background:linear-gradient(135deg,rgba(255,46,126,.38),rgba(255,77,61,.3))}
+.hero-challenge{display:inline-flex;align-items:center;gap:10px;width:fit-content;padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;color:#fff!important;text-decoration:none;background:rgba(255,46,126,.12);border:1px solid rgba(255,46,126,.45);transition:background .2s,box-shadow .2s}
+.hero-challenge:hover{background:rgba(255,46,126,.22);box-shadow:0 0 24px rgba(255,46,126,.4)}
+.hero-challenge i{width:8px;height:8px;border-radius:50%;background:#FF2E7E;box-shadow:0 0 10px #FF2E7E;animation:pouls 1.8s ease-in-out infinite}
