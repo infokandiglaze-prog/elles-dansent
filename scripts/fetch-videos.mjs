@@ -11,7 +11,7 @@ const API = 'https://www.googleapis.com/youtube/v3';
 const ENTETES = { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'fr,en;q=0.8', Cookie: 'CONSENT=YES+1' };
 
 // Seules les vidéos de danse sont gardées (pas de yoga, vlog, etc.)
-const DANSE = /danc|danse|dansé|whin(e|ing)|\bwine\b|twerk|chor[ée]o|chor[ée]graph|dancehall|kompa|konpa|compas|amapiano|afrobeat|afro ?dance|soca|zouk|kizomba|ndombolo|azonto|coup[ée][ -]d[ée]cal[ée]|bachata|salsa|legwork|shaku|hip ?hop|bouyon|kuduro/i;
+const DANSE = /danc|danse|dansé|whin(e|ing)|\bwine\b|twerk|chor[ée]o|chor[ée]graph|dancehall|kompa|konpa|compas|amapiano|afrobeat|afro ?dance|soca|zouk|kizomba|ndombolo|azonto|coup[ée][ -]d[ée]cal[ée]|bachata|salsa|legwork|shaku|hip ?hop|bouyon|kuduro|mapouka|win(e|ing)\b|whine|booty|bubbl|gouyad|sensu|heels|waist|hips?\b.*(roll|shake|move)/i;
 
 async function yt(endpoint, params) {
   const url = new URL(`${API}/${endpoint}`);
