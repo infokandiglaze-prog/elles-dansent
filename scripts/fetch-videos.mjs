@@ -12,7 +12,7 @@ const ENTETES = { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'fr,en;q=0.8',
 
 // Seules les vidéos de danse sont gardées (pas de yoga, vlog, etc.)
 const DANSE = /danc|danse|dansé|whin(e|ing)|\bwine\b|twerk|chor[ée]o|chor[ée]graph|dancehall|kompa|konpa|compas|amapiano|afrobeat|afro ?dance|soca|zouk|kizomba|ndombolo|azonto|coup[ée][ -]d[ée]cal[ée]|bachata|salsa|legwork|shaku|hip ?hop|bouyon|kuduro|mapouka|win(e|ing)\b|whine|booty|bubbl|gouyad|sensu|heels|waist|hips?\b.*(roll|shake|move)/i;
-const ENFANTS = /\bkids?\b|ni[ñn][oa]s|\bchild|enfants?\b|\bteens?\b|\bjunior|foundation|infantil|\bbaby\b|\bmini\b|\bfamil(y|le)\b|daughter|\bma fille\b/i; // jamais de vidéos avec des enfants
+const ENFANTS = /\bkids?\b|ni[ñn][oa]s|\bchild|enfants?\b|\bteens?\b|\bjunior|foundation|infantil|\bbaby\b|\bmini\b|\bfamil(y|le)\b|daughter|\bma fille\b|\bmen\b|\bman\b|hombres?|\bboys?\b|\bguys?\b|\bmale\b|\baudio\b|lyrics?|letra|paroles|visuali[sz]er|instrumental|\bslowed\b|sped up/i; // jamais de vidéos avec des enfants
 
 async function yt(endpoint, params) {
   const url = new URL(`${API}/${endpoint}`);
