@@ -6,6 +6,7 @@
 <title>Twerk du jour — Babe Killa</title>
 <meta name="description" content="Toutes les nouvelles vidéos twerk de YouTube, mises à jour chaque jour : cours, chorégraphies, twerkshops et fitness.">
 <meta name="theme-color" content="#07050A">
+<meta name="babek-reserve" content="membres">
 <link rel="icon" href="media/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,5 +148,7 @@ $('#annee').textContent = new Date().getFullYear();
 $('#burger').addEventListener('click', () => { const o = $('#menu').classList.toggle('ouvert'); $('#burger').setAttribute('aria-expanded', o); });
 demarrer();
 </script>
+<script src="auth-config.js"></script>
+<script type="module" src="membre.js"></script>
 </body>
 </html>
