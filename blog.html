@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Le blog — Elles Dansent</title>
+<title>Le blog — Babe Killa</title>
 <meta name="description" content="Clips, tendances et inspirations danse : les vidéos qui font bouger la culture afro et caribéenne, avec un petit article pour chacune.">
 <meta name="theme-color" content="#07050A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='9' fill='%2307050A'/%3E%3Cg fill='none' stroke='%23FF2E7E' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='17' cy='8' r='3'/%3E%3Cpath d='M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="media/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <script src="agegate.js"></script>
 <style>
 .blog-hero{padding:72px 0 40px}
@@ -43,9 +43,9 @@
 
 <header class="nav scrolled" id="nav">
   <div class="wrap nav-in">
-    <a href="./" class="logo" aria-label="Elles Dansent, accueil">
-      <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34"><rect width="34" height="34" rx="9" fill="#FF2E7E"/><g fill="none" stroke="#07050A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="8" r="3"/><path d="M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4"/></g></svg>
-      <span>Elles Dansent</span>
+    <a href="./" class="logo" aria-label="Babe Killa, accueil">
+      <img class="logo-img" src="media/logo.svg" alt="" width="42" height="42">
+      <span>Babe Killa</span>
     </a>
     <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -69,9 +69,10 @@
 
 <footer class="foot">
   <div class="wrap foot-bas">
-    <span>© <span id="annee"></span> Elles Dansent</span>
+    <span>© <span id="annee"></span> Babe Killa</span>
     <a href="./">Retour au répertoire</a>
   </div>
+<div class="wrap socials" aria-label="Babe Killa sur les réseaux"><span>Suis Babe Killa</span><a href="https://www.instagram.com/babek.officiel/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@babekingc6r" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/@BabeKing-c6r" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/babekilla01" target="_blank" rel="noopener">X</a></div>
 </footer>
 
 <script>
@@ -81,7 +82,7 @@ const dateFr = (d) => new Date(d + 'T12:00:00').toLocaleDateString('fr-CA', { da
 const PLAY = '<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#07050A"/></svg>';
 
 function liste(articles) {
-  document.title = 'Le blog — Elles Dansent';
+  document.title = 'Le blog — Babe Killa';
   $('#vue').innerHTML = `
     <section class="blog-hero">
       <p class="kicker">Le blog</p>
@@ -103,7 +104,7 @@ function liste(articles) {
 }
 
 function article(a) {
-  document.title = a.titre + ' — Elles Dansent';
+  document.title = a.titre + ' — Babe Killa';
   const style = (a.styles || [])[0];
   $('#vue').innerHTML = `
     <article class="article">
