@@ -1,15 +1,13 @@
 [
   {
     "id": "UC2IoyvRMJ40-yXw78X-gEFQ",
-    "nom": "Nadia Pérez"
+    "nom": "Nadia Pérez",
+    "toutDanse": true
   },
   {
     "id": "UCbbjWKK2B9qiht32Vmmo4_A",
-    "nom": "Obsession Twerk Camp"
-  },
-  {
-    "id": "UCIpYDfH22uzgsz77lrEhtYQ",
-    "nom": "Elmateco"
+    "nom": "Obsession Twerk Camp",
+    "toutDanse": true
   },
   {
     "id": "UC7Ul2k3EhfIHE2RFvjoMorA",
@@ -17,14 +15,7 @@
   },
   {
     "id": "UCQ8pgXWecNrjpBgvUFVqv_w",
-    "nom": "Nastya Nass"
-  },
-  {
-    "id": "UCRCurJProQ_FhLmUWCVeFiQ",
-    "nom": "Sugaarrbbaby"
-  },
-  {
-    "id": "UCqJ1DkLMhjEj2LiIWjk8E3A",
-    "nom": "NocheCalor"
+    "nom": "Nastya Nass",
+    "toutDanse": true
   }
 ]
