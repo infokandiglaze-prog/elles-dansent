@@ -316,5 +316,86 @@
     "langue": "anglais",
     "pays": "Royaume-Uni",
     "bio": ""
+  },
+  {
+    "id": "twerk-with-tinze",
+    "nom": "",
+    "chaine": "UCHizJ5AKbXnUgkCAGj_Up-g",
+    "video_exemple": "",
+    "styles": [
+      "Twerk",
+      "Dancehall"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "lili-jasmijn",
+    "nom": "",
+    "chaine": "UCsaHUK1Mlpkz-TNcOEfcBrQ",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "Pays-Bas",
+    "bio": ""
+  },
+  {
+    "id": "jamilia-nazarova",
+    "nom": "",
+    "chaine": "UCGnNfErAM_jVadlirQEda0g",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "lauren-halil",
+    "nom": "",
+    "chaine": "UCfUJN8j8Pqn8BYqrZ5r-A7w",
+    "video_exemple": "",
+    "styles": [
+      "Twerk",
+      "Whine"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "Royaume-Uni",
+    "bio": ""
+  },
+  {
+    "id": "kasia-jukowska",
+    "nom": "",
+    "chaine": "UCFMV_BbD2Bk6SFR7H0NenBQ",
+    "video_exemple": "",
+    "styles": [
+      "Dancehall"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "Pologne",
+    "bio": ""
+  },
+  {
+    "id": "shruti-banka",
+    "nom": "",
+    "chaine": "UCC_6ThuUepaWyB43dBAgB9Q",
+    "video_exemple": "",
+    "styles": [
+      "Heels",
+      "Chorégraphie"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "Inde",
+    "bio": ""
   }
 ]
