@@ -8,7 +8,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const KEY = process.env.YOUTUBE_API_KEY;
 const API = 'https://www.googleapis.com/youtube/v3';
 const MAX_FIL = 600; // nombre maximum de vidéos gardées sur la page
-const REQUETES = ['twerk', 'twerk tutorial', 'twerk choreography', 'twerk class', 'twerkshop', 'twerk dance', 'twerk fitness'];
+const REQUETES = ['twerk', 'twerk tutorial', 'twerk choreography', 'twerk class', 'twerkshop', 'twerk dance', 'twerk fitness', 'twerk heels', 'sensual twerk', 'booty dance', 'perreo dance', 'dancehall whine'];
 const TWERK = /twerk|booty|jiggle|bounce|shake/i;
 
 const lireJson = async (f, defaut) => { try { return JSON.parse(await readFile(f, 'utf8')); } catch { return defaut; } };
