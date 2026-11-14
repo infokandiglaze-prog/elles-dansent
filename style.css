@@ -216,3 +216,6 @@ dialog::backdrop{background:rgba(8,5,4,.78);backdrop-filter:blur(6px)}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* Miniatures YouTube : on rogne les bandes noires des images hqdefault (4:3) */
+.hc-media,.thumb,.vthumb{background-size:auto 134%!important;background-position:center!important}
