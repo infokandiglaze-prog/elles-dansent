@@ -153,7 +153,7 @@ for (const prof of profs) {
       // La vidéo choisie à la main est toujours affichée en premier
       let titre = 'Vidéo';
       try { const r = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${prof.video_exemple}&format=json`, { headers: ENTETES }); if (r.ok) titre = (await r.json()).title; } catch {}
-      info.videos.unshift({ id: prof.video_exemple, titre, date: '', miniature: `https://i.ytimg.com/vi/${prof.video_exemple}/hqdefault.jpg` });
+      if (!ENFANTS.test(titre)) info.videos.unshift({ id: prof.video_exemple, titre, date: '', miniature: `https://i.ytimg.com/vi/${prof.video_exemple}/hqdefault.jpg` });
     }
     info.videos = info.videos.slice(0, MAX_VIDEOS);
     console.log(`${prof.id} : ${avant} vidéos trouvées, ${info.videos.length} de danse gardées`);
