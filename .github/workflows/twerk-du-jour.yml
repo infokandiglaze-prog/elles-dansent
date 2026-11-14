@@ -1,0 +1,40 @@
+name: Twerk du jour
+
+on:
+  schedule:
+    - cron: '41 10 * * *'   # chaque jour (~5h41, heure de Montréal)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: maj-donnees
+  cancel-in-progress: false
+
+jobs:
+  twerk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Chercher les nouvelles vidéos twerk
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/twerk-du-jour.mjs
+      - name: Enregistrer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/twerk.json
+          git diff --cached --quiet || (git commit -m "Twerk du jour" && git pull --rebase && git push)
+      - name: Chaînes à valider
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s rapport-twerk.md ]; then
+            gh issue create --title "Twerk : nouvelles chaînes à valider — $(date +%Y-%m-%d)" --body-file rapport-twerk.md
+          fi
