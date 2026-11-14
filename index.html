@@ -3,11 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Babe Killa — Le répertoire international des profs de danse</title>
-<meta name="description" content="Le répertoire international des femmes qui enseignent la danse en ligne : afrobeats, dancehall, kompa, twerk, mapouka, amapiano, coupé-décalé, whine et plus. Cours gratuits sur YouTube, triés par style et niveau.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Babe Killa — Apprends à danser avec les meilleures profs du monde entier">
-<meta property="og:description" content="Cours de twerk, dancehall et danses du monde sur YouTube, réunis au même endroit et mis à jour chaque jour.">
+<title>Babe K Music &amp; Dance Challenge — Babe Killa</title>
+<meta name="description" content="Danse sur la musique de Babe K : le #BabeKChallenge chaque mois, et de la musique libre de droits pour les profs de danse partenaires.">
 <meta name="theme-color" content="#07050A">
 <link rel="icon" href="media/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +12,78 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=6">
 <script src="agegate.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Babe Killa","description":"Répertoire international des femmes qui enseignent la danse en ligne.","inLanguage":"fr"}</script>
+<style>
+.mu-hero{padding-top:80px;padding-bottom:40px;position:relative}
+.mu-hero h1{font-weight:800;font-size:clamp(42px,6.4vw,92px);line-height:.98;letter-spacing:-.035em;max-width:900px}
+.mu-hero .lead{margin-top:20px;max-width:680px}
+.mu-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn-ghost2{background:transparent;border:1px solid var(--bord);color:var(--texte)!important}
+.btn-ghost2:hover{border-color:#FF2E7E;background:rgba(255,46,126,.1)}
+.mu-sec{padding:72px 0;border-top:1px solid var(--ligne)}
+.mu-sec h2{font-weight:800;font-size:clamp(32px,4.2vw,54px);line-height:1.04;margin-bottom:14px}
+.mu-sec>.wrap>p.lead{max-width:720px}
+.vedette-son{margin-top:28px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,46,126,.35);box-shadow:0 0 0 1px rgba(255,46,126,.15),0 30px 80px -30px rgba(255,46,126,.55);background:#0E0A12}
+.vedette-son iframe,.morceau iframe{display:block;width:100%;border:0}
+.etapes{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:e}
+.etapes li{counter-increment:e;background:var(--carte);border:1px solid var(--ligne);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:8px}
+.etapes li::before{content:counter(e);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:42px;line-height:1;background:linear-gradient(135deg,#FF2E7E,#FF9A3D);-webkit-background-clip:text;background-clip:text;color:transparent}
+.etapes b{font-size:18px}
+.etapes span{color:var(--doux);font-size:15px}
+.hashtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,4vw,48px);background:linear-gradient(90deg,#FF2E7E,#FF4D3D 55%,#FF9A3D);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,46,126,.45));margin:26px 0 6px}
+.regles{margin:22px 0 0;padding:20px 24px;border-radius:18px;background:rgba(255,46,126,.06);border:1px solid rgba(255,46,126,.25);color:var(--doux);font-size:15px}
+.regles ul{margin:8px 0 0;padding-left:20px}
+.morceaux{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-top:32px}
+.morceau{background:var(--carte);border:1px solid var(--ligne);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.morceau a{padding:12px 16px;font-size:14px;font-weight:600;text-decoration:none;border-top:1px solid var(--ligne)}
+.avantages{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.avantages>div{background:var(--carte);border:1px solid var(--ligne);border-radius:22px;padding:30px}
+.avantages h3{font-size:22px;margin-bottom:14px}
+.avantages ul{margin:0;padding-left:20px;color:var(--doux);display:flex;flex-direction:column;gap:10px}
+.avantages>div:first-child{border-color:rgba(255,46,126,.4)}
+.petit{color:var(--muet);font-size:14px;margin-top:22px}
+@media (max-width:760px){.avantages{grid-template-columns:1fr}.morceaux{grid-template-columns:1fr}}
+.ecoute{display:flex;align-items:center;gap:16px;padding:16px;text-decoration:none;color:var(--texte)!important;transition:background .2s}
+.ecoute:hover{background:rgba(255,46,126,.08)}
+.ec-cover{flex:none;border-radius:14px;overflow:hidden;background:radial-gradient(circle at 30% 30%,#2A0B1C,#07050A);padding:8px;box-shadow:0 0 0 1px rgba(255,46,126,.3)}
+.ec-cover img{display:block;border-radius:50%}
+.ec-txt{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
+.ec-txt b{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ec-txt small{color:var(--muet);font-size:13px}
+.ec-play{flex:none;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 10px 30px -8px rgba(255,46,126,.8);transition:transform .2s}
+.ecoute:hover .ec-play{transform:scale(1.08)}
+.ecoute-big{padding:26px}
+.ecoute-big .ec-txt b{font-size:clamp(26px,3.4vw,40px)}
+.ecoute-big .ec-play{width:72px;height:72px}
+.ecoute-big .ec-play svg{width:30px;height:30px}
+.shorts{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;margin-top:32px}
+.short{all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#140E18;border:1px solid var(--ligne);transition:transform .3s,box-shadow .3s}
+.short:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(255,46,126,.7),0 24px 50px -18px rgba(255,46,126,.65)}
+.short img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.short::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,5,10,.9))}
+.short-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 10px 30px -8px rgba(255,46,126,.8)}
+.short-titre{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;font-weight:700;font-size:15px;color:#fff}
+.short iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.fc{margin-top:28px;background:var(--carte);border:1px solid rgba(255,46,126,.35);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;box-shadow:0 30px 80px -40px rgba(255,46,126,.5)}
+.fc h3{font-size:26px}
+.fc-note{margin:0;color:var(--muet);font-size:14px}
+.fc-grille{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fc-large{grid-column:1/-1}
+.fc label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:var(--doux)}
+.fc input:not([type=checkbox]),.fc select{min-height:46px;border-radius:14px;border:1px solid var(--bord);background:#07050A;color:var(--texte);padding:0 14px;font:inherit;font-weight:400}
+.fc input:focus,.fc select:focus{outline:none;border-color:#FF2E7E;box-shadow:0 0 0 4px rgba(255,46,126,.15)}
+.fc .fc-case{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400}
+.fc .btn{align-self:flex-start}
+.fc-msg{margin:0;font-weight:600;color:#FF7AB0;min-height:1.2em}
+.fc-msg.ok{color:#7CF5B0}
+@media (max-width:760px){.fc-grille{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 
-<header class="nav" id="nav">
+<header class="nav scrolled" id="nav">
   <div class="wrap nav-in">
-    <a href="#" class="logo" aria-label="Babe Killa, accueil">
+    <a href="./" class="logo" aria-label="Babe Killa, accueil">
       <img class="logo-img" src="media/logo.svg" alt="" width="42" height="42">
       <span>Babe Killa</span>
     </a>
@@ -30,199 +91,183 @@
       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav id="menu" aria-label="Navigation principale">
-      <a href="#nouveautes">Nouveautés</a>
-      <a href="#styles">Styles</a>
-      <a href="#profs">Les profs</a>
+      <a href="profs.html#nouveautes">Nouveautés</a>
+      <a href="profs.html#styles">Styles</a>
+      <a href="profs.html#profs">Les profs</a>
       <a href="twerk.html">Twerk du jour</a>
       <a href="clips.html">Clips</a>
       <a href="blog.html">Blog</a>
-      <a href="musique.html" class="nav-hot">Challenge</a>
-      <a href="musique.html#partenaire" class="btn btn-or">Je suis prof</a>
+      <a href="./" aria-current="page" class="nav-hot">Challenge</a>
+      <a href="#partenaire" class="btn btn-or">Je suis prof</a>
     </nav>
   </div>
 </header>
 
 <main id="contenu">
-
-<section class="hero">
-  <div class="hero-video" aria-hidden="true">
-    <video id="hero-vid" src="media/couverture_1.mp4" poster="media/couverture.jpg" autoplay muted loop playsinline preload="auto"></video>
+<section class="mu-hero wrap">
+  <p class="kicker">Babe K Music · Dance Challenge</p>
+  <h1>Danse sur la musique de <em>Babe K</em>.</h1>
+  <p class="lead">Chaque mois, une nouvelle chanson de Babe K et un nouveau défi de danse. Et pour les profs de danse : de la musique libre à utiliser dans leurs cours, sans blocage de droits d'auteur.</p>
+  <div class="mu-cta">
+    <a href="#challenge" class="btn btn-or">Participer au challenge</a>
+    <a href="#partenaire" class="btn btn-ghost2">Je suis prof de danse</a>
   </div>
-  <span class="hero-label">En vedette</span>
-  <button class="hero-son" id="hero-son" type="button" aria-label="Activer le son"><i></i><span>Son off</span></button>
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="wrap hero-in">
-    <div class="hero-text reveal">
-      <p class="eyebrow"><span class="dot"></span> Le répertoire international des femmes qui enseignent la danse</p>
-      <h1>Apprends à danser avec celles qui <em>font vibrer</em> le monde.</h1>
-      <p class="lead">Afrobeats, dancehall, kompa, twerk, mapouka, amapiano, coupé-décalé, whine… Les meilleures profs sur YouTube, réunies au même endroit et mises à jour chaque jour.</p>
-      <form class="search" role="search" onsubmit="return false">
-        <label for="recherche" class="sr">Chercher une prof ou un style</label>
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-        <input id="recherche" type="search" placeholder="Une prof, un style, un niveau…" autocomplete="off">
-        <a href="#profs" class="btn btn-or">Explorer</a>
-      </form>
-      <a class="hero-challenge" href="musique.html"><i></i>Nouveau : le #BabeKChallenge — danse sur « Fiebre » de Babe K</a>
-      <ul class="stats" aria-label="Le répertoire en chiffres">
-        <li><b id="st-profs">–</b><span>profs</span></li>
-        <li><b id="st-videos">–</b><span>cours vidéo</span></li>
-        <li><b id="st-styles">–</b><span>styles</span></li>
+</section>
+
+<section class="mu-sec" id="videos-babek">
+  <div class="wrap">
+    <p class="kicker">Les vidéos de Babe K</p>
+    <h2>Regarde <em>Babe K</em> en action</h2>
+    <p class="lead">Les vidéos officielles de Babe K, directement de sa chaîne YouTube. Inspire-toi pour ta danse du challenge.</p>
+    <div class="shorts">
+      <button type="button" class="short" data-id="lB0uibSrqbY" aria-label="Lire « Bad Gyal Out »"><img src="https://i.ytimg.com/vi/lB0uibSrqbY/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Bad Gyal Out</span></button>
+      <button type="button" class="short" data-id="aXWomLgLN54" aria-label="Lire « Lollipop Queen »"><img src="https://i.ytimg.com/vi/aXWomLgLN54/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Lollipop Queen</span></button>
+      <button type="button" class="short" data-id="akZlzxf-RrU" aria-label="Lire « She Walked In Like She Owned The Night »"><img src="https://i.ytimg.com/vi/akZlzxf-RrU/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">She Walked In Like She Owned The Night</span></button>
+      <button type="button" class="short" data-id="Cc34r69PsRE" aria-label="Lire « She said COME COME COME »"><img src="https://i.ytimg.com/vi/Cc34r69PsRE/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">She said COME COME COME</span></button>
+      <button type="button" class="short" data-id="AOE2wnkS13c" aria-label="Lire « Welcome to the Candy Shop »"><img src="https://i.ytimg.com/vi/AOE2wnkS13c/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Welcome to the Candy Shop</span></button>
+      <button type="button" class="short" data-id="Dpbj0kcfQ9g" aria-label="Lire « Babe K (Remix) »"><img src="https://i.ytimg.com/vi/Dpbj0kcfQ9g/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Babe K (Remix)</span></button>
+      <button type="button" class="short" data-id="gYlkS5l9iMA" aria-label="Lire « Bad Gyal Out (version 2) »"><img src="https://i.ytimg.com/vi/gYlkS5l9iMA/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Bad Gyal Out (version 2)</span></button>
+    </div>
+    <div class="mu-cta"><a href="https://www.youtube.com/@BabeKing-c6r?sub_confirmation=1" class="btn btn-or" target="_blank" rel="noopener">S'abonner à Babe K sur YouTube</a></div>
+  </div>
+</section>
+
+<section class="mu-sec" id="challenge">
+  <div class="wrap">
+    <p class="kicker">Challenge du mois</p>
+    <h2>« Fiebre » — Babe K</h2>
+    <p class="lead">Écoute la chanson, crée ta danse, publie-la et envoie-nous le lien. Les meilleures vidéos sont mises en vedette sur le site.</p>
+    <div class="vedette-son"><a class="ecoute ecoute-big" href="https://suno.com/song/0ec65a8b-6ec6-4c6f-8ce7-65fcd58cb26f" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="96" height="96"></span><span class="ec-txt"><b>Fiebre</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Fiebre » sur Suno (nouvel onglet)</span></a></div>
+    <div class="hashtag">#BabeKChallenge</div>
+    <ol class="etapes">
+      <li><b>Écoute</b><span>Mets « Fiebre » en boucle et trouve ton style : twerk, dancehall, whine, perreo…</span></li>
+      <li><b>Filme-toi</b><span>Une vidéo verticale de 15 à 60 secondes sur la chanson.</span></li>
+      <li><b>Publie</b><span>Sur TikTok ou Instagram avec #BabeKChallenge et identifie @babek.officiel.</span></li>
+      <li><b>Envoie le lien</b><span>Envoie-nous le lien de ta vidéo. Les meilleures passent sur le site, et la gagnante du mois est en vedette sur l'accueil.</span></li>
+    </ol>
+    <form class="fc" id="form-challenge" novalidate>
+      <h3>Inscris-toi au challenge</h3>
+      <p class="fc-note">Gratuit. Il faut un compte membre Babe Killa (Google ou courriel) pour envoyer ta vidéo.</p>
+      <div class="fc-grille">
+        <label>Ton nom ou pseudo<input name="nom" required maxlength="80" autocomplete="nickname"></label>
+        <label>Ton compte Instagram ou TikTok<input name="reseau" maxlength="120" placeholder="@toncompte"></label>
+        <label class="fc-large">Lien de ta vidéo (TikTok, Instagram ou YouTube)<input name="lien" type="url" required maxlength="300" placeholder="https://www.tiktok.com/@toncompte/video/..."></label>
+        <label>Ton pays<input name="pays" maxlength="60" autocomplete="country-name"></label>
+        <label>Tu es…<select name="type"><option>Danseuse</option><option>Prof de danse</option></select></label>
+      </div>
+      <label class="fc-case"><input type="checkbox" name="majeur"> J'ai 18 ans ou plus, et toutes les personnes dans la vidéo aussi.</label>
+      <label class="fc-case"><input type="checkbox" name="consentement"> J'accepte que ma vidéo soit affichée sur le site Babe Killa (elle reste sur mon compte).</label>
+      <button type="submit" class="btn btn-or">Envoyer ma vidéo</button>
+      <p class="fc-msg" id="fc-msg" aria-live="polite"></p>
+    </form>
+    <div class="regles"><b>Règles du challenge</b>
+      <ul>
+        <li>Tu dois avoir <b>18 ans ou plus</b>.</li>
+        <li>Envoie seulement une vidéo où tu apparais toi-même, ou avec des personnes adultes qui sont d'accord.</li>
+        <li>En envoyant ton lien, tu acceptes que ta vidéo soit affichée sur le site (elle reste sur ton compte).</li>
+        <li>Aucune vidéo n'est publiée sans être vérifiée d'abord. Pas de nudité.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Afrobeats</span><span>Twerk</span><span>Dancehall</span><span>Mapouka</span><span>Kompa</span><span>Whine</span><span>Amapiano</span><span>Coupé-décalé</span><span>Ndombolo</span><span>Soca</span><span>Kizomba</span><span>Azonto</span><span>Zouk</span>
-      <span>Afrobeats</span><span>Twerk</span><span>Dancehall</span><span>Mapouka</span><span>Kompa</span><span>Whine</span><span>Amapiano</span><span>Coupé-décalé</span><span>Ndombolo</span><span>Soca</span><span>Kizomba</span><span>Azonto</span><span>Zouk</span>
-    </div>
-  </div>
-</section>
-
-<section id="nouveautes" class="section">
+<section class="mu-sec" id="musique">
   <div class="wrap">
-    <div class="head reveal">
-      <div>
-        <p class="kicker">Nouveautés</p>
-        <h2>Les derniers cours publiés</h2>
-      </div>
-      <div class="arrows">
-        <button type="button" class="round" id="prev" aria-label="Vidéos précédentes"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <button type="button" class="round" id="next" aria-label="Vidéos suivantes"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
-      </div>
+    <p class="kicker">Musique libre pour danseuses</p>
+    <h2>Toute la musique de <em>Babe K</em></h2>
+    <p class="lead">Les profs partenaires peuvent utiliser ces chansons dans leurs cours et chorégraphies, en échange d'un crédit « Musique : Babe K ».</p>
+    <div class="morceaux">
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/e5992ec8-eb75-428e-ac4a-439ca3667812" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>BIMBO</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « BIMBO » sur Suno (nouvel onglet)</span></a></div>
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/1133b57e-2d93-4f9a-9b57-f525f6a35a65" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>Alarma</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Alarma » sur Suno (nouvel onglet)</span></a></div>
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/93bdd28e-23ff-4299-8339-12b92e655c43" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>Backdoor</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Backdoor » sur Suno (nouvel onglet)</span></a></div>
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/ea91305e-ccee-4ed3-bc8a-1846fc9e73df" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>Mutate</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Mutate » sur Suno (nouvel onglet)</span></a></div>
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/2462c2a8-710e-4ea3-a450-c6c8ada599a7" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>Pass It On</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Pass It On » sur Suno (nouvel onglet)</span></a></div>
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/45748a93-9111-4b6c-8be0-8c7115bdc120" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>Episode 1 - The Code</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Episode 1 - The Code » sur Suno (nouvel onglet)</span></a></div>
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/1b6448ea-90d9-42cd-b559-0e3c6470bc7b" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>Episode 2 - The Download</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Episode 2 - The Download » sur Suno (nouvel onglet)</span></a></div>
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/cd8b6230-60e3-4ed0-918a-4682ac86d82e" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>Episode 3 - The Spread</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Episode 3 - The Spread » sur Suno (nouvel onglet)</span></a></div>
+      <div class="morceau"><a class="ecoute" href="https://suno.com/song/d9624a9b-9204-4535-8b45-8181c8c3a355" target="_blank" rel="noopener"><span class="ec-cover"><img src="media/logo.svg" alt="" width="64" height="64"></span><span class="ec-txt"><b>Episode 4 - Alarm</b><small>Babe K · Suno</small></span><span class="ec-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sr">Écouter « Episode 4 - Alarm » sur Suno (nouvel onglet)</span></a></div>
     </div>
-    <div class="rail" id="rail" tabindex="0" aria-label="Derniers cours"></div>
   </div>
 </section>
 
-<section id="styles" class="section alt">
+<section class="mu-sec" id="partenaire">
   <div class="wrap">
-    <div class="head reveal">
-      <div>
-        <p class="kicker">Styles</p>
-        <h2>Choisis ta vibe</h2>
-      </div>
+    <p class="kicker">Programme partenaire</p>
+    <h2>Profs de danse : utilisez la musique de <em>Babe K</em> gratuitement.</h2>
+    <p class="lead">Fini les vidéos bloquées ou les revenus perdus à cause des droits d'auteur. Utilise la musique de Babe K pour tes cours et tes chorégraphies.</p>
+    <div class="avantages">
+      <div><h3>Ce que tu reçois</h3><ul>
+        <li>Des chansons dancehall, twerk et latino à utiliser dans tes vidéos, gratuitement.</li>
+        <li>Ta fiche mise en avant sur le site avec le badge « Partenaire Babe K ».</li>
+        <li>Ta chorégraphie peut devenir le challenge du mois.</li>
+      </ul></div>
+      <div><h3>En échange</h3><ul>
+        <li>Mettre « Musique : Babe K » et le lien du site dans la description de ta vidéo.</li>
+        <li>Ne pas revendre ni réutiliser la musique en dehors de tes vidéos de danse.</li>
+        <li>Être une prof adulte (18 ans et plus).</li>
+      </ul></div>
     </div>
-    <div class="styles" id="filtres" role="group" aria-label="Filtrer par style"></div>
+    <div class="mu-cta"><a href="https://ig.me/m/babek.officiel" class="btn btn-or" target="_blank" rel="noopener">Devenir partenaire</a></div>
+    <p class="petit">Tu es prof, tu figures dans le répertoire et tu préfères être retirée ? Écris-nous sur Instagram et on retire ta fiche.</p>
   </div>
 </section>
-
-<section id="profs" class="section">
-  <div class="wrap">
-    <div class="head reveal">
-      <div>
-        <p class="kicker">Le répertoire</p>
-        <h2>Les profs</h2>
-        <p id="compteur" class="muted">Chargement…</p>
-      </div>
-      <label class="tri">Trier par
-        <select id="tri">
-          <option value="recent">Plus récentes vidéos</option>
-          <option value="nom">Nom (A → Z)</option>
-          <option value="videos">Nombre de vidéos</option>
-        </select>
-      </label>
-    </div>
-    <div class="grid" id="grille"></div>
-  </div>
-</section>
-
-<section class="section light">
-  <div class="wrap">
-    <div class="head reveal"><div><p class="kicker k-dark">Comment ça marche</p><h2>Trois étapes. Zéro prise de tête.</h2></div></div>
-    <ol class="steps">
-      <li class="reveal"><span class="num">01</span><h3>Choisis ton style</h3><p>Filtre par danse, niveau et langue du cours. Débutante ou confirmée, il y a une prof pour toi.</p></li>
-      <li class="reveal"><span class="num">02</span><h3>Découvre ta prof</h3><p>Chaque fiche réunit ses dernières vidéos, mises à jour automatiquement chaque jour.</p></li>
-      <li class="reveal"><span class="num">03</span><h3>Danse et soutiens-la</h3><p>Les vues et les abonnements vont directement à sa chaîne : tu soutiens les créatrices.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section id="rejoindre" class="section">
-  <div class="wrap">
-    <div class="cta reveal">
-      <div>
-        <p class="kicker">Pour les profs</p>
-        <h2>Tu enseignes la danse sur YouTube&nbsp;? Rejoins le répertoire.</h2>
-        <p class="lead">L'inscription est gratuite. Envoie ta chaîne, tes styles et ta ville : on crée ta fiche et tes nouvelles vidéos s'y ajoutent toutes seules.</p>
-      </div>
-      <div class="cta-side">
-        <a class="btn btn-or big" href="musique.html#partenaire">Rejoindre le répertoire</a>
-        <ul class="checks">
-          <li>Gratuit, sans engagement</li>
-          <li>Tes vues restent sur ta chaîne</li>
-          <li>Fiche mise à jour automatiquement</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" class="section alt">
-  <div class="wrap narrow">
-    <div class="head reveal"><div><p class="kicker">FAQ</p><h2>Questions fréquentes</h2></div></div>
-    <div class="faq">
-      <details class="reveal"><summary>Les cours sont-ils gratuits&nbsp;?</summary><p>Oui. Toutes les vidéos sont publiées gratuitement par les profs sur leur chaîne YouTube. Le répertoire te permet simplement de les trouver plus facilement.</p></details>
-      <details class="reveal"><summary>Comment les profs sont-elles choisies&nbsp;?</summary><p>Chaque chaîne est vérifiée à la main avant d'être publiée. On met en avant des femmes du monde entier qui enseignent la danse en ligne, quelle que soit leur origine.</p></details>
-      <details class="reveal"><summary>Je suis prof, comment apparaître sur le site&nbsp;?</summary><p>Remplis le formulaire d'inscription avec le lien de ta chaîne. Une fois validée, tes nouvelles vidéos s'ajoutent automatiquement à ta fiche.</p></details>
-      <details class="reveal"><summary>À quelle fréquence le site est-il mis à jour&nbsp;?</summary><p>Les vidéos de chaque prof sont récupérées automatiquement chaque jour.</p></details>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <footer class="foot">
-  <div class="wrap foot-in">
-    <div>
-      <a href="#" class="logo"><img class="logo-img" src="media/logo.svg" alt="" width="38" height="38"><span>Babe Killa</span></a>
-      <p class="muted">Le répertoire international des femmes qui enseignent la danse.</p>
-    </div>
-    <nav aria-label="Pied de page">
-      <a href="#nouveautes">Nouveautés</a>
-      <a href="#styles">Styles</a>
-      <a href="#profs">Les profs</a>
-      <a href="twerk.html">Twerk du jour</a>
-      <a href="clips.html">Clips</a>
-      <a href="blog.html">Blog</a>
-      <a href="#rejoindre">Devenir prof</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-  </div>
   <div class="wrap foot-bas">
     <span>© <span id="annee"></span> Babe Killa</span>
-    <span id="maj"></span>
+    <a href="./">Retour au répertoire</a>
   </div>
 <div class="wrap socials" aria-label="Babe Killa sur les réseaux"><span>Suis Babe Killa</span><a href="https://www.instagram.com/babek.officiel/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@babekingc6r" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/@BabeKing-c6r" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/babekilla01" target="_blank" rel="noopener">X</a></div>
 </footer>
 
-<dialog id="fiche" aria-labelledby="fiche-nom">
-  <div class="fiche-head">
-    <div class="fiche-id">
-      <img id="fiche-avatar" alt="" width="64" height="64">
-      <div>
-        <h2 id="fiche-nom"></h2>
-        <p id="fiche-meta" class="muted"></p>
-      </div>
-    </div>
-    <button type="button" class="round" id="fermer" aria-label="Fermer">
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-  </div>
-  <div class="player" id="lecteur"></div>
-  <div class="fiche-bar">
-    <p id="fiche-titre" class="fiche-titre"></p>
-    <a id="fiche-chaine" class="btn btn-ghost" target="_blank" rel="noopener">Voir la chaîne YouTube ↗</a>
-  </div>
-  <div class="videos" id="fiche-videos"></div>
-</dialog>
-
-<script src="app.js?v=4"></script>
 <script>
-(function(){var v=document.getElementById('hero-vid'),b=document.getElementById('hero-son');if(!v||!b)return;
-b.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted)v.play();b.querySelector('span').textContent=v.muted?'Son off':'Son on';b.setAttribute('aria-label',v.muted?'Activer le son':'Couper le son');});})();
+document.getElementById('annee').textContent = new Date().getFullYear();
+document.getElementById('burger').addEventListener('click', function () { var o = document.getElementById('menu').classList.toggle('ouvert'); this.setAttribute('aria-expanded', o); });
+</script>
+<script>
+document.querySelectorAll('.short').forEach(function (b) {
+  b.addEventListener('click', function () {
+    if (b.querySelector('iframe')) return;
+    b.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0&playsinline=1" title="Vidéo Babe K" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  });
+});
+</script>
+<script src="auth-config.js?v=2"></script>
+<script type="module" src="membre.js?v=3"></script>
+<script type="module">
+const f = document.getElementById('form-challenge');
+const msg = document.getElementById('fc-msg');
+const dire = (t, ok) => { msg.textContent = t; msg.className = 'fc-msg' + (ok ? ' ok' : ''); };
+const pret = () => new Promise((r) => { if (window.BabeK && window.BabeK.ouvrir) r(window.BabeK); else document.addEventListener('babek-pret', () => r(window.BabeK), { once: true }); setTimeout(() => r(window.BabeK || null), 8000); });
+f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  dire('');
+  const d = new FormData(f);
+  const lien = String(d.get('lien') || '').trim();
+  if (!String(d.get('nom') || '').trim()) return dire('Écris ton nom ou ton pseudo.');
+  if (!/^https:\/\/([a-z]+\.)?(tiktok\.com|instagram\.com|youtube\.com|youtu\.be)\//i.test(lien)) return dire('Le lien doit venir de TikTok, Instagram ou YouTube.');
+  if (!d.get('majeur')) return dire('Tu dois avoir 18 ans ou plus pour participer.');
+  if (!d.get('consentement')) return dire('Coche la case pour accepter que ta vidéo soit affichée.');
+  const B = await pret();
+  if (!B) return dire('Les inscriptions ouvrent bientôt. Réessaie plus tard.');
+  if (!B.auth.currentUser) { B.ouvrir(); return dire('Connecte-toi ou crée ton compte gratuit, puis clique à nouveau sur « Envoyer ma vidéo ».'); }
+  const btn = f.querySelector('button[type=submit]');
+  btn.disabled = true;
+  try {
+    const F = await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js');
+    const u = B.auth.currentUser;
+    await F.addDoc(F.collection(F.getFirestore(B.app), 'participations'), {
+      uid: u.uid, courriel: u.email || '', nom: String(d.get('nom')).trim().slice(0, 80),
+      reseau: String(d.get('reseau') || '').trim().slice(0, 120), lien: lien.slice(0, 300),
+      pays: String(d.get('pays') || '').trim().slice(0, 60), type: d.get('type') === 'Prof de danse' ? 'Prof de danse' : 'Danseuse',
+      majeur: true, consentement: true, date: F.serverTimestamp()
+    });
+    f.reset();
+    dire('Merci ! Ta vidéo est bien reçue. Si elle est choisie, elle apparaîtra sur le site. Bonne chance !', true);
+  } catch (err) { dire('Oups, l\'envoi n\'a pas marché. Réessaie dans un instant.'); }
+  btn.disabled = false;
+});
 </script>
 </body>
 </html>
