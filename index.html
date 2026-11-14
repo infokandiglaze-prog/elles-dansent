@@ -3,98 +3,207 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Elles Dansent — les profs de danse afrodescendantes</title>
-<meta name="description" content="Le répertoire des femmes afrodescendantes qui enseignent la danse sur YouTube : afrobeats, dancehall, kompa, amapiano, coupé-décalé et plus.">
+<title>Elles Dansent — Le répertoire des profs de danse afrodescendantes</title>
+<meta name="description" content="Le répertoire des femmes afrodescendantes qui enseignent la danse en ligne : afrobeats, dancehall, kompa, amapiano, coupé-décalé, whine et plus. Cours gratuits sur YouTube, triés par style et niveau.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Elles Dansent — Apprends à danser avec les meilleures profs afrodescendantes">
+<meta property="og:description" content="Cours de danse afro et caribéens sur YouTube, réunis au même endroit et mis à jour chaque jour.">
+<meta name="theme-color" content="#120C0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='9' fill='%23120C0A'/%3E%3Cg fill='none' stroke='%23F2B33D' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='17' cy='8' r='3'/%3E%3Cpath d='M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Elles Dansent","description":"Répertoire des femmes afrodescendantes qui enseignent la danse en ligne.","inLanguage":"fr"}</script>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 
-<header class="wrap top">
-  <a href="#" class="logo">
-    <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#F2B33D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="7" r="3.5"/><path d="M17 11v9l-6 10"/><path d="M17 20l6 10"/><path d="M8 14c4 2 14 2 18-4"/></svg>
-    <span>Elles Dansent</span>
-  </a>
-  <nav aria-label="Navigation principale">
-    <a href="#profs">Les profs</a>
-    <a href="#comment">Comment ça marche</a>
-    <a href="#rejoindre" class="btn">Je suis prof — m'inscrire</a>
-  </nav>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="logo" aria-label="Elles Dansent, accueil">
+      <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34"><rect width="34" height="34" rx="9" fill="#F2B33D"/><g fill="none" stroke="#120C0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="8" r="3"/><path d="M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4"/></g></svg>
+      <span>Elles Dansent</span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="menu" aria-label="Navigation principale">
+      <a href="#nouveautes">Nouveautés</a>
+      <a href="#styles">Styles</a>
+      <a href="#profs">Les profs</a>
+      <a href="#faq">FAQ</a>
+      <a href="#rejoindre" class="btn btn-or">Je suis prof</a>
+    </nav>
+  </div>
 </header>
 
-<section class="wrap hero">
-  <div class="hero-text">
-    <p class="kicker">Le répertoire des femmes afrodescendantes qui enseignent la danse</p>
-    <h1>Apprends à danser avec <span>celles qui font vibrer</span> la culture.</h1>
-    <p class="lead">Afrobeats, dancehall, kompa, amapiano, coupé-décalé… Trouve les meilleures profs sur YouTube, classées par style, niveau et langue.</p>
-    <div class="search">
-      <label for="recherche">Chercher une prof ou un style</label>
-      <input id="recherche" type="search" placeholder="ex. kompa, débutante, amapiano…">
+<main id="contenu">
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="hero-text reveal">
+      <p class="eyebrow"><span class="dot"></span> Le répertoire des femmes afrodescendantes qui enseignent la danse</p>
+      <h1>Apprends à danser avec celles qui <em>font vibrer</em> la culture.</h1>
+      <p class="lead">Afrobeats, dancehall, kompa, amapiano, coupé-décalé, whine… Les meilleures profs sur YouTube, réunies au même endroit et mises à jour chaque jour.</p>
+      <form class="search" role="search" onsubmit="return false">
+        <label for="recherche" class="sr">Chercher une prof ou un style</label>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="recherche" type="search" placeholder="Une prof, un style, un niveau…" autocomplete="off">
+        <a href="#profs" class="btn btn-or">Explorer</a>
+      </form>
+      <ul class="stats" aria-label="Le répertoire en chiffres">
+        <li><b id="st-profs">–</b><span>profs</span></li>
+        <li><b id="st-videos">–</b><span>cours vidéo</span></li>
+        <li><b id="st-styles">–</b><span>styles</span></li>
+      </ul>
+    </div>
+    <div class="hero-card reveal" id="vedette" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Afrobeats</span><span>Dancehall</span><span>Kompa</span><span>Amapiano</span><span>Coupé-décalé</span><span>Ndombolo</span><span>Whine</span><span>Kizomba</span><span>Azonto</span><span>Soca</span><span>Zouk</span>
+      <span>Afrobeats</span><span>Dancehall</span><span>Kompa</span><span>Amapiano</span><span>Coupé-décalé</span><span>Ndombolo</span><span>Whine</span><span>Kizomba</span><span>Azonto</span><span>Soca</span><span>Zouk</span>
     </div>
   </div>
 </section>
 
-<section class="bar">
-  <div class="wrap filters" id="filtres" aria-label="Filtrer par style"></div>
+<section id="nouveautes" class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Nouveautés</p>
+        <h2>Les derniers cours publiés</h2>
+      </div>
+      <div class="arrows">
+        <button type="button" class="round" id="prev" aria-label="Vidéos précédentes"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="round" id="next" aria-label="Vidéos suivantes"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Derniers cours"></div>
+  </div>
 </section>
 
-<section id="profs" class="wrap section">
-  <div class="section-head">
+<section id="styles" class="section alt">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Styles</p>
+        <h2>Choisis ta vibe</h2>
+      </div>
+    </div>
+    <div class="styles" id="filtres" role="group" aria-label="Filtrer par style"></div>
+  </div>
+</section>
+
+<section id="profs" class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <p class="kicker">Le répertoire</p>
+        <h2>Les profs</h2>
+        <p id="compteur" class="muted">Chargement…</p>
+      </div>
+      <label class="tri">Trier par
+        <select id="tri">
+          <option value="recent">Plus récentes vidéos</option>
+          <option value="nom">Nom (A → Z)</option>
+          <option value="videos">Nombre de vidéos</option>
+        </select>
+      </label>
+    </div>
+    <div class="grid" id="grille"></div>
+  </div>
+</section>
+
+<section class="section light">
+  <div class="wrap">
+    <div class="head reveal"><div><p class="kicker k-dark">Comment ça marche</p><h2>Trois étapes. Zéro prise de tête.</h2></div></div>
+    <ol class="steps">
+      <li class="reveal"><span class="num">01</span><h3>Choisis ton style</h3><p>Filtre par danse, niveau et langue du cours. Débutante ou confirmée, il y a une prof pour toi.</p></li>
+      <li class="reveal"><span class="num">02</span><h3>Découvre ta prof</h3><p>Chaque fiche réunit ses dernières vidéos, mises à jour automatiquement chaque jour.</p></li>
+      <li class="reveal"><span class="num">03</span><h3>Danse et soutiens-la</h3><p>Les vues et les abonnements vont directement à sa chaîne : tu soutiens les créatrices.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="rejoindre" class="section">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div>
+        <p class="kicker">Pour les profs</p>
+        <h2>Tu enseignes la danse sur YouTube&nbsp;? Rejoins le répertoire.</h2>
+        <p class="lead">L'inscription est gratuite. Envoie ta chaîne, tes styles et ta ville : on crée ta fiche et tes nouvelles vidéos s'y ajoutent toutes seules.</p>
+      </div>
+      <div class="cta-side">
+        <!-- Remplace FORMULAIRE_URL par le lien de ton Google Form (ou Tally, Jotform…) -->
+        <a class="btn btn-or big" href="FORMULAIRE_URL">Rejoindre le répertoire</a>
+        <ul class="checks">
+          <li>Gratuit, sans engagement</li>
+          <li>Tes vues restent sur ta chaîne</li>
+          <li>Fiche mise à jour automatiquement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section alt">
+  <div class="wrap narrow">
+    <div class="head reveal"><div><p class="kicker">FAQ</p><h2>Questions fréquentes</h2></div></div>
+    <div class="faq">
+      <details class="reveal"><summary>Les cours sont-ils gratuits&nbsp;?</summary><p>Oui. Toutes les vidéos sont publiées gratuitement par les profs sur leur chaîne YouTube. Le répertoire te permet simplement de les trouver plus facilement.</p></details>
+      <details class="reveal"><summary>Comment les profs sont-elles choisies&nbsp;?</summary><p>Chaque chaîne est vérifiée à la main avant d'être publiée. On met en avant des femmes afrodescendantes qui enseignent la danse en ligne.</p></details>
+      <details class="reveal"><summary>Je suis prof, comment apparaître sur le site&nbsp;?</summary><p>Remplis le formulaire d'inscription avec le lien de ta chaîne. Une fois validée, tes nouvelles vidéos s'ajoutent automatiquement à ta fiche.</p></details>
+      <details class="reveal"><summary>À quelle fréquence le site est-il mis à jour&nbsp;?</summary><p>Les vidéos de chaque prof sont récupérées automatiquement chaque jour.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
     <div>
-      <h2>Les profs</h2>
-      <p id="compteur" class="muted">Chargement…</p>
+      <a href="#" class="logo"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 34 34"><rect width="34" height="34" rx="9" fill="#F2B33D"/><g fill="none" stroke="#120C0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="8" r="3"/><path d="M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4"/></g></svg><span>Elles Dansent</span></a>
+      <p class="muted">Le répertoire des femmes afrodescendantes qui enseignent la danse.</p>
     </div>
-    <a href="#rejoindre">Tu ne te vois pas ? Ajoute ta chaîne →</a>
+    <nav aria-label="Pied de page">
+      <a href="#nouveautes">Nouveautés</a>
+      <a href="#styles">Styles</a>
+      <a href="#profs">Les profs</a>
+      <a href="#rejoindre">Devenir prof</a>
+      <a href="#faq">FAQ</a>
+    </nav>
   </div>
-  <div class="grid" id="grille"></div>
-</section>
-
-<section id="comment" class="light">
-  <div class="wrap section">
-    <h2>Un seul endroit pour toutes les profs qu'on ne trouve pas assez facilement.</h2>
-    <div class="steps">
-      <div><b>01</b><h3>Choisis ton style</h3><p>Filtre par danse, niveau et langue du cours.</p></div>
-      <div><b>02</b><h3>Découvre la prof</h3><p>Sa fiche réunit ses dernières vidéos, mises à jour automatiquement.</p></div>
-      <div><b>03</b><h3>Danse avec elle</h3><p>Les vues vont directement à sa chaîne YouTube : tu soutiens les créatrices.</p></div>
-    </div>
+  <div class="wrap foot-bas">
+    <span>© <span id="annee"></span> Elles Dansent</span>
+    <span id="maj"></span>
   </div>
-</section>
-
-<section id="rejoindre" class="wrap section join">
-  <div>
-    <p class="kicker">Pour les profs</p>
-    <h2>Tu enseignes la danse sur YouTube ? Rejoins le répertoire.</h2>
-    <p class="lead">L'inscription est gratuite. Envoie ta chaîne, tes styles et ta ville : on crée ta fiche et tes nouvelles vidéos s'y ajoutent toutes seules.</p>
-  </div>
-  <div class="card-join">
-    <!-- Remplace FORMULAIRE_URL par le lien de ton Google Form (ou Tally, Jotform…) -->
-    <a class="btn big" href="FORMULAIRE_URL">Remplir le formulaire d'inscription</a>
-    <p class="muted small">On vérifie chaque chaîne avant de la publier.</p>
-  </div>
-</section>
-
-<footer class="wrap foot">
-  <span>© <span id="annee"></span> Elles Dansent</span>
-  <span id="maj" class="muted"></span>
 </footer>
 
 <dialog id="fiche" aria-labelledby="fiche-nom">
   <div class="fiche-head">
     <div class="fiche-id">
-      <img id="fiche-avatar" alt="" width="56" height="56">
+      <img id="fiche-avatar" alt="" width="64" height="64">
       <div>
         <h2 id="fiche-nom"></h2>
         <p id="fiche-meta" class="muted"></p>
       </div>
     </div>
-    <button type="button" class="close" id="fermer" aria-label="Fermer">
-      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    <button type="button" class="round" id="fermer" aria-label="Fermer">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
   <div class="player" id="lecteur"></div>
-  <a id="fiche-chaine" class="chaine" target="_blank" rel="noopener">Voir la chaîne YouTube →</a>
+  <div class="fiche-bar">
+    <p id="fiche-titre" class="fiche-titre"></p>
+    <a id="fiche-chaine" class="btn btn-ghost" target="_blank" rel="noopener">Voir la chaîne YouTube ↗</a>
+  </div>
   <div class="videos" id="fiche-videos"></div>
 </dialog>
 
