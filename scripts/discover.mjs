@@ -20,6 +20,24 @@ if (!KEY) {
   process.exit(0);
 }
 
+// Requêtes lancées à chaque passage (styles demandés en priorité)
+const PRIORITAIRES = [
+  'twerk tutorial for beginners',
+  'twerk class tutorial',
+  'tuto twerk débutante',
+  'cours de twerk en ligne',
+  'mapouka tuto danse',
+  'mapouka dance tutorial',
+  'danse mapouka cours',
+  'slow wine tutorial',
+  'sensual wine dance tutorial',
+  'whine sensuel tuto',
+  'danse sensuelle afro tuto',
+  'bubble whine tutorial',
+  'dancehall female class heels',
+  'gouyad dance tutorial'
+];
+
 // Requêtes de base : cours / tutoriels des styles afro et caribéens
 const BASE = [
   'cours de danse afro débutante',
@@ -95,7 +113,7 @@ if (idsExemples.length) {
 // Rotation : chaque semaine, un groupe différent de requêtes de base
 const semaine = Math.floor(Date.now() / (7 * 864e5));
 const decale = (semaine * 10) % BASE.length;
-const requetes = [...requetesStyle, ...BASE.slice(decale), ...BASE.slice(0, decale)].slice(0, MAX_RECHERCHES);
+const requetes = [...new Set([...PRIORITAIRES, ...requetesStyle, ...BASE.slice(decale), ...BASE.slice(0, decale)])].slice(0, MAX_RECHERCHES);
 
 const trouvees = new Map(); // channelId → { requetes, videos }
 for (const q of requetes) {
