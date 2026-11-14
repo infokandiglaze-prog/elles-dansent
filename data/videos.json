@@ -1,83 +1,183 @@
 {
-  "maj": "2026-11-14T00:09:31.731Z",
+  "maj": "2026-11-14T00:37:44.570Z",
   "profs": {
     "tesi-holistic": {
       "chaineId": "UCuhfBK6zREw1rxVHxmUGgmw",
       "chaineNom": "Tesi Holistic ",
-      "chaineUrl": "https://www.youtube.com/channel/UCuhfBK6zREw1rxVHxmUGgmw",
-      "avatar": "https://yt3.googleusercontent.com/jYU7lNLceHyg7mNHJjahpnHy_WeJa5qBfQgPLpWuL77VRKLlSvDZS4V63bZgkndvYpq_1Z3V_w=s900-c-k-c0x00ffffff-no-rj",
+      "chaineUrl": "https://www.youtube.com/@tesiholistic",
+      "avatar": "https://yt3.ggpht.com/jYU7lNLceHyg7mNHJjahpnHy_WeJa5qBfQgPLpWuL77VRKLlSvDZS4V63bZgkndvYpq_1Z3V_w=s240-c-k-c0x00ffffff-no-rj",
       "videos": [
         {
-          "id": "o7JOLXBYj2o",
-          "titre": "Not Ready for the Middle Split? Try This First",
+          "id": "I_KD3W3qnlQ",
+          "titre": "Whining for Complete Beginners - Start Here ",
           "date": "",
-          "miniature": "https://i.ytimg.com/vi/o7JOLXBYj2o/hqdefault.jpg"
+          "miniature": "https://i.ytimg.com/vi/I_KD3W3qnlQ/hqdefault.jpg"
         },
         {
-          "id": "K1UmvkS8C84",
-          "titre": "18-Min Daily Yoga for Beginners | Deep Stretch for Flexibility & Vitality",
+          "id": "xS3jP_2BARw",
+          "titre": "Chair Whining for Weak Knees & Arthritis | Reconnect with Your Body Gently",
+          "date": "2026-07-03T21:44:02Z",
+          "miniature": "https://i.ytimg.com/vi/xS3jP_2BARw/hqdefault.jpg"
+        }
+      ]
+    },
+    "foxy-roxy": {
+      "chaineId": "UCnu27Txxn4F8nHTBrpymnTQ",
+      "chaineNom": "Foxy Roxy",
+      "chaineUrl": "https://www.youtube.com/@foxxyroxyyy",
+      "avatar": "https://yt3.ggpht.com/nIe6FnZZArQUS-bCwTMsyGlC4lBcGVALq9_d6gmrqmPNEBVWpWJz_CDUT4hM8vKCQIezeER_GA=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "CXQ4en5V6HY",
+          "titre": "BEGINNERS ROUTINE TUTORIAL | Tra Tra (Ahi Challenge) by foxxyroxyyy",
           "date": "",
-          "miniature": "https://i.ytimg.com/vi/K1UmvkS8C84/hqdefault.jpg"
+          "miniature": "https://i.ytimg.com/vi/CXQ4en5V6HY/hqdefault.jpg"
         },
         {
-          "id": "8mtA9oRvgG0",
-          "titre": "11-minute Somatic Reset for Women | Very Gentle Stretch",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/8mtA9oRvgG0/hqdefault.jpg"
+          "id": "8iwGP92-Uwc",
+          "titre": "5 ways to train your isolations #beginnerstwerk #gluteworkout #gluteactivation",
+          "date": "2026-06-26T15:47:40Z",
+          "miniature": "https://i.ytimg.com/vi/8iwGP92-Uwc/hqdefault.jpg"
         },
         {
-          "id": "YTc1iSfq1rg",
-          "titre": "13-minute Lower Back Reset | Deep but Gentle",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/YTc1iSfq1rg/hqdefault.jpg"
+          "id": "OqhVwIYXVyw",
+          "titre": "HOW TO GET MEGAN KNEES || Beginner Twerk Tutorial",
+          "date": "2026-06-19T13:00:16Z",
+          "miniature": "https://i.ytimg.com/vi/OqhVwIYXVyw/hqdefault.jpg"
         },
         {
-          "id": "9PAOJ0LwK3M",
-          "titre": "Why I can't afford to people-please.",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/9PAOJ0LwK3M/hqdefault.jpg"
+          "id": "1aWHRJc4DQ8",
+          "titre": "Another twerk choreo yours truly! Foxy Shorts available on my website 🔥 #choreography #latto",
+          "date": "2026-04-24T13:00:04Z",
+          "miniature": "https://i.ytimg.com/vi/1aWHRJc4DQ8/hqdefault.jpg"
         },
         {
-          "id": "PwLxT0Y1DqA",
-          "titre": "A Slow Deep Stretch for Tight Hamstrings and Flexibility",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/PwLxT0Y1DqA/hqdefault.jpg"
+          "id": "mQQfO3iqDsY",
+          "titre": "How shake your ass fast! #beginnerstwerk #dancetutorial #howtodance",
+          "date": "2026-04-11T13:01:33Z",
+          "miniature": "https://i.ytimg.com/vi/mQQfO3iqDsY/hqdefault.jpg"
         },
         {
-          "id": "ULMIl4RleTg",
-          "titre": "How to identify and change your limiting beliefs",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/ULMIl4RleTg/hqdefault.jpg"
+          "id": "RbQcsyDI6xw",
+          "titre": "POP DAT 🔥 #choreography #foxxyroxyyy #intermediate",
+          "date": "2026-03-13T21:16:18Z",
+          "miniature": "https://i.ytimg.com/vi/RbQcsyDI6xw/hqdefault.jpg"
         },
         {
-          "id": "FSxuNaDrQ0I",
-          "titre": "For People Who Sit All Day | Great For Runners",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/FSxuNaDrQ0I/hqdefault.jpg"
+          "id": "z46wKRnFpsA",
+          "titre": "#snoopdogg in #amsterdam #poledance #performance",
+          "date": "2026-03-04T15:34:00Z",
+          "miniature": "https://i.ytimg.com/vi/z46wKRnFpsA/hqdefault.jpg"
         },
         {
-          "id": "zoucCghfJp8",
-          "titre": "Simple Ways to Feel More Sensual as a Busy Woman",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/zoucCghfJp8/hqdefault.jpg"
+          "id": "3KStALKSNc8",
+          "titre": "Try this at home! #beginnerstwerk #bodychallenge",
+          "date": "2026-02-27T14:00:10Z",
+          "miniature": "https://i.ytimg.com/vi/3KStALKSNc8/hqdefault.jpg"
         },
         {
-          "id": "rMPvFwD5gXw",
-          "titre": "15-Minute Flexibility Routine for Lazy People | All levels",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/rMPvFwD5gXw/hqdefault.jpg"
+          "id": "jYPFa4cKmOU",
+          "titre": "How to Twerk on your Hands & Knees #beginnerstwerk #dancetutorial #howto #howtodance #quicktutorial",
+          "date": "2026-02-22T18:01:47Z",
+          "miniature": "https://i.ytimg.com/vi/jYPFa4cKmOU/hqdefault.jpg"
         },
         {
-          "id": "usAEoPPTalQ",
-          "titre": "Why people admire you then resent you",
-          "date": "",
-          "miniature": "https://i.ytimg.com/vi/usAEoPPTalQ/hqdefault.jpg"
+          "id": "SkTkgHx7wRM",
+          "titre": "Ultimate Beginner's Twerk Choreo || Step by Step Tutorial",
+          "date": "2026-02-13T14:00:52Z",
+          "miniature": "https://i.ytimg.com/vi/SkTkgHx7wRM/hqdefault.jpg"
         },
         {
-          "id": "ar-V4KAC9B8",
-          "titre": "Somatic Hip-Opening for Your Period | Back Relief",
+          "id": "l4OBvad73QI",
+          "titre": "HOW TO BOOTY JIGGLE || Quick Beginner Twerk Tutorial",
+          "date": "2026-01-30T14:01:30Z",
+          "miniature": "https://i.ytimg.com/vi/l4OBvad73QI/hqdefault.jpg"
+        },
+        {
+          "id": "kBxg4SK-chU",
+          "titre": "Twerk choreo by @foxxyroxyyy - First upload of 2026! I’ve missed yall",
+          "date": "2026-01-16T13:53:10Z",
+          "miniature": "https://i.ytimg.com/vi/kBxg4SK-chU/hqdefault.jpg"
+        }
+      ]
+    },
+    "chriss-choreo": {
+      "chaineId": "UC11dvGb4c0sRb1x606_zL5A",
+      "chaineNom": "Chriss Choreo",
+      "chaineUrl": "https://www.youtube.com/@chrisschoreo",
+      "avatar": "https://yt3.ggpht.com/xF4oYr1yUt2aeap7lTlxFGaeyLx5yqofqwjZ6zep_bzxbVl3Y7_jOzuGrJhHcr_rOEvEolCh=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "-OdJOstow24",
+          "titre": "WINING TUTORIAL | SOCA DANCE CLASS | CHRISS CHOREO",
           "date": "",
-          "miniature": "https://i.ytimg.com/vi/ar-V4KAC9B8/hqdefault.jpg"
+          "miniature": "https://i.ytimg.com/vi/-OdJOstow24/hqdefault.jpg"
+        },
+        {
+          "id": "XyjKWOvX1Yk",
+          "titre": "Would you like to join me LIVE tomorrow Nov 7th for Dancing at 10am? Tap the link in comments",
+          "date": "2026-11-07T00:10:46Z",
+          "miniature": "https://i.ytimg.com/vi/XyjKWOvX1Yk/hqdefault.jpg"
+        },
+        {
+          "id": "P7L7THZAEok",
+          "titre": "Sensuality Dance Workshop upcoming!",
+          "date": "2026-10-28T17:14:24Z",
+          "miniature": "https://i.ytimg.com/vi/P7L7THZAEok/hqdefault.jpg"
+        },
+        {
+          "id": "omS-ZjAlt4I",
+          "titre": "HIIT + DANCE FITNESS with CHRISS CHOREO",
+          "date": "2026-10-21T07:40:52Z",
+          "miniature": "https://i.ytimg.com/vi/omS-ZjAlt4I/hqdefault.jpg"
+        },
+        {
+          "id": "7u5rfy63hr8",
+          "titre": "JUST 2 SPACES REMAINING website: www.chrisschoreo.com Email: carnivalorigins@gmail.com",
+          "date": "2026-09-30T18:06:11Z",
+          "miniature": "https://i.ytimg.com/vi/7u5rfy63hr8/hqdefault.jpg"
+        },
+        {
+          "id": "Hjy7KeBro2Q",
+          "titre": "Website: www.chrisschoreo.com Email: carnivalorigins@gmail.com Instagram: @carnivalorigins",
+          "date": "2026-09-24T21:56:50Z",
+          "miniature": "https://i.ytimg.com/vi/Hjy7KeBro2Q/hqdefault.jpg"
+        },
+        {
+          "id": "c_k2VKrIQ3g",
+          "titre": "www.chrisschoreo.com EMAIL: carnivalorigins@gmail.com IG: @carnivalorigins Deadline is September 30",
+          "date": "2026-09-21T13:38:23Z",
+          "miniature": "https://i.ytimg.com/vi/c_k2VKrIQ3g/hqdefault.jpg"
+        },
+        {
+          "id": "yQcfbXYRiac",
+          "titre": "Jamaica Carnival 2027 by Chriss Choreo Sign up www.chrisschoreo.com email: carnivalorigins@gmail.com",
+          "date": "2026-09-18T23:10:10Z",
+          "miniature": "https://i.ytimg.com/vi/yQcfbXYRiac/hqdefault.jpg"
+        },
+        {
+          "id": "rAUYSfgawuk",
+          "titre": "RSVP here: www.chrisschoreo.com OR Email us here: carnivalorigins@gmail.com",
+          "date": "2026-09-14T17:02:43Z",
+          "miniature": "https://i.ytimg.com/vi/rAUYSfgawuk/hqdefault.jpg"
+        },
+        {
+          "id": "9-ToWeM3kl0",
+          "titre": "CARNIVAL ORIGINS 2027 www.chrisschoreo.com",
+          "date": "2026-09-11T21:35:04Z",
+          "miniature": "https://i.ytimg.com/vi/9-ToWeM3kl0/hqdefault.jpg"
+        },
+        {
+          "id": "O2pJNbBZMGo",
+          "titre": "Need More info? www.chrisschoreo.com",
+          "date": "2026-09-10T15:38:49Z",
+          "miniature": "https://i.ytimg.com/vi/O2pJNbBZMGo/hqdefault.jpg"
+        },
+        {
+          "id": "tBjnkZeSJ-Q",
+          "titre": "CARNIVAL ORIGINS × AC HOTEL | ALL INFO including retreat costs are on www.chrisschoreo.com",
+          "date": "2026-09-01T16:37:03Z",
+          "miniature": "https://i.ytimg.com/vi/tBjnkZeSJ-Q/hqdefault.jpg"
         }
       ]
     }
