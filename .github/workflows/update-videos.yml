@@ -2,7 +2,7 @@ name: Mettre à jour les vidéos YouTube
 
 on:
   schedule:
-    - cron: '17 9 * * *'   # chaque jour (~4h17, heure de Montréal)
+    - cron: '17 9,21 * * *'   # 2 fois par jour (~4h17 et ~16h17, heure de Montréal)
   workflow_dispatch:        # bouton « Run workflow » pour lancer à la main
   push:
     paths:
