@@ -39,6 +39,7 @@ const approuvees = new Set([
   ...extra.map((c) => (typeof c === 'string' ? c : c.id))
 ]);
 const deja = new Set(fil.videos.map((v) => v.id));
+const idsExtra = new Set(extra.map((c) => (typeof c === 'string' ? c : c.id)));
 
 // 1. Recherche des vidéos publiées ces 3 derniers jours
 const depuis = new Date(Date.now() - 3 * 864e5).toISOString();
@@ -73,7 +74,8 @@ for (let i = 0; i < ids.length; i += 50) {
     if (!v.status?.embeddable) continue;
     if (v.contentDetails?.contentRating?.ytRating === 'ytAgeRestricted') continue;
     if (v.snippet?.madeForKids) continue;
-    if (!TWERK.test(`${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
+    // Les chaînes twerk approuvées à la main sont gardées en entier ; les autres doivent parler de twerk
+    if (!idsExtra.has(v.snippet.channelId) && !TWERK.test(`${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
     const video = {
       id: v.id,
       titre: v.snippet.title,
