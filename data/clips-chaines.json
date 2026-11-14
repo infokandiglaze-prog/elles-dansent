@@ -5,16 +5,6 @@
     "genre": "Reggaeton & Latino"
   },
   {
-    "id": "UCqJ1DkLMhjEj2LiIWjk8E3A",
-    "nom": "NocheCalor",
-    "genre": "Reggaeton & Latino"
-  },
-  {
-    "id": "UCRouCe-tiSnqdkOCDy7ZrhA",
-    "nom": "Jkobe & Mgl",
-    "genre": "Reggaeton & Latino"
-  },
-  {
     "id": "UCqhJ-ZgHynhSg0gBRazs-Mw",
     "nom": "PEARJA",
     "genre": "Autres"
@@ -30,36 +20,6 @@
     "genre": "Dancehall"
   },
   {
-    "id": "UCZZx2Uaheeu1OGUBbWSbnPg",
-    "nom": "Vybz Kartel",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCefBhh70GxGOi89otNmji_Q",
-    "nom": "Skillibeng",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCsGw3GFqcVeGd1_kWmmLKlA",
-    "nom": "Valiant",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCYGHSw2kacL589nNX4l0fMg",
-    "nom": "Popcaan",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCOSJVk71utzoCmRxzcfhM-A",
-    "nom": "Masicka",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCGluLwnhI9qBeDAA1ZOpFcQ",
-    "nom": "Govana",
-    "genre": "Dancehall"
-  },
-  {
     "id": "UCmcrTPKYzbw2fQHiAjWg4_g",
     "nom": "Jada Kingdom",
     "genre": "Dancehall"
@@ -68,31 +28,6 @@
     "id": "UC69OX2oRgC-v7SIZxXh5S4Q",
     "nom": "Stalk Ashley",
     "genre": "Dancehall"
-  },
-  {
-    "id": "UCCM9iyNEzdGLatgxETNFQYQ",
-    "nom": "RajahWild",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCy1ljgtV9biMMBSSi6eOTvw",
-    "nom": "Teejay",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCZjR0cPlO91NNQ-6fgvtuhA",
-    "nom": "Dexta Daps",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCSe-VWoq4gumFruTLcRNSww",
-    "nom": "Machel Montano",
-    "genre": "Soca & Carnaval"
-  },
-  {
-    "id": "UCcrD4bSGlvWGm1Bu1YFiLFQ",
-    "nom": "Kes The Band",
-    "genre": "Soca & Carnaval"
   },
   {
     "id": "UCQvUkx9rDOdFqN5NkWS1X6w",
@@ -105,21 +40,6 @@
     "genre": "Soca & Carnaval"
   },
   {
-    "id": "UCRzXREN2_9aB_IJH5yhbLDQ",
-    "nom": "Voice",
-    "genre": "Soca & Carnaval"
-  },
-  {
-    "id": "UCG1BZEjvgwP1ZOw9hZeJj9A",
-    "nom": "Skinny Fabulous",
-    "genre": "Soca & Carnaval"
-  },
-  {
-    "id": "UCC7koaENbxj_w0yXfxZCLFw",
-    "nom": "Kerwin Du Bois",
-    "genre": "Soca & Carnaval"
-  },
-  {
     "id": "UCnT8nswNwCCCAl20Tmj32Dw",
     "nom": "Destra Garcia",
     "genre": "Soca & Carnaval"
@@ -127,11 +47,6 @@
   {
     "id": "UCAz_arPYFMtZ54emSy4aD0Q",
     "nom": "Alison Hinds",
-    "genre": "Soca & Carnaval"
-  },
-  {
-    "id": "UCP_hs6ljVpsDXX7fKqmXyqQ",
-    "nom": "Mical Teja",
     "genre": "Soca & Carnaval"
   }
 ]
