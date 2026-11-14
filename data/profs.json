@@ -4,7 +4,9 @@
     "nom": "",
     "chaine": "UCuhfBK6zREw1rxVHxmUGgmw",
     "video_exemple": "I_KD3W3qnlQ",
-    "styles": ["Whine"],
+    "styles": [
+      "Whine"
+    ],
     "niveau": "Débutante",
     "langue": "anglais",
     "pays": "",
@@ -15,7 +17,9 @@
     "nom": "",
     "chaine": "UCnu27Txxn4F8nHTBrpymnTQ",
     "video_exemple": "CXQ4en5V6HY",
-    "styles": ["Chorégraphie"],
+    "styles": [
+      "Chorégraphie"
+    ],
     "niveau": "Débutante",
     "langue": "anglais",
     "pays": "",
@@ -26,10 +30,104 @@
     "nom": "",
     "chaine": "UC11dvGb4c0sRb1x606_zL5A",
     "video_exemple": "-OdJOstow24",
-    "styles": ["Soca", "Whine"],
+    "styles": [
+      "Soca",
+      "Whine"
+    ],
     "niveau": "Débutante",
     "langue": "anglais",
     "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "sherrie-silver",
+    "nom": "",
+    "chaine": "UCUv5gm85_rdIQsallnldf4A",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "rosey-lucci",
+    "nom": "",
+    "chaine": "UC0txyRgnWOdBTQldmBpJCtw",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "Royaume-Uni",
+    "bio": ""
+  },
+  {
+    "id": "taras-body",
+    "nom": "",
+    "chaine": "UCQXSTjAoqNh5HK5Ae6iwwjA",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "français",
+    "pays": "France",
+    "bio": ""
+  },
+  {
+    "id": "sarah-powell",
+    "nom": "",
+    "chaine": "UCg5fiB8oAMlU_H8Cq9AxDYQ",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "jennifer-anthony",
+    "nom": "",
+    "chaine": "UCrW8JMbe-4Ryp2Cadp3hCnA",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "bm-official",
+    "nom": "",
+    "chaine": "UCrZUtLsN2NuwAJE_q0PZjpA",
+    "video_exemple": "",
+    "styles": [
+      "Ndombolo"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "afronovo",
+    "nom": "",
+    "chaine": "UCCHR51CK7JgtIVSb6ef3EBA",
+    "video_exemple": "",
+    "styles": [
+      "Afro house"
+    ],
+    "niveau": "Débutante",
+    "langue": "français",
+    "pays": "France",
     "bio": ""
   }
 ]
