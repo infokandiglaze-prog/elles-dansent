@@ -1,4 +1,85 @@
 {
-  "maj": "2026-11-14T00:03:55.457Z",
-  "profs": {}
+  "maj": "2026-11-14T00:07:06.077Z",
+  "profs": {
+    "exemple-1": {
+      "chaineId": "UCuhfBK6zREw1rxVHxmUGgmw",
+      "chaineNom": "Tesi Holistic ",
+      "chaineUrl": "https://www.youtube.com/channel/UCuhfBK6zREw1rxVHxmUGgmw",
+      "avatar": "https://yt3.googleusercontent.com/jYU7lNLceHyg7mNHJjahpnHy_WeJa5qBfQgPLpWuL77VRKLlSvDZS4V63bZgkndvYpq_1Z3V_w=s900-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "o7JOLXBYj2o",
+          "titre": "Not Ready for the Middle Split? Try This First",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/o7JOLXBYj2o/hqdefault.jpg"
+        },
+        {
+          "id": "K1UmvkS8C84",
+          "titre": "18-Min Daily Yoga for Beginners | Deep Stretch for Flexibility & Vitality",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/K1UmvkS8C84/hqdefault.jpg"
+        },
+        {
+          "id": "8mtA9oRvgG0",
+          "titre": "11-minute Somatic Reset for Women | Very Gentle Stretch",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/8mtA9oRvgG0/hqdefault.jpg"
+        },
+        {
+          "id": "YTc1iSfq1rg",
+          "titre": "13-minute Lower Back Reset | Deep but Gentle",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/YTc1iSfq1rg/hqdefault.jpg"
+        },
+        {
+          "id": "9PAOJ0LwK3M",
+          "titre": "Why I can't afford to people-please.",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/9PAOJ0LwK3M/hqdefault.jpg"
+        },
+        {
+          "id": "PwLxT0Y1DqA",
+          "titre": "A Slow Deep Stretch for Tight Hamstrings and Flexibility",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/PwLxT0Y1DqA/hqdefault.jpg"
+        },
+        {
+          "id": "ULMIl4RleTg",
+          "titre": "How to identify and change your limiting beliefs",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/ULMIl4RleTg/hqdefault.jpg"
+        },
+        {
+          "id": "FSxuNaDrQ0I",
+          "titre": "For People Who Sit All Day | Great For Runners",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/FSxuNaDrQ0I/hqdefault.jpg"
+        },
+        {
+          "id": "zoucCghfJp8",
+          "titre": "Simple Ways to Feel More Sensual as a Busy Woman",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/zoucCghfJp8/hqdefault.jpg"
+        },
+        {
+          "id": "rMPvFwD5gXw",
+          "titre": "15-Minute Flexibility Routine for Lazy People | All levels",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/rMPvFwD5gXw/hqdefault.jpg"
+        },
+        {
+          "id": "usAEoPPTalQ",
+          "titre": "Why people admire you then resent you",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/usAEoPPTalQ/hqdefault.jpg"
+        },
+        {
+          "id": "ar-V4KAC9B8",
+          "titre": "Somatic Hip-Opening for Your Period | Back Relief",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/ar-V4KAC9B8/hqdefault.jpg"
+        }
+      ]
+    }
+  }
 }
