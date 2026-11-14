@@ -9,7 +9,8 @@ const KEY = process.env.YOUTUBE_API_KEY;
 const API = 'https://www.googleapis.com/youtube/v3';
 const MAX_FIL = 600; // nombre maximum de vidéos gardées sur la page
 const REQUETES = ['dancehall music video', 'reggaeton video oficial', 'perreo video oficial', 'dembow video oficial', 'shatta clip officiel', 'twerk music video', 'rap video clip', 'afrobeats music video', 'baile funk clipe oficial', 'soca music video'];
-const TWERK = /official|oficial|officiel|clipe|music video|video clip|videoclip|visualizer/i;
+const TWERK = /official|oficial|officiel|clipe|music video|video clip|videoclip|visualizer|performance video|\(prod\./i;
+const EXCLURE = /vlog|podcast|interview|episode|rezy|pop ?up|unboxing|get ready|grwm|aprende|food|market|vacation|makeup|coming soon|detr[aá]s de c[aá]maras|behind the scenes|\bbts\b|teaser|lookbook|shein|haul|reaction|storytime|audio oficial|sizzle|surgery|bachelorette/i; // vidéos hors danse à exclure
 
 const lireJson = async (f, defaut) => { try { return JSON.parse(await readFile(f, 'utf8')); } catch { return defaut; } };
 
@@ -74,8 +75,9 @@ for (let i = 0; i < ids.length; i += 50) {
     if (!v.status?.embeddable) continue;
     if (v.contentDetails?.contentRating?.ytRating === 'ytAgeRestricted') continue;
     if (v.snippet?.madeForKids) continue;
-    // Les chaînes twerk approuvées à la main sont gardées en entier ; les autres doivent parler de twerk
-    if (!idsExtra.has(v.snippet.channelId) && !TWERK.test(`${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
+    // Seulement des clips musicaux officiels : titre de clip obligatoire, vidéos hors sujet exclues
+    if (EXCLURE.test(v.snippet.title)) continue;
+    if (!TWERK.test(idsExtra.has(v.snippet.channelId) ? v.snippet.title : `${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
     const video = {
       id: v.id,
       titre: v.snippet.title,
@@ -94,7 +96,7 @@ for (let i = 0; i < ids.length; i += 50) {
   }
 }
 
-fil.videos = [...ajouts, ...fil.videos]
+fil.videos = [...ajouts, ...fil.videos.filter((v) => approuvees.has(v.chaineId) && !EXCLURE.test(v.titre || '') && TWERK.test(v.titre || ''))]
   .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
   .slice(0, MAX_FIL);
 fil.maj = new Date().toISOString();
