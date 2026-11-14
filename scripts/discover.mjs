@@ -7,7 +7,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const KEY = process.env.YOUTUBE_API_KEY;
 const API = 'https://www.googleapis.com/youtube/v3';
-const MAX_RECHERCHES = 10; // 100 unités de quota chacune → 1 000 / semaine
+const MAX_RECHERCHES = Number(process.env.MAX_RECHERCHES || 30); // 100 unités de quota chacune → 3 000 par passage
 const MIN_ABONNES = 500;
 
 if (!KEY) {
@@ -24,18 +24,34 @@ if (!KEY) {
 const BASE = [
   'cours de danse afro débutante',
   'afro dance tutorial for beginners',
+  'afro dance tutorial female instructor',
   'tuto danse afrobeat',
+  'afrobeats choreography tutorial woman',
   'dancehall dance tutorial female',
+  'dancehall femme tuto',
+  'dancehall queen tutorial',
   'kompa dance tutorial',
   'apprendre à danser le kompa',
+  'konpa dance class women',
   'amapiano dance tutorial',
+  'amapiano dance tutorial female',
   'coupé décalé tuto danse',
-  'ndombolo tuto danse',
+  'ndombolo tuto danse femme',
+  'ndombolo dance tutorial',
   'kizomba ladies styling tutorial',
   'azonto dance tutorial',
   'zouk dance tutorial',
   'soca dance tutorial',
-  'afro fitness dance workout'
+  'soca wining tutorial',
+  'how to wine your waist tutorial',
+  'whining dance tutorial',
+  'twerk tutorial for beginners',
+  'afro fitness dance workout',
+  'afro dance workout',
+  'danse africaine cours en ligne',
+  'cours de danse africaine femme',
+  'shaku shaku legwork tutorial',
+  'bouyon dance tutorial'
 ];
 
 async function yt(endpoint, params) {
@@ -78,7 +94,7 @@ if (idsExemples.length) {
 
 // Rotation : chaque semaine, un groupe différent de requêtes de base
 const semaine = Math.floor(Date.now() / (7 * 864e5));
-const decale = (semaine * 6) % BASE.length;
+const decale = (semaine * 10) % BASE.length;
 const requetes = [...requetesStyle, ...BASE.slice(decale), ...BASE.slice(0, decale)].slice(0, MAX_RECHERCHES);
 
 const trouvees = new Map(); // channelId → { requetes, videos }
@@ -119,7 +135,7 @@ for (let i = 0; i < ids.length; i += 50) {
   }
 }
 nouvelles.sort((a, b) => b.pertinence - a.pertinence || b.abonnes - a.abonnes);
-const retenues = nouvelles.slice(0, 20);
+const retenues = nouvelles.slice(0, 60);
 
 historique.vus = [...new Set([...historique.vus, ...retenues.map((c) => c.chaineId)])];
 historique.candidates = [...retenues, ...historique.candidates].slice(0, 200);
