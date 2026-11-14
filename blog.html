@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<meta name="babek-reserve" content="membres">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Le blog — Babe Killa</title>
@@ -51,14 +52,14 @@
       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav id="menu" aria-label="Navigation principale">
-      <a href="./#nouveautes">Nouveautés</a>
-      <a href="./#styles">Styles</a>
-      <a href="./#profs">Les profs</a>
+      <a href="profs.html#nouveautes">Nouveautés</a>
+      <a href="profs.html#styles">Styles</a>
+      <a href="profs.html#profs">Les profs</a>
       <a href="twerk.html">Twerk du jour</a>
       <a href="clips.html">Clips</a>
       <a href="blog.html" aria-current="page">Blog</a>
-      <a href="musique.html" class="nav-hot">Challenge</a>
-      <a href="musique.html#partenaire" class="btn btn-or">Je suis prof</a>
+      <a href="./" class="nav-hot">Challenge</a>
+      <a href="./#partenaire" class="btn btn-or">Je suis prof</a>
     </nav>
   </div>
 </header>
@@ -116,7 +117,7 @@ function article(a) {
       <div class="corps">${(a.texte || []).map((p) => `<p>${esc(p)}</p>`).join('')}</div>
       <div class="encadre">
         <div><h3>Envie d'apprendre à danser comme ça ?</h3><p>Trouve une prof ${style ? 'de ' + esc(style.toLowerCase()) + ' ' : ''}dans le répertoire.</p></div>
-        <a class="btn btn-or" href="./#profs">Voir les profs</a>
+        <a class="btn btn-or" href="profs.html#profs">Voir les profs</a>
       </div>
       <p class="source">Vidéo : chaîne YouTube officielle de l'artiste. Tous droits réservés à leurs auteurs.</p>
     </article>`;
@@ -137,5 +138,7 @@ $('#burger').addEventListener('click', () => {
 });
 demarrer();
 </script>
+<script src="auth-config.js?v=2"></script>
+<script type="module" src="membre.js?v=3"></script>
 </body>
 </html>
