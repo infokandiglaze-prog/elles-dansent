@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le blog — Elles Dansent</title>
+<meta name="description" content="Clips, tendances et inspirations danse : les vidéos qui font bouger la culture afro et caribéenne, avec un petit article pour chacune.">
+<meta name="theme-color" content="#120C0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='9' fill='%23120C0A'/%3E%3Cg fill='none' stroke='%23F2B33D' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='17' cy='8' r='3'/%3E%3Cpath d='M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.blog-hero{padding:72px 0 40px}
+.blog-hero h1{font-weight:800;font-size:clamp(40px,5.6vw,76px);line-height:1;letter-spacing:-.03em}
+.blog-hero h1 em{font-style:normal;color:var(--or)}
+.blog-hero .lead{margin-top:18px}
+.articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;padding-bottom:96px}
+.acard{background:var(--carte);border:1px solid var(--ligne);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:var(--texte)!important;transition:transform .35s var(--ease),box-shadow .35s,border-color .3s}
+.acard:hover{transform:translateY(-6px);box-shadow:var(--ombre);border-color:var(--bord)}
+.acard .thumb{position:relative}
+.acard .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(246,237,227,.95);display:flex;align-items:center;justify-content:center}
+.acard-body{padding:24px;display:flex;flex-direction:column;gap:12px}
+.acard h2{font-size:24px;line-height:1.15}
+.acard p{margin:0;color:var(--doux)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muet);font-size:14px}
+.article{max-width:860px;margin:0 auto;padding:48px 0 96px}
+.retour{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;margin-bottom:28px}
+.article h1{font-weight:800;font-size:clamp(34px,4.6vw,58px);line-height:1.05;letter-spacing:-.03em;margin:14px 0 18px}
+.article .chapo{font-size:21px;color:var(--doux);margin:0 0 30px}
+.article .player{margin-bottom:34px;box-shadow:var(--ombre)}
+.article .corps p{font-size:18px;line-height:1.75;margin:0 0 22px}
+.encadre{margin-top:40px;padding:30px;border-radius:24px;background:linear-gradient(135deg,#2A1A12,#1B1310 60%);border:1px solid var(--bord);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.encadre h3{font-size:24px}
+.encadre p{margin:6px 0 0;color:var(--doux)}
+.source{margin-top:26px;font-size:14px;color:var(--muet)}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="nav scrolled" id="nav">
+  <div class="wrap nav-in">
+    <a href="./" class="logo" aria-label="Elles Dansent, accueil">
+      <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34"><rect width="34" height="34" rx="9" fill="#F2B33D"/><g fill="none" stroke="#120C0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="8" r="3"/><path d="M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4"/></g></svg>
+      <span>Elles Dansent</span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="menu" aria-label="Navigation principale">
+      <a href="./#nouveautes">Nouveautés</a>
+      <a href="./#styles">Styles</a>
+      <a href="./#profs">Les profs</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="./#rejoindre" class="btn btn-or">Je suis prof</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" class="wrap">
+  <div id="vue"><p class="muted" style="padding:80px 0">Chargement…</p></div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-bas">
+    <span>© <span id="annee"></span> Elles Dansent</span>
+    <a href="./">Retour au répertoire</a>
+  </div>
+</footer>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const dateFr = (d) => new Date(d + 'T12:00:00').toLocaleDateString('fr-CA', { day: 'numeric', month: 'long', year: 'numeric' });
+const PLAY = '<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#120C0A"/></svg>';
+
+function liste(articles) {
+  document.title = 'Le blog — Elles Dansent';
+  $('#vue').innerHTML = `
+    <section class="blog-hero">
+      <p class="kicker">Le blog</p>
+      <h1>Les clips qui font <em>bouger</em> la culture.</h1>
+      <p class="lead">Tendances, clips et inspirations : une vidéo, un petit article, et les profs pour apprendre à danser dessus.</p>
+    </section>
+    <div class="articles">
+      ${articles.map((a) => `
+        <a class="acard" href="?a=${encodeURIComponent(a.id)}">
+          <span class="thumb" style="background-image:url('https://i.ytimg.com/vi/${esc(a.video)}/hqdefault.jpg')"><span class="play">${PLAY}</span></span>
+          <span class="acard-body">
+            <span class="meta"><span class="tag">${esc(a.artiste)}</span>${(a.styles || []).map((s) => `<span class="tag o">${esc(s)}</span>`).join('')}</span>
+            <h2>${esc(a.titre)}</h2>
+            <p>${esc(a.chapo)}</p>
+            <span class="meta">${dateFr(a.date)} · Lire l'article →</span>
+          </span>
+        </a>`).join('')}
+    </div>`;
+}
+
+function article(a) {
+  document.title = a.titre + ' — Elles Dansent';
+  const style = (a.styles || [])[0];
+  $('#vue').innerHTML = `
+    <article class="article">
+      <a class="retour" href="blog.html">← Tous les articles</a>
+      <div class="meta"><span class="tag">${esc(a.artiste)}</span>${(a.styles || []).map((s) => `<span class="tag o">${esc(s)}</span>`).join('')}<span>${dateFr(a.date)}</span></div>
+      <h1>${esc(a.titre)}</h1>
+      <p class="chapo">${esc(a.chapo)}</p>
+      <div class="player"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(a.video)}?rel=0" title="${esc(a.titre)}" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="corps">${(a.texte || []).map((p) => `<p>${esc(p)}</p>`).join('')}</div>
+      <div class="encadre">
+        <div><h3>Envie d'apprendre à danser comme ça ?</h3><p>Trouve une prof ${style ? 'de ' + esc(style.toLowerCase()) + ' ' : ''}dans le répertoire.</p></div>
+        <a class="btn btn-or" href="./#profs">Voir les profs</a>
+      </div>
+      <p class="source">Vidéo : chaîne YouTube officielle de l'artiste. Tous droits réservés à leurs auteurs.</p>
+    </article>`;
+  scrollTo(0, 0);
+}
+
+async function demarrer() {
+  const articles = (await (await fetch('data/blog.json')).json()).sort((a, b) => b.date.localeCompare(a.date));
+  const id = new URLSearchParams(location.search).get('a');
+  const a = id && articles.find((x) => x.id === id);
+  a ? article(a) : liste(articles);
+}
+
+$('#annee').textContent = new Date().getFullYear();
+$('#burger').addEventListener('click', () => {
+  const ouvert = $('#menu').classList.toggle('ouvert');
+  $('#burger').setAttribute('aria-expanded', ouvert);
+});
+demarrer();
+</script>
+</body>
+</html>
