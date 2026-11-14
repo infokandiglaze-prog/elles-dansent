@@ -70,7 +70,7 @@ function vedette() {
   box.classList.add('hc-video-on');
   box.innerHTML = `
     <div class="hc-video">
-      <video src="media/couverture.mp4" poster="media/couverture.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <video src="media/couverture_1.mp4" poster="media/couverture.jpg" autoplay muted loop playsinline preload="metadata"></video>
       <span class="hc-badge">En vedette</span>
       <button type="button" class="hc-son" aria-label="Activer le son">Son off</button>
     </div>`;
