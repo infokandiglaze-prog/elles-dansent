@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-14T21:46:40.243Z",
+  "maj": "2026-11-14T21:50:02.742Z",
   "profs": {
     "tesi-holistic": {
       "chaineId": "UCuhfBK6zREw1rxVHxmUGgmw",
@@ -1234,22 +1234,22 @@
           "miniature": "https://i.ytimg.com/vi/2X8TMvvOnSY/hqdefault.jpg"
         },
         {
-          "id": "c4PJ3_Ndbxg",
-          "titre": "How To Dance To Soca \"Waving\" Basic Foundational Steps - Dance Tutorial #socadancetutorial",
-          "date": "2020-06-15T18:05:23Z",
-          "miniature": "https://i.ytimg.com/vi/c4PJ3_Ndbxg/hqdefault.jpg"
-        },
-        {
-          "id": "J4QlieRgOqY",
-          "titre": "How To Dance To Soca - (Dance Tutorial) \"Winin\"  Soca Dance Foundational Steps #DanceTutorial #Soca",
-          "date": "2020-06-10T17:28:36Z",
-          "miniature": "https://i.ytimg.com/vi/J4QlieRgOqY/hqdefault.jpg"
-        },
-        {
           "id": "N38Qkf4bSFs",
           "titre": "IVAN TORRENT - Contemporary Dance Choreography by Priscilla Gueverra - #epicmusic #dancevideo",
           "date": "2020-04-30T16:00:10Z",
           "miniature": "https://i.ytimg.com/vi/N38Qkf4bSFs/hqdefault.jpg"
+        },
+        {
+          "id": "jQTe178hUSg",
+          "titre": "#DanceFitness Socacize Fitness - Pandemonium - Voice ft Lil Natty & Thunda  #CaribbeanDANCEFitness",
+          "date": "2020-04-02T01:10:39Z",
+          "miniature": "https://i.ytimg.com/vi/jQTe178hUSg/hqdefault.jpg"
+        },
+        {
+          "id": "8kXyCCMFXNs",
+          "titre": "#DanceFitness Socacize Fitness - Nadia Batson \"FATT\" Soca 2020",
+          "date": "2020-03-18T21:53:15Z",
+          "miniature": "https://i.ytimg.com/vi/8kXyCCMFXNs/hqdefault.jpg"
         }
       ]
     },
@@ -1482,12 +1482,6 @@
           "miniature": "https://i.ytimg.com/vi/cC0LtUws0v4/hqdefault.jpg"
         },
         {
-          "id": "zBEyCSin9-E",
-          "titre": "Pick your winner 💃🏽🏆 Simi vs AG Baby #IzzyDanceTutorials ✨",
-          "date": "2024-06-05T03:01:53Z",
-          "miniature": "https://i.ytimg.com/vi/zBEyCSin9-E/hqdefault.jpg"
-        },
-        {
           "id": "h0kD7QL4UTs",
           "titre": "IZZY DANCE TUTORIALS - EPISODE 10 (Feat Simi) | SIMI FT TIWA SAVAGE - MEN ARE CRAZY",
           "date": "2024-05-29T18:00:07Z",
@@ -1510,6 +1504,12 @@
           "titre": "IZZY DANCE TUTORIALS - EPISODE 9 (Feat Adekunle Gold) | ADEKUNLE GOLD - RODO",
           "date": "2024-05-15T18:00:07Z",
           "miniature": "https://i.ytimg.com/vi/qVsgZpBsb5I/hqdefault.jpg"
+        },
+        {
+          "id": "ybT2RkbyEfI",
+          "titre": "Omah Lay - Holy Ghost Dance video (Izzy x Regina)",
+          "date": "2024-04-08T19:36:03Z",
+          "miniature": "https://i.ytimg.com/vi/ybT2RkbyEfI/hqdefault.jpg"
         }
       ]
     },
