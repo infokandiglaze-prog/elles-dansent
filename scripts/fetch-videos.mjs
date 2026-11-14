@@ -12,6 +12,7 @@ const ENTETES = { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'fr,en;q=0.8',
 
 // Seules les vidéos de danse sont gardées (pas de yoga, vlog, etc.)
 const DANSE = /danc|danse|dansé|whin(e|ing)|\bwine\b|twerk|chor[ée]o|chor[ée]graph|dancehall|kompa|konpa|compas|amapiano|afrobeat|afro ?dance|soca|zouk|kizomba|ndombolo|azonto|coup[ée][ -]d[ée]cal[ée]|bachata|salsa|legwork|shaku|hip ?hop|bouyon|kuduro|mapouka|win(e|ing)\b|whine|booty|bubbl|gouyad|sensu|heels|waist|hips?\b.*(roll|shake|move)/i;
+const ENFANTS = /\bkids?\b|ni[ñn][oa]s|\bchild|enfants?\b|\bteens?\b|\bjunior|foundation|infantil|\bbaby\b|\bmini\b|\bfamil(y|le)\b|daughter|\bma fille\b/i; // jamais de vidéos avec des enfants
 
 async function yt(endpoint, params) {
   const url = new URL(`${API}/${endpoint}`);
@@ -140,12 +141,12 @@ for (const prof of profs) {
       continue;
     }
     const avant = info.videos.length;
-    info.videos = info.videos.filter((v) => DANSE.test(v.titre || ''));
+    info.videos = info.videos.filter((v) => DANSE.test(v.titre || '') && !ENFANTS.test(v.titre || ''));
     if (info.videos.length < 4 && !KEY) {
       // Le flux RSS ne contient que les 15 dernières vidéos : on cherche plus loin sur la page de la chaîne
       try {
         const plus = await viaPageChaine(info.chaineId, 40);
-        for (const v of plus?.videos || []) if (DANSE.test(v.titre) && !info.videos.some((x) => x.id === v.id)) info.videos.push(v);
+        for (const v of plus?.videos || []) if (DANSE.test(v.titre) && !ENFANTS.test(v.titre) && !info.videos.some((x) => x.id === v.id)) info.videos.push(v);
       } catch (e) { console.warn(`Page de la chaîne illisible : ${e.message}`); }
     }
     if (prof.video_exemple && !info.videos.some((v) => v.id === prof.video_exemple)) {
