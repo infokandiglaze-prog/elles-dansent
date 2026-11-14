@@ -55,6 +55,14 @@
 .ecoute-big .ec-txt b{font-size:clamp(26px,3.4vw,40px)}
 .ecoute-big .ec-play{width:72px;height:72px}
 .ecoute-big .ec-play svg{width:30px;height:30px}
+.shorts{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;margin-top:32px}
+.short{all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#140E18;border:1px solid var(--ligne);transition:transform .3s,box-shadow .3s}
+.short:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(255,46,126,.7),0 24px 50px -18px rgba(255,46,126,.65)}
+.short img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.short::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,5,10,.9))}
+.short-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 10px 30px -8px rgba(255,46,126,.8)}
+.short-titre{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;font-weight:700;font-size:15px;color:#fff}
+.short iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 </style>
 </head>
 <body>
@@ -90,6 +98,24 @@
   <div class="mu-cta">
     <a href="#challenge" class="btn btn-or">Participer au challenge</a>
     <a href="#partenaire" class="btn btn-ghost2">Je suis prof de danse</a>
+  </div>
+</section>
+
+<section class="mu-sec" id="videos-babek">
+  <div class="wrap">
+    <p class="kicker">Les vidéos de Babe K</p>
+    <h2>Regarde <em>Babe K</em> en action</h2>
+    <p class="lead">Les vidéos officielles de Babe K, directement de sa chaîne YouTube. Inspire-toi pour ta danse du challenge.</p>
+    <div class="shorts">
+      <button type="button" class="short" data-id="lB0uibSrqbY" aria-label="Lire « Bad Gyal Out »"><img src="https://i.ytimg.com/vi/lB0uibSrqbY/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Bad Gyal Out</span></button>
+      <button type="button" class="short" data-id="aXWomLgLN54" aria-label="Lire « Lollipop Queen »"><img src="https://i.ytimg.com/vi/aXWomLgLN54/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Lollipop Queen</span></button>
+      <button type="button" class="short" data-id="akZlzxf-RrU" aria-label="Lire « She Walked In Like She Owned The Night »"><img src="https://i.ytimg.com/vi/akZlzxf-RrU/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">She Walked In Like She Owned The Night</span></button>
+      <button type="button" class="short" data-id="Cc34r69PsRE" aria-label="Lire « She said COME COME COME »"><img src="https://i.ytimg.com/vi/Cc34r69PsRE/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">She said COME COME COME</span></button>
+      <button type="button" class="short" data-id="AOE2wnkS13c" aria-label="Lire « Welcome to the Candy Shop »"><img src="https://i.ytimg.com/vi/AOE2wnkS13c/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Welcome to the Candy Shop</span></button>
+      <button type="button" class="short" data-id="Dpbj0kcfQ9g" aria-label="Lire « Babe K (Remix) »"><img src="https://i.ytimg.com/vi/Dpbj0kcfQ9g/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Babe K (Remix)</span></button>
+      <button type="button" class="short" data-id="gYlkS5l9iMA" aria-label="Lire « Bad Gyal Out (version 2) »"><img src="https://i.ytimg.com/vi/gYlkS5l9iMA/hqdefault.jpg" alt="" loading="lazy"><span class="short-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="short-titre">Bad Gyal Out (version 2)</span></button>
+    </div>
+    <div class="mu-cta"><a href="https://www.youtube.com/@BabeKing-c6r?sub_confirmation=1" class="btn btn-or" target="_blank" rel="noopener">S'abonner à Babe K sur YouTube</a></div>
   </div>
 </section>
 
@@ -171,6 +197,14 @@
 <script>
 document.getElementById('annee').textContent = new Date().getFullYear();
 document.getElementById('burger').addEventListener('click', function () { var o = document.getElementById('menu').classList.toggle('ouvert'); this.setAttribute('aria-expanded', o); });
+</script>
+<script>
+document.querySelectorAll('.short').forEach(function (b) {
+  b.addEventListener('click', function () {
+    if (b.querySelector('iframe')) return;
+    b.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0&playsinline=1" title="Vidéo Babe K" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  });
+});
 </script>
 </body>
 </html>
