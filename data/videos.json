@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-14T00:56:28.543Z",
+  "maj": "2026-11-14T00:57:32.769Z",
   "profs": {
     "tesi-holistic": {
       "chaineId": "UCuhfBK6zREw1rxVHxmUGgmw",
@@ -1284,7 +1284,14 @@
       "chaineNom": "Flora Mpindi",
       "chaineUrl": "https://www.youtube.com/@florvmp.",
       "avatar": "https://yt3.ggpht.com/H6E4Ijk65cchzNPpfitlGB_XeGzQTkoLWDY_8KtjADh5MYPXzrr7KwFXNXXLeRQE-RigUFosIQ=s240-c-k-c0x00ffffff-no-rj",
-      "videos": []
+      "videos": [
+        {
+          "id": "vPW6H1OrxEs",
+          "titre": "How To Reserve Your Waist #reverse #dance",
+          "date": "",
+          "miniature": "https://i.ytimg.com/vi/vPW6H1OrxEs/hqdefault.jpg"
+        }
+      ]
     },
     "evee-smile": {
       "chaineId": "UCJG0Tz4CJyQ6fRbj4P5oVUg",
