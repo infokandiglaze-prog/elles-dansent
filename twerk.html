@@ -28,6 +28,10 @@
 .vids .vthumb{position:relative}
 .badge-neuf{position:absolute;top:10px;left:10px;background:var(--or);color:var(--fond);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px}
 .vide{padding:60px 0;color:var(--doux);font-size:18px}
+.genres{display:flex;flex-wrap:wrap;gap:10px;margin:-10px 0 28px}
+.genre{cursor:pointer;font:600 14px/1 Inter,sans-serif;color:var(--doux);background:transparent;border:1px solid var(--bord);border-radius:999px;padding:10px 16px;transition:all .2s}
+.genre:hover{border-color:#FF2E7E;color:#fff}
+.genre.actif{color:#fff;border-color:transparent;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 8px 24px -8px rgba(255,46,126,.7)}
 </style>
 </head>
 <body>
@@ -76,6 +80,7 @@
       </select>
     </label>
   </div>
+  <div class="genres" id="genres" role="group" aria-label="Filtrer par style"></div>
 
   <div class="vids" id="vids"></div>
 </main>
@@ -105,11 +110,14 @@ const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 const vuesFr = (n) => n >= 1e6 ? (n / 1e6).toFixed(1).replace('.', ',') + ' M vues' : n >= 1e3 ? Math.round(n / 1e3) + ' k vues' : n + ' vues';
 const quand = (d) => { const j = Math.floor((Date.now() - new Date(d)) / 864e5); return j < 1 ? "aujourd'hui" : j < 2 ? 'hier' : j < 30 ? `il y a ${j} jours` : j < 365 ? `il y a ${Math.floor(j / 30)} mois` : `il y a ${Math.floor(j / 365)} an${j >= 730 ? 's' : ''}`; };
 let videos = [];
+let genreDe = {};
+let genre = 'Tous';
+const AUTRE = 'Profs du répertoire';
 
 function afficher() {
   const t = $('#q').value.toLowerCase().trim();
   const tri = $('#tri').value;
-  const liste = videos.filter((v) => !t || `${v.titre} ${v.chaine}`.toLowerCase().includes(t))
+  const liste = videos.filter((v) => (genre === 'Tous' || (genreDe[v.chaineId] || AUTRE) === genre) && (!t || `${v.titre} ${v.chaine}`.toLowerCase().includes(t)))
     .sort((a, b) => tri === 'vues' ? b.vues - a.vues : (b.date || '').localeCompare(a.date || ''));
   $('#vids').innerHTML = liste.length ? liste.map((v) => `
     <button type="button" class="vcard" data-id="${esc(v.id)}">
@@ -133,6 +141,10 @@ function ouvrir(id) {
 async function demarrer() {
   const d = await (await fetch('data/twerk.json', { cache: 'no-store' })).json();
   videos = d.videos || [];
+  try { const ch = await (await fetch('data/twerk-chaines.json', { cache: 'no-store' })).json(); ch.forEach((c) => { if (c && c.genre) genreDe[c.id] = c.genre; }); } catch (e) {}
+  const genres = ['Tous', 'Écoles & cours', 'Heels & sensuel', 'Dancehall & slow wine', 'Fitness twerk', AUTRE].filter((g) => g === 'Tous' || videos.some((v) => (genreDe[v.chaineId] || AUTRE) === g));
+  $('#genres').innerHTML = genres.map((g) => '<button type="button" class="genre' + (g === genre ? ' actif' : '') + '" data-g="' + g + '">' + g + '</button>').join('');
+  $('#genres').querySelectorAll('.genre').forEach((b) => b.addEventListener('click', () => { genre = b.dataset.g; $('#genres').querySelectorAll('.genre').forEach((x) => x.classList.toggle('actif', x === b)); afficher(); }));
   $('#maj').textContent = d.maj
     ? `${videos.length} vidéos · mis à jour le ${new Date(d.maj).toLocaleDateString('fr-CA', { day: 'numeric', month: 'long', year: 'numeric' })}`
     : 'Première mise à jour en cours';
