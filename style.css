@@ -287,3 +287,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;op
   .hero-son{right:16px;bottom:auto;top:86px}
 }
 @media (prefers-reduced-motion:reduce){.dot{animation:none}}
+
+/* ===== Marque Babe Killa ===== */
+.logo-img{display:block;border-radius:50%;box-shadow:0 0 0 1px rgba(255,46,126,.35),0 0 18px rgba(255,46,126,.45)}
+.socials{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:18px;padding-bottom:28px}
+.socials span{color:var(--muet);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
+.socials a{color:var(--texte);text-decoration:none;font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--bord);transition:border-color .2s,background .2s,box-shadow .2s}
+.socials a:hover{border-color:#FF2E7E;background:rgba(255,46,126,.12);box-shadow:0 0 18px rgba(255,46,126,.35);color:#fff}
