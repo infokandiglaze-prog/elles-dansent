@@ -10,6 +10,8 @@ const API = 'https://www.googleapis.com/youtube/v3';
 const MAX_FIL = 600; // nombre maximum de vidéos gardées sur la page
 const REQUETES = ['twerk', 'twerk tutorial', 'twerk choreography', 'twerk class', 'twerkshop', 'twerk dance', 'twerk fitness', 'twerk heels', 'sensual twerk', 'booty dance', 'perreo dance', 'dancehall whine'];
 const TWERK = /twerk|booty|jiggle|bounce|shake/i;
+const DANSE = /twerk|booty|jiggle|shake|choreo|chor[ée]|class|clase|cours|tutorial|tuto|workshop|heels|whine|wining|perreo|danc|danse|bail|dancehall|isolation|glute|freestyle/i;
+const EXCLURE = /vlog|podcast|interview|episode|rezy|pop ?up|unboxing|get ready|grwm|aprende|food|market|vacation|makeup|coming soon|detr[aá]s de c[aá]maras|behind the scenes|\bbts\b|teaser|lookbook|shein|haul|reaction|storytime|audio oficial|sizzle|surgery|bachelorette/i; // vidéos hors danse à exclure
 
 const lireJson = async (f, defaut) => { try { return JSON.parse(await readFile(f, 'utf8')); } catch { return defaut; } };
 
@@ -40,6 +42,9 @@ const approuvees = new Set([
 ]);
 const deja = new Set(fil.videos.map((v) => v.id));
 const idsExtra = new Set(extra.map((c) => (typeof c === 'string' ? c : c.id)));
+// Chaînes 100 % danse (cours, chorégraphies) : toutes leurs vidéos sont gardées, sauf les exclusions
+const tout = new Set(extra.filter((c) => c && c.toutDanse).map((c) => c.id));
+const garderTitre = (titre, ch) => !EXCLURE.test(titre) && (tout.has(ch) || (idsExtra.has(ch) ? DANSE : TWERK).test(titre));
 
 // 1. Recherche des vidéos publiées ces 3 derniers jours
 const depuis = new Date(Date.now() - 3 * 864e5).toISOString();
@@ -74,8 +79,10 @@ for (let i = 0; i < ids.length; i += 50) {
     if (!v.status?.embeddable) continue;
     if (v.contentDetails?.contentRating?.ytRating === 'ytAgeRestricted') continue;
     if (v.snippet?.madeForKids) continue;
-    // Les chaînes twerk approuvées à la main sont gardées en entier ; les autres doivent parler de twerk
-    if (!idsExtra.has(v.snippet.channelId) && !TWERK.test(`${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
+    // Seulement des vidéos de danse : les chaînes approuvées doivent avoir un titre de danse, les autres doivent parler de twerk
+    if (EXCLURE.test(v.snippet.title)) continue;
+    if (idsExtra.has(v.snippet.channelId)) { if (!garderTitre(v.snippet.title, v.snippet.channelId)) continue; }
+    else if (!TWERK.test(`${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
     const video = {
       id: v.id,
       titre: v.snippet.title,
@@ -94,7 +101,7 @@ for (let i = 0; i < ids.length; i += 50) {
   }
 }
 
-fil.videos = [...ajouts, ...fil.videos]
+fil.videos = [...ajouts, ...fil.videos.filter((v) => approuvees.has(v.chaineId) && garderTitre(v.titre || '', v.chaineId))]
   .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
   .slice(0, MAX_FIL);
 fil.maj = new Date().toISOString();
