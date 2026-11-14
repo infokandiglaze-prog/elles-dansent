@@ -8,7 +8,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const KEY = process.env.YOUTUBE_API_KEY;
 const API = 'https://www.googleapis.com/youtube/v3';
 const MAX_FIL = 600; // nombre maximum de vidéos gardées sur la page
-const REQUETES = ['dancehall music video', 'reggaeton video oficial', 'perreo video oficial', 'dembow video oficial', 'shatta clip officiel', 'twerk music video', 'rap video clip', 'afrobeats music video', 'baile funk clipe oficial', 'soca music video'];
+const REQUETES = ['dancehall music video', 'reggaeton video oficial', 'perreo video oficial', 'dembow video oficial', 'shatta clip officiel', 'twerk music video', 'rap video clip', 'afrobeats music video', 'baile funk clipe oficial', 'soca music video', 'dancehall official music video', 'soca 2026 official music video', 'carnival soca music video', 'bouyon official music video'];
 const TWERK = /official|oficial|officiel|clipe|music video|video clip|videoclip|visualizer|performance video|\(prod\./i;
 const EXCLURE = /vlog|podcast|interview|episode|rezy|pop ?up|unboxing|get ready|grwm|aprende|food|market|vacation|makeup|coming soon|detr[aá]s de c[aá]maras|behind the scenes|\bbts\b|teaser|lookbook|shein|haul|reaction|storytime|audio oficial|sizzle|surgery|bachelorette/i; // vidéos hors danse à exclure
 
