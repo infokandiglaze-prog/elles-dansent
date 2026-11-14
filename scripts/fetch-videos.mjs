@@ -77,38 +77,70 @@ async function trouverChaineId(prof) {
 async function viaRss(prof) {
   const id = await trouverChaineId(prof);
   if (!id) return null;
-  const xml = await page(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`);
-  const entrees = xml.split('<entry>').slice(1).map((e) => e.split('</entry>')[0]);
-  return {
-    chaineId: id,
-    chaineNom: tag(xml.split('<entry>')[0], 'title'),
-    chaineUrl: `https://www.youtube.com/channel/${id}`,
-    avatar: '',
-    videos: entrees.slice(0, MAX_VIDEOS).map((e) => {
-      const vid = tag(e, 'yt:videoId');
-      return {
-        id: vid,
-        titre: tag(e, 'title'),
-        date: tag(e, 'published'),
-        miniature: (e.match(/<media:thumbnail url="([^"]+)"/) || [])[1] || `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`
-      };
-    })
-  };
+  let xml = '';
+  try { xml = await page(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`); }
+  catch (e) { console.warn(`Flux RSS indisponible (${e.message}), lecture de la page de la chaîne.`); }
+  if (xml.includes('<entry>')) {
+    const entrees = xml.split('<entry>').slice(1).map((e) => e.split('</entry>')[0]);
+    return {
+      chaineId: id,
+      chaineNom: tag(xml.split('<entry>')[0], 'title'),
+      chaineUrl: `https://www.youtube.com/channel/${id}`,
+      avatar: '',
+      videos: entrees.slice(0, MAX_VIDEOS).map((e) => {
+        const vid = tag(e, 'yt:videoId');
+        return {
+          id: vid,
+          titre: tag(e, 'title'),
+          date: tag(e, 'published'),
+          miniature: (e.match(/<media:thumbnail url="([^"]+)"/) || [])[1] || `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`
+        };
+      })
+    };
+  }
+  return viaPageChaine(id);
+}
+
+// Plan C : liste des vidéos lue sur la page publique de la chaîne + titres via oEmbed
+async function viaPageChaine(id) {
+  const html = await page(`https://www.youtube.com/channel/${id}/videos`);
+  const ids = [...new Set([...html.matchAll(/"videoId":"([\w-]{11})"/g)].map((m) => m[1]))].slice(0, MAX_VIDEOS);
+  const avatar = (html.match(/"avatar":\{"thumbnails":\[\{"url":"([^"]+)"/) || [])[1] || '';
+  let chaineNom = decode((html.match(/<meta property="og:title" content="([^"]+)"/) || [])[1] || '');
+  const videos = [];
+  for (const vid of ids) {
+    try {
+      const r = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${vid}&format=json`, { headers: ENTETES });
+      if (!r.ok) continue;
+      const o = await r.json();
+      chaineNom = chaineNom || o.author_name;
+      videos.push({ id: vid, titre: o.title, date: '', miniature: `https://i.ytimg.com/vi/${vid}/hqdefault.jpg` });
+    } catch {}
+  }
+  if (!videos.length) return null;
+  return { chaineId: id, chaineNom, chaineUrl: `https://www.youtube.com/channel/${id}`, avatar, videos };
 }
 
 console.log(KEY ? 'Mode : API YouTube (clé trouvée)' : 'Mode : flux RSS (pas de clé API)');
 
 const profs = JSON.parse(await readFile('data/profs.json', 'utf8'));
 const out = { maj: new Date().toISOString(), profs: {} };
+let ancien = { profs: {} };
+try { ancien = JSON.parse(await readFile('data/videos.json', 'utf8')); } catch {}
 
 for (const prof of profs) {
   try {
     const info = KEY ? await viaApi(prof) : await viaRss(prof);
-    if (!info) { console.warn(`Chaîne introuvable : ${prof.id}`); continue; }
+    if (!info) {
+      console.warn(`Chaîne introuvable : ${prof.id}`);
+      if (ancien.profs?.[prof.id]) out.profs[prof.id] = ancien.profs[prof.id];
+      continue;
+    }
     out.profs[prof.id] = info;
     console.log(`OK ${prof.id} → ${info.chaineNom} (${info.videos.length} vidéos)`);
   } catch (e) {
     console.error(`Erreur ${prof.id} : ${e.message}`);
+    if (ancien.profs?.[prof.id]) out.profs[prof.id] = ancien.profs[prof.id]; // on garde les anciennes vidéos
   }
 }
 
