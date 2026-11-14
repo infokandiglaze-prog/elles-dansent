@@ -66,6 +66,26 @@ function stats() {
 }
 
 function vedette() {
+  const box = $('#vedette');
+  box.classList.add('hc-video-on');
+  box.innerHTML = `
+    <div class="hc-video">
+      <video src="media/couverture.mp4" poster="media/couverture.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <span class="hc-badge">En vedette</span>
+      <button type="button" class="hc-son" aria-label="Activer le son">Son off</button>
+    </div>`;
+  const vid = box.querySelector('video');
+  const son = box.querySelector('.hc-son');
+  son.addEventListener('click', () => {
+    vid.muted = !vid.muted;
+    if (!vid.muted) vid.play();
+    son.textContent = vid.muted ? 'Son off' : 'Son on';
+    son.setAttribute('aria-label', vid.muted ? 'Activer le son' : 'Couper le son');
+  });
+  vid.addEventListener('error', () => { box.classList.remove('hc-video-on'); vedetteProf(); });
+}
+
+function vedetteProf() {
   const p = [...profs].sort((a, b) => (b.derniere || '').localeCompare(a.derniere || ''))[0];
   if (!p) return;
   const v = p.videos[0];
