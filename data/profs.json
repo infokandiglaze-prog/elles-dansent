@@ -105,12 +105,39 @@
     "bio": ""
   },
   {
-    "id": "bm-official",
+    "id": "afronovo",
     "nom": "",
-    "chaine": "UCrZUtLsN2NuwAJE_q0PZjpA",
+    "chaine": "UCCHR51CK7JgtIVSb6ef3EBA",
     "video_exemple": "",
     "styles": [
-      "Ndombolo"
+      "Afro house"
+    ],
+    "niveau": "Débutante",
+    "langue": "français",
+    "pays": "France",
+    "bio": ""
+  },
+  {
+    "id": "gwladys-b",
+    "nom": "",
+    "chaine": "UCD8OPn-K0Oqu5ed_Sm1-NKg",
+    "video_exemple": "",
+    "styles": [
+      "Dancehall",
+      "Whine"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "bad-gyal-cassie",
+    "nom": "",
+    "chaine": "UCRTvJensXSvtT3LbaC8U9Kg",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats"
     ],
     "niveau": "Tous niveaux",
     "langue": "anglais",
@@ -118,12 +145,130 @@
     "bio": ""
   },
   {
-    "id": "afronovo",
+    "id": "rose-kompa-queen",
     "nom": "",
-    "chaine": "UCCHR51CK7JgtIVSb6ef3EBA",
+    "chaine": "UCywPEDhC77HsvuVT3sBUwLw",
     "video_exemple": "",
     "styles": [
-      "Afro house"
+      "Kompa"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "rachael-okesola",
+    "nom": "",
+    "chaine": "UCPlZUGuomsFwib9fpG3iagA",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "Royaume-Uni",
+    "bio": ""
+  },
+  {
+    "id": "portia-rufu",
+    "nom": "",
+    "chaine": "UCDfFCUeStmIyknTPGouVvPw",
+    "video_exemple": "",
+    "styles": [
+      "Whine"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "robyn",
+    "nom": "",
+    "chaine": "UCPEqbsHiuGajJmpTCy8xYpQ",
+    "video_exemple": "",
+    "styles": [
+      "Amapiano"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "julie-cafrine",
+    "nom": "",
+    "chaine": "UCkRuzHAMQzuvHfUWAcVWpHA",
+    "video_exemple": "",
+    "styles": [
+      "Dancehall"
+    ],
+    "niveau": "Débutante",
+    "langue": "français",
+    "pays": "France",
+    "bio": ""
+  },
+  {
+    "id": "latonya-style",
+    "nom": "",
+    "chaine": "UC00SYh5pxoC-oAAmsytCNhQ",
+    "video_exemple": "",
+    "styles": [
+      "Dancehall"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "Jamaïque",
+    "bio": ""
+  },
+  {
+    "id": "priscilla-gueverra",
+    "nom": "",
+    "chaine": "UCFGzpAYOIZRX69G-9hAttlA",
+    "video_exemple": "",
+    "styles": [
+      "Soca"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "flora-mpindi",
+    "nom": "",
+    "chaine": "UCBh04dxP4fo0iEC0KwSQ42g",
+    "video_exemple": "",
+    "styles": [
+      "Whine"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "evee-smile",
+    "nom": "",
+    "chaine": "UCJG0Tz4CJyQ6fRbj4P5oVUg",
+    "video_exemple": "",
+    "styles": [
+      "Dancehall",
+      "Whine"
+    ],
+    "niveau": "Débutante",
+    "langue": "français",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "sia-prisca",
+    "nom": "",
+    "chaine": "UCLwYlnx8A7OERnaBnYqhahg",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats"
     ],
     "niveau": "Débutante",
     "langue": "français",
