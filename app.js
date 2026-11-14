@@ -67,6 +67,7 @@ function stats() {
 
 function vedette() {
   const box = $('#vedette');
+  if (!box) return;
   box.classList.add('hc-video-on');
   box.innerHTML = `
     <div class="hc-video">
