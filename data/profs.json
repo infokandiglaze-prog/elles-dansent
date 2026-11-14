@@ -18,6 +18,7 @@
     "chaine": "UCnu27Txxn4F8nHTBrpymnTQ",
     "video_exemple": "CXQ4en5V6HY",
     "styles": [
+      "Twerk",
       "Chorégraphie"
     ],
     "niveau": "Débutante",
@@ -273,6 +274,47 @@
     "niveau": "Débutante",
     "langue": "français",
     "pays": "France",
+    "bio": ""
+  },
+  {
+    "id": "izzy-odigie",
+    "nom": "",
+    "chaine": "UCZTiTy0pcrWCsiaSBfDIrFQ",
+    "video_exemple": "",
+    "styles": [
+      "Afrobeats",
+      "Chorégraphie"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "flory-z",
+    "nom": "",
+    "chaine": "UCrySZ0sbVRQJViRhXwMkUBg",
+    "video_exemple": "",
+    "styles": [
+      "Mapouka",
+      "Coupé-décalé"
+    ],
+    "niveau": "Débutante",
+    "langue": "français",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "all-jezina",
+    "nom": "",
+    "chaine": "UC53bId-wyG_-0_EwuWJEkPQ",
+    "video_exemple": "",
+    "styles": [
+      "Whine"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "Royaume-Uni",
     "bio": ""
   }
 ]
