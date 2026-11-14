@@ -1,10 +1,25 @@
 [
   {
-    "id": "tesi-holistic",
+    "id": "foxy-roxy",
     "nom": "",
-    "chaine": "UCuhfBK6zREw1rxVHxmUGgmw",
-    "video_exemple": "I_KD3W3qnlQ",
+    "chaine": "UCnu27Txxn4F8nHTBrpymnTQ",
+    "video_exemple": "CXQ4en5V6HY",
     "styles": [
+      "Twerk",
+      "Chorégraphie"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "portia-rufu",
+    "nom": "",
+    "chaine": "UCDfFCUeStmIyknTPGouVvPw",
+    "video_exemple": "",
+    "styles": [
+      "Twerk",
       "Whine"
     ],
     "niveau": "Débutante",
@@ -13,13 +28,199 @@
     "bio": ""
   },
   {
-    "id": "foxy-roxy",
+    "id": "all-jezina",
     "nom": "",
-    "chaine": "UCnu27Txxn4F8nHTBrpymnTQ",
-    "video_exemple": "CXQ4en5V6HY",
+    "chaine": "UC53bId-wyG_-0_EwuWJEkPQ",
+    "video_exemple": "",
+    "styles": [
+      "Twerk",
+      "Whine"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "Royaume-Uni",
+    "bio": ""
+  },
+  {
+    "id": "twerk-with-tinze",
+    "nom": "",
+    "chaine": "UCHizJ5AKbXnUgkCAGj_Up-g",
+    "video_exemple": "",
+    "styles": [
+      "Twerk",
+      "Dancehall"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "lili-jasmijn",
+    "nom": "",
+    "chaine": "UCsaHUK1Mlpkz-TNcOEfcBrQ",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "Pays-Bas",
+    "bio": ""
+  },
+  {
+    "id": "jamilia-nazarova",
+    "nom": "",
+    "chaine": "UCGnNfErAM_jVadlirQEda0g",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "lauren-halil",
+    "nom": "",
+    "chaine": "UCfUJN8j8Pqn8BYqrZ5r-A7w",
+    "video_exemple": "",
+    "styles": [
+      "Twerk",
+      "Whine"
+    ],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "Royaume-Uni",
+    "bio": ""
+  },
+  {
+    "id": "twerk-n-sweat",
+    "nom": "TWERK N SWEAT",
+    "chaine": "UCfDTo454uAhxlEI3-064Bww",
+    "video_exemple": "CU21BvZFL_A",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "nastya-nass",
+    "nom": "Nastya Nass",
+    "chaine": "UCQ8pgXWecNrjpBgvUFVqv_w",
+    "video_exemple": "",
     "styles": [
       "Twerk",
       "Chorégraphie"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "obsession-twerk-camp",
+    "nom": "Obsession Twerk Camp",
+    "chaine": "UCbbjWKK2B9qiht32Vmmo4_A",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "mei-twerk-class",
+    "nom": "Mei Twerk Class",
+    "chaine": "UCwsfVLl7VSe5Q-8uDQ-DhNg",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "nadia-perez",
+    "nom": "Nadia Pérez",
+    "chaine": "UC2IoyvRMJ40-yXw78X-gEFQ",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "espagnol",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "lexy-panterra",
+    "nom": "Lexy Panterra",
+    "chaine": "UCX5HNI74PQfEQcYYjZxxTqw",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "hip-shake-fitness",
+    "nom": "Hip Shake Fitness",
+    "chaine": "UC3j0NBFog-U6h4g6RYXUkEw",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "États-Unis",
+    "bio": ""
+  },
+  {
+    "id": "coach-lulufit",
+    "nom": "Coach LuluFit",
+    "chaine": "UCdI1s3Gdxa7fY6zmjP47mvw",
+    "video_exemple": "",
+    "styles": [
+      "Twerk"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "netere-rial",
+    "nom": "Neterè Rial",
+    "chaine": "UCJ_GQjAo9ABZ0cXtgwHk6rw",
+    "video_exemple": "",
+    "styles": [
+      "Twerk",
+      "Heels"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "italien",
+    "pays": "Italie",
+    "bio": ""
+  },
+  {
+    "id": "tesi-holistic",
+    "nom": "",
+    "chaine": "UCuhfBK6zREw1rxVHxmUGgmw",
+    "video_exemple": "I_KD3W3qnlQ",
+    "styles": [
+      "Whine"
     ],
     "niveau": "Débutante",
     "langue": "anglais",
@@ -159,19 +360,6 @@
     "bio": ""
   },
   {
-    "id": "portia-rufu",
-    "nom": "",
-    "chaine": "UCDfFCUeStmIyknTPGouVvPw",
-    "video_exemple": "",
-    "styles": [
-      "Whine"
-    ],
-    "niveau": "Débutante",
-    "langue": "anglais",
-    "pays": "",
-    "bio": ""
-  },
-  {
     "id": "robyn",
     "nom": "",
     "chaine": "UCPEqbsHiuGajJmpTCy8xYpQ",
@@ -292,73 +480,6 @@
     "bio": ""
   },
   {
-    "id": "all-jezina",
-    "nom": "",
-    "chaine": "UC53bId-wyG_-0_EwuWJEkPQ",
-    "video_exemple": "",
-    "styles": [
-      "Whine"
-    ],
-    "niveau": "Débutante",
-    "langue": "anglais",
-    "pays": "Royaume-Uni",
-    "bio": ""
-  },
-  {
-    "id": "twerk-with-tinze",
-    "nom": "",
-    "chaine": "UCHizJ5AKbXnUgkCAGj_Up-g",
-    "video_exemple": "",
-    "styles": [
-      "Twerk",
-      "Dancehall"
-    ],
-    "niveau": "Débutante",
-    "langue": "anglais",
-    "pays": "",
-    "bio": ""
-  },
-  {
-    "id": "lili-jasmijn",
-    "nom": "",
-    "chaine": "UCsaHUK1Mlpkz-TNcOEfcBrQ",
-    "video_exemple": "",
-    "styles": [
-      "Twerk"
-    ],
-    "niveau": "Débutante",
-    "langue": "anglais",
-    "pays": "Pays-Bas",
-    "bio": ""
-  },
-  {
-    "id": "jamilia-nazarova",
-    "nom": "",
-    "chaine": "UCGnNfErAM_jVadlirQEda0g",
-    "video_exemple": "",
-    "styles": [
-      "Twerk"
-    ],
-    "niveau": "Débutante",
-    "langue": "anglais",
-    "pays": "États-Unis",
-    "bio": ""
-  },
-  {
-    "id": "lauren-halil",
-    "nom": "",
-    "chaine": "UCfUJN8j8Pqn8BYqrZ5r-A7w",
-    "video_exemple": "",
-    "styles": [
-      "Twerk",
-      "Whine"
-    ],
-    "niveau": "Débutante",
-    "langue": "anglais",
-    "pays": "Royaume-Uni",
-    "bio": ""
-  },
-  {
     "id": "kasia-jukowska",
     "nom": "",
     "chaine": "UCFMV_BbD2Bk6SFR7H0NenBQ",
@@ -396,19 +517,6 @@
     "niveau": "Tous niveaux",
     "langue": "anglais",
     "pays": "",
-    "bio": ""
-  },
-  {
-    "id": "twerk-n-sweat",
-    "nom": "TWERK N SWEAT",
-    "chaine": "UCfDTo454uAhxlEI3-064Bww",
-    "video_exemple": "CU21BvZFL_A",
-    "styles": [
-      "Twerk"
-    ],
-    "niveau": "Tous niveaux",
-    "langue": "anglais",
-    "pays": "États-Unis",
     "bio": ""
   },
   {
@@ -503,6 +611,20 @@
     "niveau": "Tous niveaux",
     "langue": "français",
     "pays": "France",
+    "bio": ""
+  },
+  {
+    "id": "di-vasylchenko",
+    "nom": "Di Vasylchenko",
+    "chaine": "UCnDtPtBzMHlcV_4ury2ifqA",
+    "video_exemple": "",
+    "styles": [
+      "Dancehall",
+      "Whine"
+    ],
+    "niveau": "Tous niveaux",
+    "langue": "anglais",
+    "pays": "",
     "bio": ""
   }
 ]
