@@ -10,7 +10,15 @@ const API = 'https://www.googleapis.com/youtube/v3';
 const MAX_RECHERCHES = 10; // 100 unités de quota chacune → 1 000 / semaine
 const MIN_ABONNES = 500;
 
-if (!KEY) { console.error('YOUTUBE_API_KEY manquante.'); process.exit(1); }
+if (!KEY) {
+  // Sans clé, la recherche YouTube est impossible : on s'arrête proprement.
+  console.log('Pas de clé API (secret YOUTUBE_API_KEY) : recherche de nouvelles profs ignorée.');
+  let h = '{\n  "vus": [],\n  "candidates": []\n}\n';
+  try { h = await readFile('data/candidats.json', 'utf8'); } catch {}
+  await writeFile('data/candidats.json', h);
+  await writeFile('rapport.md', '');
+  process.exit(0);
+}
 
 // Requêtes de base : cours / tutoriels des styles afro et caribéens
 const BASE = [
