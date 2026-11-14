@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-14T00:43:37.764Z",
+  "maj": "2026-11-14T00:56:28.543Z",
   "profs": {
     "tesi-holistic": {
       "chaineId": "UCuhfBK6zREw1rxVHxmUGgmw",
@@ -539,20 +539,6 @@
         }
       ]
     },
-    "bm-official": {
-      "chaineId": "UCrZUtLsN2NuwAJE_q0PZjpA",
-      "chaineNom": "BM Official",
-      "chaineUrl": "https://www.youtube.com/@bm.artist",
-      "avatar": "https://yt3.ggpht.com/ytc/AIdro_mvxAdJzZjz-XR4BBM3jHAISm0UA8mCE6Piqrsdn-wWAmQ=s240-c-k-c0x00ffffff-no-rj",
-      "videos": [
-        {
-          "id": "DzQ5dSeF11I",
-          "titre": "Dancing to #TshoboChallenge with my wife @PopTheBalloon Join the challenge!",
-          "date": "2025-10-30T18:17:14Z",
-          "miniature": "https://i.ytimg.com/vi/DzQ5dSeF11I/hqdefault.jpg"
-        }
-      ]
-    },
     "afronovo": {
       "chaineId": "UCCHR51CK7JgtIVSb6ef3EBA",
       "chaineNom": "Afronovo Online",
@@ -630,6 +616,833 @@
           "titre": "TUTORIEL DANSE AFRICAINE/ AFRO HOUSE / SMALL AFRO DANCE ROUTINE / SUNMANIAKS",
           "date": "2020-01-21T09:43:37Z",
           "miniature": "https://i.ytimg.com/vi/HwUQG1J7Uyo/hqdefault.jpg"
+        }
+      ]
+    },
+    "gwladys-b": {
+      "chaineId": "UCD8OPn-K0Oqu5ed_Sm1-NKg",
+      "chaineNom": "Gwladys B.",
+      "chaineUrl": "https://www.youtube.com/@gwladysb.",
+      "avatar": "https://yt3.ggpht.com/FMaFTvW-xl6LqPeZtyk127euEc1MDIWcazPQPMNMjGn15x2mi0RleKwlrD95fpByHjKPzyUdgg=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "pLtVnBWKyBo",
+          "titre": "Can’t Do the Butterfly in Dancehall? Try This! 🔥 #dancetuto #dancehall #danceforbeginners #viral",
+          "date": "2026-10-12T16:00:24Z",
+          "miniature": "https://i.ytimg.com/vi/pLtVnBWKyBo/hqdefault.jpg"
+        },
+        {
+          "id": "nOPRNI-vVK4",
+          "titre": "Dancehall is worldwide 🥳🇯🇲 Where are you watching from? #viral #dancevideo #dancehall #challenge",
+          "date": "2026-10-11T21:53:24Z",
+          "miniature": "https://i.ytimg.com/vi/nOPRNI-vVK4/hqdefault.jpg"
+        },
+        {
+          "id": "d8BKQ2VEjFk",
+          "titre": "Which country killed this Dancehall/Hip Hop Challenge? DC: Pyrotechs✨ #leanback #dancehall #viral",
+          "date": "2026-08-21T18:36:28Z",
+          "miniature": "https://i.ytimg.com/vi/d8BKQ2VEjFk/hqdefault.jpg"
+        },
+        {
+          "id": "j0IGxd-zzG0",
+          "titre": "When the vibe is unmatched… the crew showed up 🔥 #zenzele #dancevideo #savibe #amapianon #fyp",
+          "date": "2026-07-15T02:38:16Z",
+          "miniature": "https://i.ytimg.com/vi/j0IGxd-zzG0/hqdefault.jpg"
+        },
+        {
+          "id": "0IAtUqDTn_Y",
+          "titre": "Meet the crew who turned work into a Dancehall session 🔥 #viralshort #viralvideo #dancehall #fyp",
+          "date": "2026-06-24T10:27:12Z",
+          "miniature": "https://i.ytimg.com/vi/0IAtUqDTn_Y/hqdefault.jpg"
+        },
+        {
+          "id": "0jpFfTin6ko",
+          "titre": "Congo made history and I had to dance 🇨🇩🔥 #drc #worldcup #leopards #africanfootball #viral #fyp",
+          "date": "2026-06-18T19:35:24Z",
+          "miniature": "https://i.ytimg.com/vi/0jpFfTin6ko/hqdefault.jpg"
+        },
+        {
+          "id": "KsAwNFeb5Rs",
+          "titre": "How to Dance the Butterfly | Easy Tutorial 🔥 #dancehallmove #dancetutorial #dancehall #viral #fyp",
+          "date": "2026-06-17T21:01:20Z",
+          "miniature": "https://i.ytimg.com/vi/KsAwNFeb5Rs/hqdefault.jpg"
+        },
+        {
+          "id": "ZTVDD1SShAw",
+          "titre": "You think you’re leaving dance class…then this happens 👀 #humour #viralshorts #fyp #bts #danceclass",
+          "date": "2026-06-08T14:33:04Z",
+          "miniature": "https://i.ytimg.com/vi/ZTVDD1SShAw/hqdefault.jpg"
+        },
+        {
+          "id": "_t_JiPR09ho",
+          "titre": "Corporate team building, but make it Dancehall 🥳🔥#dancehall #viralshorts #teambuilding #dance #fyp",
+          "date": "2026-06-01T20:26:11Z",
+          "miniature": "https://i.ytimg.com/vi/_t_JiPR09ho/hqdefault.jpg"
+        },
+        {
+          "id": "94atuF7X07Y",
+          "titre": "How to Wine Your Waist for Beginners 👀 #wine #hips #waistline #jamaica #africa #viral #tutorial",
+          "date": "2026-05-29T12:46:06Z",
+          "miniature": "https://i.ytimg.com/vi/94atuF7X07Y/hqdefault.jpg"
+        },
+        {
+          "id": "uIE7ukWuu80",
+          "titre": "Which flag felt this song the most? 👀 #kassav #zouk #kompa #danceshorts #youtubeshorts #viral #fyp",
+          "date": "2026-05-25T21:00:27Z",
+          "miniature": "https://i.ytimg.com/vi/uIE7ukWuu80/hqdefault.jpg"
+        },
+        {
+          "id": "6ROOaAoCcew",
+          "titre": "Nobody expected the office to turn into THIS 😭🔥 #viralshorts #dancechallenge #dancehall #carribean",
+          "date": "2026-05-21T18:30:08Z",
+          "miniature": "https://i.ytimg.com/vi/6ROOaAoCcew/hqdefault.jpg"
+        }
+      ]
+    },
+    "bad-gyal-cassie": {
+      "chaineId": "UCRTvJensXSvtT3LbaC8U9Kg",
+      "chaineNom": "Bad Gyal Cassie",
+      "chaineUrl": "https://www.youtube.com/@badgyalcassie8273",
+      "avatar": "https://yt3.ggpht.com/M-GnD7A3rzyhI7H3EbDNxDYoJxerqsfsS8w1Tjyd3-m_aXEkaus-vi5AwPacOT9nlysbgTv4=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "LUVhloxYij0",
+          "titre": "Dj Goja Jason Derulo x Melody - Mi Chico Dance Video",
+          "date": "2026-07-28T09:58:44Z",
+          "miniature": "https://i.ytimg.com/vi/LUVhloxYij0/hqdefault.jpg"
+        },
+        {
+          "id": "GVBsjFEV68M",
+          "titre": "FETE DE LA MUSIQUE CHOREGRAPHE BADGYALCASSIE - Spiritual Gangsta Anais B -",
+          "date": "2026-07-06T21:24:15Z",
+          "miniature": "https://i.ytimg.com/vi/GVBsjFEV68M/hqdefault.jpg"
+        },
+        {
+          "id": "tGRnVS-fq2Y",
+          "titre": "uncle waffles & royal musiq - wadibusa feat. ohp sage pcee & djy biza | DANCE VIDEO | BADGYALCASSIE",
+          "date": "2024-07-09T14:09:05Z",
+          "miniature": "https://i.ytimg.com/vi/tGRnVS-fq2Y/hqdefault.jpg"
+        },
+        {
+          "id": "r1s0JRRVm6I",
+          "titre": "EVA LISA | KIMA DÔNE | RÉPÉTITION | CHOREGRAPHY BY BADGYALCASSIEE",
+          "date": "2024-06-16T18:38:31Z",
+          "miniature": "https://i.ytimg.com/vi/r1s0JRRVm6I/hqdefault.jpg"
+        },
+        {
+          "id": "hOoUlD0ZvsM",
+          "titre": "TEMS ME AND U | CHORÉGRAPHIE BY | ​@BADGYALCASSIE",
+          "date": "2024-05-05T07:48:21Z",
+          "miniature": "https://i.ytimg.com/vi/hOoUlD0ZvsM/hqdefault.jpg"
+        },
+        {
+          "id": "efGXR6NJ0wM",
+          "titre": "BEAFRIKA ACADEMY | YAWA FIREBOY | CHORÉGRAPHIE BY | BADGYALCASSIE X KUTY",
+          "date": "2023-11-11T19:33:06Z",
+          "miniature": "https://i.ytimg.com/vi/efGXR6NJ0wM/hqdefault.jpg"
+        },
+        {
+          "id": "2dx9jLRfViw",
+          "titre": "BEAFRIKA ACADEMY | PETIT GÉNIE | CHORÉGRAPHIE BY | BADGYALCASSIE X CHARLITO LE VRAI",
+          "date": "2023-10-11T09:29:45Z",
+          "miniature": "https://i.ytimg.com/vi/2dx9jLRfViw/hqdefault.jpg"
+        },
+        {
+          "id": "cTLxvSw_8z8",
+          "titre": "FAIR-PLAY DANCE CAMP  SHOW AFRO | @badgyalcassie8273",
+          "date": "2023-08-11T19:08:14Z",
+          "miniature": "https://i.ytimg.com/vi/cTLxvSw_8z8/hqdefault.jpg"
+        },
+        {
+          "id": "6mx2Bzp8j7k",
+          "titre": "BEAFRIKA ACADEMY I AMAPIANO I CHOREGRAPHY BY BADGYALCASSIE X TEBZA",
+          "date": "2023-07-24T12:54:47Z",
+          "miniature": "https://i.ytimg.com/vi/6mx2Bzp8j7k/hqdefault.jpg"
+        },
+        {
+          "id": "wMIZdXXMUC4",
+          "titre": "BEAFRIKA ACADEMY I AMAPIANO I CHOREGRAPHY BY BADGYALCASSIE X TEBZA",
+          "date": "2023-07-24T12:18:46Z",
+          "miniature": "https://i.ytimg.com/vi/wMIZdXXMUC4/hqdefault.jpg"
+        },
+        {
+          "id": "uk-yoKQau68",
+          "titre": "BEAFRIKA ACADEMY | CHOREO BADGYALCASSIE X JOËL TENDA",
+          "date": "2023-06-19T19:53:57Z",
+          "miniature": "https://i.ytimg.com/vi/uk-yoKQau68/hqdefault.jpg"
+        },
+        {
+          "id": "AVe6VRFfN5c",
+          "titre": "BEAFRIKA ACADEMY I LOOK AT HER NQOBILE | CHOREO BADGYALCASSIE X LYDIA LAPRADE",
+          "date": "2023-05-30T11:49:45Z",
+          "miniature": "https://i.ytimg.com/vi/AVe6VRFfN5c/hqdefault.jpg"
+        }
+      ]
+    },
+    "rose-kompa-queen": {
+      "chaineId": "UCywPEDhC77HsvuVT3sBUwLw",
+      "chaineNom": "Rose Kompa Queen",
+      "chaineUrl": "https://www.youtube.com/@rosekonpaqueen",
+      "avatar": "https://yt3.ggpht.com/mR1S3in83zwpePnMjLcipIB1dwc4Bg_vClabL9rUZCt_qcXlYSE81SlvDFmvvso0SlUDys57btc=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "nEhTRfPXb44",
+          "titre": "Self expression through Kompa dance 🇭🇹 the most beautiful music and dance 🔥",
+          "date": "2026-09-08T23:00:22Z",
+          "miniature": "https://i.ytimg.com/vi/nEhTRfPXb44/hqdefault.jpg"
+        },
+        {
+          "id": "rNpYmeAWBuk",
+          "titre": "Always the best time dancing Kompa with my sister ❤️💃🏾 #konpa konpa  #kompa #gouyad",
+          "date": "2026-09-04T21:47:52Z",
+          "miniature": "https://i.ytimg.com/vi/rNpYmeAWBuk/hqdefault.jpg"
+        },
+        {
+          "id": "V1M7RIw7oUI",
+          "titre": "A strong Kompa dancer is a strong human! #kompa #konpa #dance",
+          "date": "2026-09-04T10:29:27Z",
+          "miniature": "https://i.ytimg.com/vi/V1M7RIw7oUI/hqdefault.jpg"
+        },
+        {
+          "id": "Pc3vJkG4hGQ",
+          "titre": "Waistline Movement in Konpa 🇭🇹 | Control, Flow & Confidence 💃🏽 #Konpa #Kompa #gouyad",
+          "date": "2026-08-24T21:42:09Z",
+          "miniature": "https://i.ytimg.com/vi/Pc3vJkG4hGQ/hqdefault.jpg"
+        },
+        {
+          "id": "RkdWPVdyy4Y",
+          "titre": "Waistline Movement in Konpa 🇭🇹 | Control, Flow & Confidence 💃🏽 #Konpa #Kompa #Gouyad",
+          "date": "2026-08-24T21:41:06Z",
+          "miniature": "https://i.ytimg.com/vi/RkdWPVdyy4Y/hqdefault.jpg"
+        },
+        {
+          "id": "6ILNBAiehW8",
+          "titre": "Konpa Dance 🔥 Feel the Music, Move With the Rhythm 🇭🇹 @Claudelkompaking",
+          "date": "2026-08-23T20:31:56Z",
+          "miniature": "https://i.ytimg.com/vi/6ILNBAiehW8/hqdefault.jpg"
+        },
+        {
+          "id": "xHasTT2dRkA",
+          "titre": "Waistline movements in Konpa isn’t just about how it looks it’s about control, and connection.",
+          "date": "2026-08-22T22:16:08Z",
+          "miniature": "https://i.ytimg.com/vi/xHasTT2dRkA/hqdefault.jpg"
+        },
+        {
+          "id": "_97rL5Qug3w",
+          "titre": "Waistline movements in Kompa dance has so many great benefits 💃🏾❤️",
+          "date": "2026-08-22T20:26:54Z",
+          "miniature": "https://i.ytimg.com/vi/_97rL5Qug3w/hqdefault.jpg"
+        },
+        {
+          "id": "bEg3ULtMhUM",
+          "titre": "This is what growth looks like, keep showing up! #konpa #kompa #konpadancejourney #Claudel",
+          "date": "2026-08-17T21:37:02Z",
+          "miniature": "https://i.ytimg.com/vi/bEg3ULtMhUM/hqdefault.jpg"
+        },
+        {
+          "id": "iZePFSTx0Zc",
+          "titre": "Kompa dance improves self confidence!",
+          "date": "2026-08-17T12:09:12Z",
+          "miniature": "https://i.ytimg.com/vi/iZePFSTx0Zc/hqdefault.jpg"
+        },
+        {
+          "id": "Tsx2NuUzeU4",
+          "titre": "Move with passion, dance Kompa with purpose. #kompa #konpa #gouyad",
+          "date": "2026-08-16T12:07:41Z",
+          "miniature": "https://i.ytimg.com/vi/Tsx2NuUzeU4/hqdefault.jpg"
+        },
+        {
+          "id": "f7mbNJzhXtY",
+          "titre": "The best Kompa dance moments 💃🏾🇭🇹",
+          "date": "2026-07-21T19:32:56Z",
+          "miniature": "https://i.ytimg.com/vi/f7mbNJzhXtY/hqdefault.jpg"
+        }
+      ]
+    },
+    "rachael-okesola": {
+      "chaineId": "UCPlZUGuomsFwib9fpG3iagA",
+      "chaineNom": "Rachael Okesola",
+      "chaineUrl": "https://www.youtube.com/@rachaelokesolaofficial",
+      "avatar": "https://yt3.ggpht.com/wflq1ivoA0A79pjCFlXjJFYlEJFs9OwrBMl8HaNjm0VBS1cT-tZtpwZAPa9gvzn2I1GhxEXRbg=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "Y0uIngSsdiA",
+          "titre": "23-Min No Equipment Afrobeat Dance Party | FUN!!!",
+          "date": "2026-10-26T17:09:35Z",
+          "miniature": "https://i.ytimg.com/vi/Y0uIngSsdiA/hqdefault.jpg"
+        },
+        {
+          "id": "gurcKTo1jgc",
+          "titre": "Sweaty Afrobeats Dance Workout: Get Ready to Move! #shorts",
+          "date": "2026-08-12T21:38:48Z",
+          "miniature": "https://i.ytimg.com/vi/gurcKTo1jgc/hqdefault.jpg"
+        },
+        {
+          "id": "E9_c2j47tQc",
+          "titre": "20 Min Afrobeats Low Impact Fat Burn #shorts",
+          "date": "2026-08-12T19:41:47Z",
+          "miniature": "https://i.ytimg.com/vi/E9_c2j47tQc/hqdefault.jpg"
+        },
+        {
+          "id": "M1Pe-DVAyIY",
+          "titre": "20 Min Afrobeats Walking Workout #shorts",
+          "date": "2026-08-12T19:32:27Z",
+          "miniature": "https://i.ytimg.com/vi/M1Pe-DVAyIY/hqdefault.jpg"
+        },
+        {
+          "id": "u72T7nESSLo",
+          "titre": "Afrobeats Gospel Workout (FUN!!) | 15 Mins of Sweat + 2000 Steps 💃🏾",
+          "date": "2025-10-28T17:55:46Z",
+          "miniature": "https://i.ytimg.com/vi/u72T7nESSLo/hqdefault.jpg"
+        },
+        {
+          "id": "N0nNiE24Bt0",
+          "titre": "20 Min Walking Workout | African Dance workout (2000 Steps)",
+          "date": "2025-10-23T16:57:56Z",
+          "miniature": "https://i.ytimg.com/vi/N0nNiE24Bt0/hqdefault.jpg"
+        },
+        {
+          "id": "OxjnOmjBRgM",
+          "titre": "Afrobeats Walk & Dance | 15 Min Burna Boy Slim Waist Workout",
+          "date": "2025-10-14T16:51:39Z",
+          "miniature": "https://i.ytimg.com/vi/OxjnOmjBRgM/hqdefault.jpg"
+        },
+        {
+          "id": "ypDpyFu0N-A",
+          "titre": "25 Min Walking for Weight Loss – Flat Belly Workout | Afrobeat Playlist",
+          "date": "2025-10-13T17:02:11Z",
+          "miniature": "https://i.ytimg.com/vi/ypDpyFu0N-A/hqdefault.jpg"
+        },
+        {
+          "id": "Gn9q92EbB9c",
+          "titre": "15 Min Afro Dance Workout | No Equipment High Energy Dance | Afrifitness",
+          "date": "2022-05-02T14:11:25Z",
+          "miniature": "https://i.ytimg.com/vi/Gn9q92EbB9c/hqdefault.jpg"
+        },
+        {
+          "id": "x1Orp2wBDRw",
+          "titre": "10 MIN Arm Toning Workout with Weights | Top 5 African Dance Workouts",
+          "date": "2021-11-08T15:03:27Z",
+          "miniature": "https://i.ytimg.com/vi/x1Orp2wBDRw/hqdefault.jpg"
+        },
+        {
+          "id": "Ole_AR2j6HU",
+          "titre": "Afrobeats Workout | FAT BURNING | Full Body Toning Dumbbells Workout",
+          "date": "2021-02-18T14:52:53Z",
+          "miniature": "https://i.ytimg.com/vi/Ole_AR2j6HU/hqdefault.jpg"
+        },
+        {
+          "id": "s-T4WT06XN8",
+          "titre": "AFRICAN DANCE WORKOUT (15 Min) | Afrifitness  | No equipment",
+          "date": "2021-02-03T14:43:39Z",
+          "miniature": "https://i.ytimg.com/vi/s-T4WT06XN8/hqdefault.jpg"
+        }
+      ]
+    },
+    "portia-rufu": {
+      "chaineId": "UCDfFCUeStmIyknTPGouVvPw",
+      "chaineNom": "Portia Rufu",
+      "chaineUrl": "https://www.youtube.com/@portiarufu",
+      "avatar": "https://yt3.ggpht.com/4G5gZu3q9UUDH1nK1XS_xM7yqV7Q9V8jFrjR2WLkdMBaLG49yoCZdYRkaJSyaZmiryJm7Vn5-xs=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "zeoo--FLnKc",
+          "titre": "How to Reverse Whine for Beginners | Step-by-Step Dance Tutorial | Portia Rufu #zimbabweanyoutuber",
+          "date": "2026-02-15T09:01:16Z",
+          "miniature": "https://i.ytimg.com/vi/zeoo--FLnKc/hqdefault.jpg"
+        },
+        {
+          "id": "hZ1UIQUrtGM",
+          "titre": "How To Twerk In A Circle Tutorial || Beginner Friendly || Portia Rufu #zimbabweanyoutuber #twerk",
+          "date": "2024-05-08T11:39:53Z",
+          "miniature": "https://i.ytimg.com/vi/hZ1UIQUrtGM/hqdefault.jpg"
+        }
+      ]
+    },
+    "robyn": {
+      "chaineId": "UCPEqbsHiuGajJmpTCy8xYpQ",
+      "chaineNom": "Robyn 🤎",
+      "chaineUrl": "https://www.youtube.com/@robynchirisah",
+      "avatar": "https://yt3.ggpht.com/txGHG_xG4JHyBtVTsgD0b4PKWWeFLaxkSWOFj1it5aI-6nfIo2wwDP4GlT7px9WHq4rsooh97Q=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "UrjEnJKAg9k",
+          "titre": "Eyyy 🌸 #dance #robynchirisah",
+          "date": "2026-11-13T18:50:48Z",
+          "miniature": "https://i.ytimg.com/vi/UrjEnJKAg9k/hqdefault.jpg"
+        },
+        {
+          "id": "8VbflILCaMM",
+          "titre": "Bow Sec Time 😅 #dance #robynchirisah",
+          "date": "2026-10-26T12:55:29Z",
+          "miniature": "https://i.ytimg.com/vi/8VbflILCaMM/hqdefault.jpg"
+        },
+        {
+          "id": "LGKr_zy2zCI",
+          "titre": "I’m Outside ⛹🏾‍♂️ #dance #robynchirisah",
+          "date": "2026-10-25T08:34:32Z",
+          "miniature": "https://i.ytimg.com/vi/LGKr_zy2zCI/hqdefault.jpg"
+        },
+        {
+          "id": "G8bbCl4zsIQ",
+          "titre": "Bowww 😅🇺🇸 #dance #robynchirisah",
+          "date": "2026-10-24T10:49:57Z",
+          "miniature": "https://i.ytimg.com/vi/G8bbCl4zsIQ/hqdefault.jpg"
+        },
+        {
+          "id": "cbd5ReT3--Y",
+          "titre": "We are back in Dubai 🌸 #dance #robynchirisah",
+          "date": "2026-10-17T09:23:07Z",
+          "miniature": "https://i.ytimg.com/vi/cbd5ReT3--Y/hqdefault.jpg"
+        },
+        {
+          "id": "LEg6KxuZHIg",
+          "titre": "Soft ❤️ #dance #dancer",
+          "date": "2026-10-12T17:16:17Z",
+          "miniature": "https://i.ytimg.com/vi/LEg6KxuZHIg/hqdefault.jpg"
+        },
+        {
+          "id": "V5nX2kmvFGU",
+          "titre": "It’s been a minute 🎶 #dance #robynchirisah",
+          "date": "2026-10-07T21:07:55Z",
+          "miniature": "https://i.ytimg.com/vi/V5nX2kmvFGU/hqdefault.jpg"
+        },
+        {
+          "id": "8QMSnSJj2YM",
+          "titre": "Let’s goooo 😅 #dance #robynchirisah",
+          "date": "2026-10-02T08:07:47Z",
+          "miniature": "https://i.ytimg.com/vi/8QMSnSJj2YM/hqdefault.jpg"
+        },
+        {
+          "id": "Y797Sx41mbE",
+          "titre": "MIHLALI THE GUY, DANKIE BOI, SINO MSOLO - WO LO | DANCE TUTORIAL | BEGINNER FRIENDLY",
+          "date": "2026-09-27T16:43:15Z",
+          "miniature": "https://i.ytimg.com/vi/Y797Sx41mbE/hqdefault.jpg"
+        },
+        {
+          "id": "sGhH4lixF3M",
+          "titre": "Pick one name 😂😂 #dance #robynchirisah",
+          "date": "2026-09-21T18:44:03Z",
+          "miniature": "https://i.ytimg.com/vi/sGhH4lixF3M/hqdefault.jpg"
+        },
+        {
+          "id": "5-YF1NdBSnM",
+          "titre": "Which one was your favorite ❤️ #dance #youtubeshorts",
+          "date": "2026-09-20T16:02:06Z",
+          "miniature": "https://i.ytimg.com/vi/5-YF1NdBSnM/hqdefault.jpg"
+        },
+        {
+          "id": "2xj1Ogi5iBA",
+          "titre": "Who won 🥇 ?? #dance #robynchirisah",
+          "date": "2026-09-19T13:13:01Z",
+          "miniature": "https://i.ytimg.com/vi/2xj1Ogi5iBA/hqdefault.jpg"
+        }
+      ]
+    },
+    "julie-cafrine": {
+      "chaineId": "UCkRuzHAMQzuvHfUWAcVWpHA",
+      "chaineNom": "Julie Cafrine",
+      "chaineUrl": "https://www.youtube.com/@juliecafrine",
+      "avatar": "https://yt3.ggpht.com/7eSle2pcNLcclldxArTTO9q2W16SZUI0cmCsLOESfFmw6AgXMaXQdGIWgzVRaxfoc1Zxoldl=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "uNhfaqZ42Ko",
+          "titre": "LE PRIME 8 DALS QUI A BOULEVERSÉ TOUS LES DANSEURS.. LES JUGES.. et MOI 😭",
+          "date": "2026-03-31T16:00:58Z",
+          "miniature": "https://i.ytimg.com/vi/uNhfaqZ42Ko/hqdefault.jpg"
+        },
+        {
+          "id": "bgGgwrFvhpo",
+          "titre": "Je suis tellement angoissée à chaque fois 😰 #danseaveclesstars",
+          "date": "2026-03-18T13:44:53Z",
+          "miniature": "https://i.ytimg.com/vi/bgGgwrFvhpo/hqdefault.jpg"
+        },
+        {
+          "id": "Y6E5Ewd4s4M",
+          "titre": "PRIME 5 DALS 2026 : LES DANSEURS MYSTÈRES ( QUELLES SURPRISES!)",
+          "date": "2026-03-10T17:00:46Z",
+          "miniature": "https://i.ytimg.com/vi/Y6E5Ewd4s4M/hqdefault.jpg"
+        },
+        {
+          "id": "CG2z-uA1mN0",
+          "titre": "Il ira en finale sauf si les gens ne votent pas pour lui! #danseaveclesstars #dals2026 #samuelbambi",
+          "date": "2026-03-05T18:28:28Z",
+          "miniature": "https://i.ytimg.com/vi/CG2z-uA1mN0/hqdefault.jpg"
+        },
+        {
+          "id": "xfEBehCW5hw",
+          "titre": "Je vis dans les strass plumes et paillettes ✨ #danseuse #pov #dancecostume",
+          "date": "2026-03-02T15:56:18Z",
+          "miniature": "https://i.ytimg.com/vi/xfEBehCW5hw/hqdefault.jpg"
+        },
+        {
+          "id": "I9vKfIzsWhM",
+          "titre": "Bon bah.. RDV la semaine prochaine 🥲 #danseaveclesstars #dals2026 #prime6",
+          "date": "2026-03-02T11:26:21Z",
+          "miniature": "https://i.ytimg.com/vi/I9vKfIzsWhM/hqdefault.jpg"
+        },
+        {
+          "id": "BAReyCn4d1Y",
+          "titre": "DALS 2026 c’est quelque chose hein !!! #danseaveclesstars #dals",
+          "date": "2026-02-05T17:14:52Z",
+          "miniature": "https://i.ytimg.com/vi/BAReyCn4d1Y/hqdefault.jpg"
+        },
+        {
+          "id": "XyXvFfYEMnw",
+          "titre": "Y’a rien qui va dans cette Story ! #debriefprime2 #dals #danseaveclesstars",
+          "date": "2026-01-31T14:09:21Z",
+          "miniature": "https://i.ytimg.com/vi/XyXvFfYEMnw/hqdefault.jpg"
+        },
+        {
+          "id": "M_w5EeC4dUg",
+          "titre": "Ce candidat de DALS va nous choquer cette saison ! #danseaveclesstars #dals2026 #danse",
+          "date": "2026-01-28T16:00:36Z",
+          "miniature": "https://i.ytimg.com/vi/M_w5EeC4dUg/hqdefault.jpg"
+        },
+        {
+          "id": "p_mh1Ay2sig",
+          "titre": "Comment bouger son bassin sur cette danse ? #tutodanse #segareunionnais #segamauricien #974",
+          "date": "2026-01-27T16:23:32Z",
+          "miniature": "https://i.ytimg.com/vi/p_mh1Ay2sig/hqdefault.jpg"
+        },
+        {
+          "id": "yR2ToH3FlZE",
+          "titre": "Le prime démarre dans 2h !! #dals2026 #danseaveclesstars #dals",
+          "date": "2026-01-23T17:43:28Z",
+          "miniature": "https://i.ytimg.com/vi/yR2ToH3FlZE/hqdefault.jpg"
+        },
+        {
+          "id": "AvzGRLQe1Jo",
+          "titre": "Maghla, Angélique Miss France 2025 et Samuel Bambi #dals2026 #maghla #danseaveclesstars",
+          "date": "2026-01-21T19:39:38Z",
+          "miniature": "https://i.ytimg.com/vi/AvzGRLQe1Jo/hqdefault.jpg"
+        }
+      ]
+    },
+    "latonya-style": {
+      "chaineId": "UC00SYh5pxoC-oAAmsytCNhQ",
+      "chaineNom": "Latonya Style",
+      "chaineUrl": "https://www.youtube.com/@movesja",
+      "avatar": "https://yt3.ggpht.com/QFeFYu2yE84D9mnXCd7qP8062sT1RnLXl0QzWTY8WCk5MKDDLKLmIErW3wx2Mw2_Do61Yuh7HCc=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "URGuTQLxJlQ",
+          "titre": "Dancehall 2K Era - Ding Dong | Latonya Style Challenge",
+          "date": "2025-11-05T23:59:51Z",
+          "miniature": "https://i.ytimg.com/vi/URGuTQLxJlQ/hqdefault.jpg"
+        },
+        {
+          "id": "0EdaDg8LLoo",
+          "titre": "Female Dancehall (Middle Skool) Class by Latonya Style in Jamaica for Lili & Naomi",
+          "date": "2025-09-05T04:04:53Z",
+          "miniature": "https://i.ytimg.com/vi/0EdaDg8LLoo/hqdefault.jpg"
+        },
+        {
+          "id": "FrEjbXhz_Zo",
+          "titre": "Valiant “DOWN” (Dance Fitness Choreo) - Latonya Style PT.1  [Stylish Moves]",
+          "date": "2025-04-03T03:52:25Z",
+          "miniature": "https://i.ytimg.com/vi/FrEjbXhz_Zo/hqdefault.jpg"
+        },
+        {
+          "id": "r_X0bodybcQ",
+          "titre": "Shake it to the Max PT2 - Dance Fitness Choreo by LatonyaStyle ​⁠@Shenseea x ​⁠@MOLIY",
+          "date": "2025-04-03T02:56:25Z",
+          "miniature": "https://i.ytimg.com/vi/r_X0bodybcQ/hqdefault.jpg"
+        },
+        {
+          "id": "Z9M2Afyq0ZM",
+          "titre": "Shake it to the Max - Dance Fitness Choreo- Latonya Style PT.1 @MOLIY  x ​⁠@officialskillibeng",
+          "date": "2025-04-03T02:46:54Z",
+          "miniature": "https://i.ytimg.com/vi/Z9M2Afyq0ZM/hqdefault.jpg"
+        },
+        {
+          "id": "mxASK20CioQ",
+          "titre": "BUILD A FENCE - Dance Fitness Choreo by Latonya Style 🇯🇲 [Song By: Patrice Robert’s x Busy Signal]",
+          "date": "2025-04-03T02:37:11Z",
+          "miniature": "https://i.ytimg.com/vi/mxASK20CioQ/hqdefault.jpg"
+        },
+        {
+          "id": "YBiYJ-SED_U",
+          "titre": "Zip Code Dance Tutorial (Stylish Moves by Latonya Style)",
+          "date": "2024-06-19T21:25:00Z",
+          "miniature": "https://i.ytimg.com/vi/YBiYJ-SED_U/hqdefault.jpg"
+        },
+        {
+          "id": "h5rcTpJef1I",
+          "titre": "ZIP CODE - Latonya Style (Fiesta Riddim) Female Dancehall Part 2.",
+          "date": "2024-05-21T23:52:17Z",
+          "miniature": "https://i.ytimg.com/vi/h5rcTpJef1I/hqdefault.jpg"
+        },
+        {
+          "id": "2Pi-mJieAD8",
+          "titre": "Fit Fiyah “Continent” Latonya Style - Dance Fitness",
+          "date": "2024-04-15T17:54:06Z",
+          "miniature": "https://i.ytimg.com/vi/2Pi-mJieAD8/hqdefault.jpg"
+        },
+        {
+          "id": "2jlS38wu_mQ",
+          "titre": "Latonya Style at ‘Full House Friday’ - RJR Fame FM - “Dancers Buss Songs too”",
+          "date": "2024-04-11T17:49:02Z",
+          "miniature": "https://i.ytimg.com/vi/2jlS38wu_mQ/hqdefault.jpg"
+        },
+        {
+          "id": "TmE2Ftav7Ac",
+          "titre": "“Ting a Ling” - Dancehall Fitness -w/ Latonya Style [Caribbean Fit Fiyah 2024]",
+          "date": "2024-03-31T19:42:16Z",
+          "miniature": "https://i.ytimg.com/vi/TmE2Ftav7Ac/hqdefault.jpg"
+        },
+        {
+          "id": "HM3LN1HeyuQ",
+          "titre": "“In The Water” Soca Dance Fitness w/ Latonya Style - (Caribbean Fit Fiyah 2024)",
+          "date": "2024-03-30T02:28:25Z",
+          "miniature": "https://i.ytimg.com/vi/HM3LN1HeyuQ/hqdefault.jpg"
+        }
+      ]
+    },
+    "priscilla-gueverra": {
+      "chaineId": "UCFGzpAYOIZRX69G-9hAttlA",
+      "chaineNom": "Priscilla Gueverra",
+      "chaineUrl": "https://www.youtube.com/@priscillagueverra1",
+      "avatar": "https://yt3.ggpht.com/9n0EWirsi384GlRJakz_AWikdMTPTEDHfnflS5bL4WXGhOSP7dSuxwmnsaR_JDDg_SajLQwsTw=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "4ennd26P8qg",
+          "titre": "Mela Caribe “Nuh Typical Ting” Dance Cover by Iam The Title Dance Company",
+          "date": "2026-10-23T17:42:05Z",
+          "miniature": "https://i.ytimg.com/vi/4ennd26P8qg/hqdefault.jpg"
+        },
+        {
+          "id": "3N-4hI7QltY",
+          "titre": "Soca Burnout by Priscilla",
+          "date": "2024-10-20T17:07:12Z",
+          "miniature": "https://i.ytimg.com/vi/3N-4hI7QltY/hqdefault.jpg"
+        },
+        {
+          "id": "wWwuludjpeE",
+          "titre": "#SocaDances You Should Know - Alison Hinds \"West Indian\" #livelovesoca #teamsoca #alisonhinds #soca",
+          "date": "2021-08-22T18:59:26Z",
+          "miniature": "https://i.ytimg.com/vi/wWwuludjpeE/hqdefault.jpg"
+        },
+        {
+          "id": "KH4C7l2ASLk",
+          "titre": "#SOCADANCES YOU SHOULD KNOW \"Collin Lucas\" Iwer, Butterfly, Shadow, Wave #SocaDance",
+          "date": "2021-07-28T02:01:49Z",
+          "miniature": "https://i.ytimg.com/vi/KH4C7l2ASLk/hqdefault.jpg"
+        },
+        {
+          "id": "SviVJhuhFL0",
+          "titre": "SOCA DANCES YOU SHOULD KNOW #SocaDance  #Soca #nailahblackman #sekonsta #erphaanalves #wining",
+          "date": "2021-07-20T00:45:25Z",
+          "miniature": "https://i.ytimg.com/vi/SviVJhuhFL0/hqdefault.jpg"
+        },
+        {
+          "id": "NmC7jBL1L84",
+          "titre": "SOCA DANCES YOU SHOULD KNOW \"Tallpree - Old Woman Alone\" #Soca #SocaDance #Socamusic #Grenada",
+          "date": "2021-07-18T20:47:59Z",
+          "miniature": "https://i.ytimg.com/vi/NmC7jBL1L84/hqdefault.jpg"
+        },
+        {
+          "id": "bl7dAjgP3ok",
+          "titre": "WAISTLINE CHALLENGE  - Dancehall Choreography by Priscilla Gueverra #Dancehall #aidonia",
+          "date": "2021-06-21T01:53:49Z",
+          "miniature": "https://i.ytimg.com/vi/bl7dAjgP3ok/hqdefault.jpg"
+        },
+        {
+          "id": "TbMyP7lUMGY",
+          "titre": "LOSE WEIGHT FAST - SOCACIZE FITNESS - 25 MIN CARDIO SOCA JAM By Priscilla Gueverra",
+          "date": "2020-09-10T14:18:18Z",
+          "miniature": "https://i.ytimg.com/vi/TbMyP7lUMGY/hqdefault.jpg"
+        },
+        {
+          "id": "2X8TMvvOnSY",
+          "titre": "How To Dance To Soca - \"Beginner Soca Dance Tutorial\" - \"Cultural Dances\" #DanceTutorial #Soca",
+          "date": "2020-07-13T01:21:36Z",
+          "miniature": "https://i.ytimg.com/vi/2X8TMvvOnSY/hqdefault.jpg"
+        },
+        {
+          "id": "c4PJ3_Ndbxg",
+          "titre": "How To Dance To Soca \"Waving\" Basic Foundational Steps - Dance Tutorial #socadancetutorial",
+          "date": "2020-06-15T18:05:23Z",
+          "miniature": "https://i.ytimg.com/vi/c4PJ3_Ndbxg/hqdefault.jpg"
+        },
+        {
+          "id": "J4QlieRgOqY",
+          "titre": "How To Dance To Soca - (Dance Tutorial) \"Winin\"  Soca Dance Foundational Steps #DanceTutorial #Soca",
+          "date": "2020-06-10T17:28:36Z",
+          "miniature": "https://i.ytimg.com/vi/J4QlieRgOqY/hqdefault.jpg"
+        },
+        {
+          "id": "N38Qkf4bSFs",
+          "titre": "IVAN TORRENT - Contemporary Dance Choreography by Priscilla Gueverra - #epicmusic #dancevideo",
+          "date": "2020-04-30T16:00:10Z",
+          "miniature": "https://i.ytimg.com/vi/N38Qkf4bSFs/hqdefault.jpg"
+        }
+      ]
+    },
+    "flora-mpindi": {
+      "chaineId": "UCBh04dxP4fo0iEC0KwSQ42g",
+      "chaineNom": "Flora Mpindi",
+      "chaineUrl": "https://www.youtube.com/@florvmp.",
+      "avatar": "https://yt3.ggpht.com/H6E4Ijk65cchzNPpfitlGB_XeGzQTkoLWDY_8KtjADh5MYPXzrr7KwFXNXXLeRQE-RigUFosIQ=s240-c-k-c0x00ffffff-no-rj",
+      "videos": []
+    },
+    "evee-smile": {
+      "chaineId": "UCJG0Tz4CJyQ6fRbj4P5oVUg",
+      "chaineNom": "Evee Smile",
+      "chaineUrl": "https://www.youtube.com/@eveesmile",
+      "avatar": "https://yt3.ggpht.com/Kj1dXc_Ow2MQCa_hpllMxex2u2mGD6ov-JgVUGJa7g9xIvz0W3sAGPKemTN8UhGEzrbGvqA5aQ=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "renqLugT9_c",
+          "titre": "EVEE SMILE - \"YOU COMING\" 🔥 TEASER OFFICIEL | Dancehall Guadeloupe",
+          "date": "2026-05-10T14:17:06Z",
+          "miniature": "https://i.ytimg.com/vi/renqLugT9_c/hqdefault.jpg"
+        },
+        {
+          "id": "NVPLf2xVDC0",
+          "titre": "Evee Smile cours de danse dancehall/Shatta",
+          "date": "2026-05-10T14:08:09Z",
+          "miniature": "https://i.ytimg.com/vi/NVPLf2xVDC0/hqdefault.jpg"
+        },
+        {
+          "id": "VNHpyytv1oM",
+          "titre": "Evee Smile Showcase Trois-Rivières #choreography #dancehall #music",
+          "date": "2025-08-26T04:51:40Z",
+          "miniature": "https://i.ytimg.com/vi/VNHpyytv1oM/hqdefault.jpg"
+        },
+        {
+          "id": "omZJ7NZkRn8",
+          "titre": "Evee Smile (DANSE)  Flex Maureen chorégraphie",
+          "date": "2023-12-19T18:44:35Z",
+          "miniature": "https://i.ytimg.com/vi/omZJ7NZkRn8/hqdefault.jpg"
+        },
+        {
+          "id": "rGvwYpxg3rQ",
+          "titre": "11 steps dancehall original avec Evee Smile ( Facile)",
+          "date": "2023-10-09T01:00:30Z",
+          "miniature": "https://i.ytimg.com/vi/rGvwYpxg3rQ/hqdefault.jpg"
+        },
+        {
+          "id": "vzxCz6kNvIc",
+          "titre": "Evee Smile ( Danse) Collab Just vibe street wear",
+          "date": "2022-11-18T18:00:32Z",
+          "miniature": "https://i.ytimg.com/vi/vzxCz6kNvIc/hqdefault.jpg"
+        },
+        {
+          "id": "cZbPtKMiyJk",
+          "titre": "Evee Smile (Danse) Amsterdam",
+          "date": "2022-11-15T00:25:29Z",
+          "miniature": "https://i.ytimg.com/vi/cZbPtKMiyJk/hqdefault.jpg"
+        },
+        {
+          "id": "BKLMt2ip6WQ",
+          "titre": "Evee Smile (DANSE)  - Kalash Bumpy",
+          "date": "2022-09-02T17:00:06Z",
+          "miniature": "https://i.ytimg.com/vi/BKLMt2ip6WQ/hqdefault.jpg"
+        },
+        {
+          "id": "xBsoG-indAU",
+          "titre": "DANCEHALL MASTER CLASS  FITNESS PARK EVEE SMILE",
+          "date": "2022-08-24T17:00:30Z",
+          "miniature": "https://i.ytimg.com/vi/xBsoG-indAU/hqdefault.jpg"
+        },
+        {
+          "id": "l_gv0qOu5UU",
+          "titre": "Témoignage d'une chorégraphe à succès Evee Smile",
+          "date": "2022-08-22T15:45:49Z",
+          "miniature": "https://i.ytimg.com/vi/l_gv0qOu5UU/hqdefault.jpg"
+        },
+        {
+          "id": "QcKQtDNjTi4",
+          "titre": "5 CONSEILS pour démarrer sa CARRIÈRE de DANSEUR pro par Evee",
+          "date": "2022-03-10T18:00:24Z",
+          "miniature": "https://i.ytimg.com/vi/QcKQtDNjTi4/hqdefault.jpg"
+        },
+        {
+          "id": "5xhBNvyeJns",
+          "titre": "5 CONSEILS pour progresser en DANSE  \"Urban Dance Coaching\" MASTERCLASS (Hip-hop, afro, dancehall)",
+          "date": "2022-01-20T22:00:15Z",
+          "miniature": "https://i.ytimg.com/vi/5xhBNvyeJns/hqdefault.jpg"
+        }
+      ]
+    },
+    "sia-prisca": {
+      "chaineId": "UCLwYlnx8A7OERnaBnYqhahg",
+      "chaineNom": "SIA PRISCA Fitness & Danses",
+      "chaineUrl": "https://www.youtube.com/@siafitnessdanses8849",
+      "avatar": "https://yt3.ggpht.com/ytc/AIdro_m8AigVVG_GMNXoNyY7Swr5Bwv_sVEbAj10DBnBMEBFFrWG=s240-c-k-c0x00ffffff-no-rj",
+      "videos": [
+        {
+          "id": "6zjxCk9IbGg",
+          "titre": "Serge Beynaud chorégraphie",
+          "date": "2022-04-10T16:30:54Z",
+          "miniature": "https://i.ytimg.com/vi/6zjxCk9IbGg/hqdefault.jpg"
+        },
+        {
+          "id": "NVwZ0WGT9io",
+          "titre": "Afro danse Pas de Calais",
+          "date": "2021-05-02T16:18:55Z",
+          "miniature": "https://i.ytimg.com/vi/NVwZ0WGT9io/hqdefault.jpg"
+        },
+        {
+          "id": "JeBIXdWxIjQ",
+          "titre": "Misu na misu chorégraphie",
+          "date": "2021-04-07T20:10:10Z",
+          "miniature": "https://i.ytimg.com/vi/JeBIXdWxIjQ/hqdefault.jpg"
+        },
+        {
+          "id": "0-GKqnYXtiA",
+          "titre": "Ebony (Hustle) chorégraphie",
+          "date": "2021-03-20T18:39:20Z",
+          "miniature": "https://i.ytimg.com/vi/0-GKqnYXtiA/hqdefault.jpg"
+        },
+        {
+          "id": "63kvmUvZ-q4",
+          "titre": "chorégraphie Up (Cardi B) par SFD",
+          "date": "2021-03-12T08:06:30Z",
+          "miniature": "https://i.ytimg.com/vi/63kvmUvZ-q4/hqdefault.jpg"
+        },
+        {
+          "id": "e98V2kkCGDw",
+          "titre": "Why are you running chorégraphy",
+          "date": "2021-03-07T12:38:04Z",
+          "miniature": "https://i.ytimg.com/vi/e98V2kkCGDw/hqdefault.jpg"
+        },
+        {
+          "id": "g3XJ2KXuor0",
+          "titre": "chorégraphie senta braba",
+          "date": "2021-03-01T10:13:30Z",
+          "miniature": "https://i.ytimg.com/vi/g3XJ2KXuor0/hqdefault.jpg"
+        },
+        {
+          "id": "UI_CcIRaxk8",
+          "titre": "Danse ivoirienne",
+          "date": "2021-02-16T21:55:52Z",
+          "miniature": "https://i.ytimg.com/vi/UI_CcIRaxk8/hqdefault.jpg"
+        },
+        {
+          "id": "DEiHSWpbwfA",
+          "titre": "lifuende - Serge Beynaud Chorégraphie par Prisca",
+          "date": "2021-02-10T20:02:43Z",
+          "miniature": "https://i.ytimg.com/vi/DEiHSWpbwfA/hqdefault.jpg"
+        },
+        {
+          "id": "Bs6RVy6HeKA",
+          "titre": "Tnt allez allez chorégraphie par Prisca",
+          "date": "2021-02-01T13:30:26Z",
+          "miniature": "https://i.ytimg.com/vi/Bs6RVy6HeKA/hqdefault.jpg"
+        },
+        {
+          "id": "GSvwgOEblhk",
+          "titre": "Sia Fitness & Danses: circuit training #1",
+          "date": "2020-05-05T00:17:06Z",
+          "miniature": "https://i.ytimg.com/vi/GSvwgOEblhk/hqdefault.jpg"
+        },
+        {
+          "id": "xIPlMsWbVnc",
+          "titre": "Afro Danse 1 par Prisca Dilousia",
+          "date": "2020-04-18T12:34:56Z",
+          "miniature": "https://i.ytimg.com/vi/xIPlMsWbVnc/hqdefault.jpg"
         }
       ]
     }
