@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clips du jour — Elles Dansent</title>
+<meta name="description" content="Les clips les plus sensuels de YouTube (dancehall, reggaeton, perreo, shatta, rap), mis à jour chaque jour. Site 18+.">
+<meta name="theme-color" content="#120C0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='9' fill='%23120C0A'/%3E%3Cg fill='none' stroke='%23F2B33D' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='17' cy='8' r='3'/%3E%3Cpath d='M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="agegate.js"></script>
+<style>
+.th-hero{padding:72px 0 32px}
+.th-hero h1{font-weight:800;font-size:clamp(42px,6vw,84px);line-height:1;letter-spacing:-.03em}
+.th-hero h1 em{font-style:normal;color:var(--or)}
+.th-hero .lead{margin-top:18px}
+.live{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:8px 14px;border-radius:999px;border:1px solid var(--bord);color:var(--doux);font-size:14px}
+.live i{width:9px;height:9px;border-radius:50%;background:#E2643A;box-shadow:0 0 0 0 rgba(226,100,58,.7);animation:pouls 1.8s infinite}
+@keyframes pouls{70%{box-shadow:0 0 0 10px rgba(226,100,58,0)}100%{box-shadow:0 0 0 0 rgba(226,100,58,0)}}
+.outils{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:10px 0 30px}
+.outils .search{flex:1 1 320px}
+.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;padding-bottom:96px}
+.vids .vcard{gap:10px}
+.vids .vthumb{position:relative}
+.badge-neuf{position:absolute;top:10px;left:10px;background:var(--or);color:var(--fond);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px}
+.vide{padding:60px 0;color:var(--doux);font-size:18px}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="nav scrolled" id="nav">
+  <div class="wrap nav-in">
+    <a href="./" class="logo" aria-label="Elles Dansent, accueil">
+      <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34"><rect width="34" height="34" rx="9" fill="#F2B33D"/><g fill="none" stroke="#120C0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="8" r="3"/><path d="M17 11v8l-5 9M17 19l5 9M9 15c4 2 12 2 16-4"/></g></svg>
+      <span>Elles Dansent</span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="menu" aria-label="Navigation principale">
+      <a href="./#profs">Les profs</a>
+      <a href="twerk.html">Twerk du jour</a>
+      <a href="clips.html" aria-current="page">Clips</a>
+      <a href="blog.html">Blog</a>
+      <a href="./#rejoindre" class="btn btn-or">Je suis prof</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" class="wrap">
+  <section class="th-hero">
+    <p class="kicker">Clips du jour · 18+</p>
+    <h1>Les clips les plus <em>chauds</em> de YouTube, chaque jour.</h1>
+    <p class="lead">Dancehall, reggaeton, perreo, dembow, shatta, rap : les clips musicaux les plus sensuels, ajoutés automatiquement tous les jours. Seulement des vidéos que YouTube permet d'afficher sans restriction d'âge.</p>
+    <p class="live"><i aria-hidden="true"></i><span id="maj">Chargement…</span></p>
+  </section>
+
+  <div class="outils">
+    <form class="search" role="search" onsubmit="return false">
+      <label for="q" class="sr">Chercher une vidéo ou une chaîne</label>
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="Chercher une vidéo ou une chaîne…" autocomplete="off">
+    </form>
+    <label class="tri">Trier par
+      <select id="tri">
+        <option value="date">Plus récentes</option>
+        <option value="vues">Plus vues</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="vids" id="vids"></div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-bas">
+    <span>© <span id="annee"></span> Elles Dansent</span>
+    <a href="./">Retour au répertoire</a>
+  </div>
+</footer>
+
+<dialog id="fiche" aria-labelledby="fiche-titre">
+  <div class="fiche-head">
+    <div><h2 id="fiche-titre" style="font-size:22px"></h2><p id="fiche-meta" class="muted"></p></div>
+    <button type="button" class="round" id="fermer" aria-label="Fermer">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="player" id="lecteur"></div>
+  <div class="fiche-bar"><a id="fiche-chaine" class="btn btn-ghost" target="_blank" rel="noopener">Voir la chaîne YouTube ↗</a></div>
+</dialog>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const vuesFr = (n) => n >= 1e6 ? (n / 1e6).toFixed(1).replace('.', ',') + ' M vues' : n >= 1e3 ? Math.round(n / 1e3) + ' k vues' : n + ' vues';
+const quand = (d) => { const j = Math.floor((Date.now() - new Date(d)) / 864e5); return j < 1 ? "aujourd'hui" : j < 2 ? 'hier' : j < 30 ? `il y a ${j} jours` : j < 365 ? `il y a ${Math.floor(j / 30)} mois` : `il y a ${Math.floor(j / 365)} an${j >= 730 ? 's' : ''}`; };
+let videos = [];
+
+function afficher() {
+  const t = $('#q').value.toLowerCase().trim();
+  const tri = $('#tri').value;
+  const liste = videos.filter((v) => !t || `${v.titre} ${v.chaine}`.toLowerCase().includes(t))
+    .sort((a, b) => tri === 'vues' ? b.vues - a.vues : (b.date || '').localeCompare(a.date || ''));
+  $('#vids').innerHTML = liste.length ? liste.map((v) => `
+    <button type="button" class="vcard" data-id="${esc(v.id)}">
+      <span class="vthumb" style="background-image:url('${esc(v.miniature)}')">${(Date.now() - new Date(v.date)) < 2 * 864e5 ? '<span class="badge-neuf">Nouveau</span>' : ''}</span>
+      <span class="vtitre">${esc(v.titre)}</span>
+      <span class="vmeta">${esc(v.chaine)} · ${vuesFr(v.vues || 0)} · ${quand(v.date)}</span>
+    </button>`).join('') : '<p class="vide">Les premières vidéos arrivent avec la prochaine mise à jour quotidienne.</p>';
+  $('#vids').querySelectorAll('.vcard').forEach((b) => b.addEventListener('click', () => ouvrir(b.dataset.id)));
+}
+
+function ouvrir(id) {
+  const v = videos.find((x) => x.id === id);
+  if (!v) return;
+  $('#fiche-titre').textContent = v.titre;
+  $('#fiche-meta').textContent = `${v.chaine} · ${vuesFr(v.vues || 0)} · ${quand(v.date)}`;
+  $('#fiche-chaine').href = `https://www.youtube.com/channel/${v.chaineId}`;
+  $('#lecteur').innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}?rel=0&autoplay=1" title="${esc(v.titre)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  $('#fiche').showModal();
+}
+
+async function demarrer() {
+  const d = await (await fetch('data/clips.json', { cache: 'no-store' })).json();
+  videos = d.videos || [];
+  $('#maj').textContent = d.maj
+    ? `${videos.length} vidéos · mis à jour le ${new Date(d.maj).toLocaleDateString('fr-CA', { day: 'numeric', month: 'long', year: 'numeric' })}`
+    : 'Première mise à jour en cours';
+  afficher();
+}
+
+$('#q').addEventListener('input', afficher);
+$('#tri').addEventListener('change', afficher);
+$('#fermer').addEventListener('click', () => $('#fiche').close());
+$('#fiche').addEventListener('close', () => { $('#lecteur').innerHTML = ''; });
+$('#fiche').addEventListener('click', (e) => { if (e.target === $('#fiche')) $('#fiche').close(); });
+$('#annee').textContent = new Date().getFullYear();
+$('#burger').addEventListener('click', () => { const o = $('#menu').classList.toggle('ouvert'); $('#burger').setAttribute('aria-expanded', o); });
+demarrer();
+</script>
+</body>
+</html>
