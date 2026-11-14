@@ -8,7 +8,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const KEY = process.env.YOUTUBE_API_KEY;
 const API = 'https://www.googleapis.com/youtube/v3';
 const MAX_FIL = 600; // nombre maximum de vidéos gardées sur la page
-const REQUETES = ['twerk', 'twerk tutorial', 'twerk choreography', 'twerk class', 'twerkshop', 'twerk dance', 'twerk fitness', 'twerk heels', 'sensual twerk', 'booty dance', 'perreo dance', 'dancehall whine'];
+const REQUETES = ['twerk', 'twerk tutorial', 'twerk choreography', 'twerk class', 'twerkshop', 'twerk dance', 'twerk fitness', 'twerk heels', 'sensual twerk', 'booty dance', 'perreo dance', 'dancehall whine', 'slow wine dance', 'bedroom dancehall dance', 'heels choreography', 'heels dance class', 'strip plastic dance', 'sensual dance choreography', 'twerk school class'];
 const TWERK = /twerk|booty|jiggle|bounce|shake/i;
 const DANSE = /twerk|booty|jiggle|shake|choreo|chor[ée]|class|clase|cours|tutorial|tuto|workshop|heels|whine|wining|perreo|danc|danse|bail|dancehall|isolation|glute|freestyle/i;
 const EXCLURE = /vlog|podcast|interview|episode|rezy|pop ?up|unboxing|get ready|grwm|aprende|food|market|vacation|makeup|coming soon|detr[aá]s de c[aá]maras|behind the scenes|\bbts\b|teaser|lookbook|shein|haul|reaction|storytime|audio oficial|sizzle|surgery|bachelorette/i; // vidéos hors danse à exclure
@@ -82,7 +82,7 @@ for (let i = 0; i < ids.length; i += 50) {
     // Seulement des vidéos de danse : les chaînes approuvées doivent avoir un titre de danse, les autres doivent parler de twerk
     if (EXCLURE.test(v.snippet.title)) continue;
     if (idsExtra.has(v.snippet.channelId)) { if (!garderTitre(v.snippet.title, v.snippet.channelId)) continue; }
-    else if (!TWERK.test(`${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
+    else if (!TWERK.test(`${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`) && !DANSE.test(v.snippet.title)) continue;
     const video = {
       id: v.id,
       titre: v.snippet.title,
