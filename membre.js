@@ -7,7 +7,9 @@ if (config) {
   const V = '10.12.2';
   const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`);
   const A = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-auth.js`);
-  const auth = A.getAuth(initializeApp(config));
+  const app = initializeApp(config);
+  const auth = A.getAuth(app);
+  window.BabeK = { app, auth, A };
   auth.languageCode = 'fr';
 
   const css = document.createElement('style');
@@ -111,4 +113,6 @@ if (config) {
     if (u) fermer();
     else if (reserve) ouvrir();
   });
+  window.BabeK.ouvrir = ouvrir;
+  document.dispatchEvent(new Event('babek-pret'));
 }
