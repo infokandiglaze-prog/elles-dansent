@@ -1,6 +1,6 @@
 // Comptes membres Babe Killa (Firebase Authentication).
 // Les pages qui contiennent <meta name="babek-reserve" content="membres"> sont réservées aux membres connectés.
-const config = window.BABEK_FIREBASE;
+const config = window.BABEK_FIREBASE || (typeof firebaseConfig !== 'undefined' ? firebaseConfig : null);
 const reserve = !!document.querySelector('meta[name="babek-reserve"][content="membres"]');
 
 if (config) {
