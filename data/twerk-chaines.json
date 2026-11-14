@@ -2,20 +2,60 @@
   {
     "id": "UC2IoyvRMJ40-yXw78X-gEFQ",
     "nom": "Nadia Pérez",
-    "toutDanse": true
+    "toutDanse": true,
+    "genre": "Écoles & cours"
   },
   {
     "id": "UCbbjWKK2B9qiht32Vmmo4_A",
     "nom": "Obsession Twerk Camp",
-    "toutDanse": true
-  },
-  {
-    "id": "UC7Ul2k3EhfIHE2RFvjoMorA",
-    "nom": "QNL Network by Aliya Janell"
+    "toutDanse": true,
+    "genre": "Écoles & cours"
   },
   {
     "id": "UCQ8pgXWecNrjpBgvUFVqv_w",
     "nom": "Nastya Nass",
-    "toutDanse": true
+    "toutDanse": true,
+    "genre": "Écoles & cours"
+  },
+  {
+    "id": "UCwsfVLl7VSe5Q-8uDQ-DhNg",
+    "nom": "Mei Twerk Class",
+    "toutDanse": true,
+    "genre": "Écoles & cours"
+  },
+  {
+    "id": "UCX5HNI74PQfEQcYYjZxxTqw",
+    "nom": "Lexy Panterra",
+    "genre": "Écoles & cours"
+  },
+  {
+    "id": "UC8LaBH9v0bSEcEFck0RAfeg",
+    "nom": "DNCR Dance Tutorials",
+    "genre": "Écoles & cours"
+  },
+  {
+    "id": "UCTEMK5LPQIpmXJw7_lPtVYg",
+    "nom": "Emiliano Ferrari Villalobos",
+    "genre": "Écoles & cours"
+  },
+  {
+    "id": "UC7Ul2k3EhfIHE2RFvjoMorA",
+    "nom": "QNL Network by Aliya Janell",
+    "genre": "Heels & sensuel"
+  },
+  {
+    "id": "UCnDtPtBzMHlcV_4ury2ifqA",
+    "nom": "Di Vasylchenko (Mad Spirit)",
+    "genre": "Dancehall & slow wine"
+  },
+  {
+    "id": "UC3j0NBFog-U6h4g6RYXUkEw",
+    "nom": "Hip Shake Fitness",
+    "genre": "Fitness twerk"
+  },
+  {
+    "id": "UCdI1s3Gdxa7fY6zmjP47mvw",
+    "nom": "Coach LuluFit",
+    "genre": "Fitness twerk"
   }
 ]
