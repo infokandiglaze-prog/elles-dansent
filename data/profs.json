@@ -9,5 +9,27 @@
     "langue": "anglais",
     "pays": "",
     "bio": ""
+  },
+  {
+    "id": "foxy-roxy",
+    "nom": "",
+    "chaine": "UCnu27Txxn4F8nHTBrpymnTQ",
+    "video_exemple": "CXQ4en5V6HY",
+    "styles": ["Chorégraphie"],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
+  },
+  {
+    "id": "chriss-choreo",
+    "nom": "",
+    "chaine": "UC11dvGb4c0sRb1x606_zL5A",
+    "video_exemple": "-OdJOstow24",
+    "styles": ["Soca", "Whine"],
+    "niveau": "Débutante",
+    "langue": "anglais",
+    "pays": "",
+    "bio": ""
   }
 ]
