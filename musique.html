@@ -63,6 +63,19 @@
 .short-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 10px 30px -8px rgba(255,46,126,.8)}
 .short-titre{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;font-weight:700;font-size:15px;color:#fff}
 .short iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.fc{margin-top:28px;background:var(--carte);border:1px solid rgba(255,46,126,.35);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;box-shadow:0 30px 80px -40px rgba(255,46,126,.5)}
+.fc h3{font-size:26px}
+.fc-note{margin:0;color:var(--muet);font-size:14px}
+.fc-grille{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fc-large{grid-column:1/-1}
+.fc label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:var(--doux)}
+.fc input:not([type=checkbox]),.fc select{min-height:46px;border-radius:14px;border:1px solid var(--bord);background:#07050A;color:var(--texte);padding:0 14px;font:inherit;font-weight:400}
+.fc input:focus,.fc select:focus{outline:none;border-color:#FF2E7E;box-shadow:0 0 0 4px rgba(255,46,126,.15)}
+.fc .fc-case{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400}
+.fc .btn{align-self:flex-start}
+.fc-msg{margin:0;font-weight:600;color:#FF7AB0;min-height:1.2em}
+.fc-msg.ok{color:#7CF5B0}
+@media (max-width:760px){.fc-grille{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -132,7 +145,21 @@
       <li><b>Publie</b><span>Sur TikTok ou Instagram avec #BabeKChallenge et identifie @babek.officiel.</span></li>
       <li><b>Envoie le lien</b><span>Envoie-nous le lien de ta vidéo. Les meilleures passent sur le site, et la gagnante du mois est en vedette sur l'accueil.</span></li>
     </ol>
-    <div class="mu-cta"><a href="https://ig.me/m/babek.officiel" class="btn btn-or" target="_blank" rel="noopener">Envoyer ma vidéo</a></div>
+    <form class="fc" id="form-challenge" novalidate>
+      <h3>Inscris-toi au challenge</h3>
+      <p class="fc-note">Gratuit. Il faut un compte membre Babe Killa (Google ou courriel) pour envoyer ta vidéo.</p>
+      <div class="fc-grille">
+        <label>Ton nom ou pseudo<input name="nom" required maxlength="80" autocomplete="nickname"></label>
+        <label>Ton compte Instagram ou TikTok<input name="reseau" maxlength="120" placeholder="@toncompte"></label>
+        <label class="fc-large">Lien de ta vidéo (TikTok, Instagram ou YouTube)<input name="lien" type="url" required maxlength="300" placeholder="https://www.tiktok.com/@toncompte/video/..."></label>
+        <label>Ton pays<input name="pays" maxlength="60" autocomplete="country-name"></label>
+        <label>Tu es…<select name="type"><option>Danseuse</option><option>Prof de danse</option></select></label>
+      </div>
+      <label class="fc-case"><input type="checkbox" name="majeur"> J'ai 18 ans ou plus, et toutes les personnes dans la vidéo aussi.</label>
+      <label class="fc-case"><input type="checkbox" name="consentement"> J'accepte que ma vidéo soit affichée sur le site Babe Killa (elle reste sur mon compte).</label>
+      <button type="submit" class="btn btn-or">Envoyer ma vidéo</button>
+      <p class="fc-msg" id="fc-msg" aria-live="polite"></p>
+    </form>
     <div class="regles"><b>Règles du challenge</b>
       <ul>
         <li>Tu dois avoir <b>18 ans ou plus</b>.</li>
@@ -204,6 +231,42 @@ document.querySelectorAll('.short').forEach(function (b) {
     if (b.querySelector('iframe')) return;
     b.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0&playsinline=1" title="Vidéo Babe K" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
   });
+});
+</script>
+<script src="auth-config.js"></script>
+<script type="module" src="membre.js"></script>
+<script type="module">
+const f = document.getElementById('form-challenge');
+const msg = document.getElementById('fc-msg');
+const dire = (t, ok) => { msg.textContent = t; msg.className = 'fc-msg' + (ok ? ' ok' : ''); };
+const pret = () => new Promise((r) => { if (window.BabeK && window.BabeK.ouvrir) r(window.BabeK); else document.addEventListener('babek-pret', () => r(window.BabeK), { once: true }); setTimeout(() => r(window.BabeK || null), 8000); });
+f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  dire('');
+  const d = new FormData(f);
+  const lien = String(d.get('lien') || '').trim();
+  if (!String(d.get('nom') || '').trim()) return dire('Écris ton nom ou ton pseudo.');
+  if (!/^https:\/\/([a-z]+\.)?(tiktok\.com|instagram\.com|youtube\.com|youtu\.be)\//i.test(lien)) return dire('Le lien doit venir de TikTok, Instagram ou YouTube.');
+  if (!d.get('majeur')) return dire('Tu dois avoir 18 ans ou plus pour participer.');
+  if (!d.get('consentement')) return dire('Coche la case pour accepter que ta vidéo soit affichée.');
+  const B = await pret();
+  if (!B) return dire('Les inscriptions ouvrent bientôt. Réessaie plus tard.');
+  if (!B.auth.currentUser) { B.ouvrir(); return dire('Connecte-toi ou crée ton compte gratuit, puis clique à nouveau sur « Envoyer ma vidéo ».'); }
+  const btn = f.querySelector('button[type=submit]');
+  btn.disabled = true;
+  try {
+    const F = await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js');
+    const u = B.auth.currentUser;
+    await F.addDoc(F.collection(F.getFirestore(B.app), 'participations'), {
+      uid: u.uid, courriel: u.email || '', nom: String(d.get('nom')).trim().slice(0, 80),
+      reseau: String(d.get('reseau') || '').trim().slice(0, 120), lien: lien.slice(0, 300),
+      pays: String(d.get('pays') || '').trim().slice(0, 60), type: d.get('type') === 'Prof de danse' ? 'Prof de danse' : 'Danseuse',
+      majeur: true, consentement: true, date: F.serverTimestamp()
+    });
+    f.reset();
+    dire('Merci ! Ta vidéo est bien reçue. Si elle est choisie, elle apparaîtra sur le site. Bonne chance !', true);
+  } catch (err) { dire('Oups, l\'envoi n\'a pas marché. Réessaie dans un instant.'); }
+  btn.disabled = false;
 });
 </script>
 </body>
