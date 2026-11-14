@@ -168,7 +168,7 @@ const lignes = retenues.map((c) => [
 ].join('\n'));
 await writeFile('rapport.md', retenues.length
   ? `${retenues.length} nouvelles chaînes trouvées cette semaine.\n\n` +
-    `⚠️ **À vérifier avant d'ajouter** : l'API ne peut pas savoir si la chaîne est tenue par une femme afrodescendante, ni si la prof est d'accord. Regarde chaque chaîne, contacte la prof, puis ajoute-la dans \`data/profs.json\`.\n\n` +
+    `⚠️ **À vérifier avant d'ajouter** : l'API ne peut pas savoir si la chaîne est tenue par une femme prof de danse, ni si elle est d'accord. Regarde chaque chaîne, contacte la prof, puis ajoute-la dans \`data/profs.json\`.\n\n` +
     lignes.join('\n\n') + '\n'
   : '');
 console.log(`${retenues.length} candidates (requêtes : ${requetes.join(' | ')})`);
