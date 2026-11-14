@@ -2,7 +2,7 @@ name: Twerk du jour
 
 on:
   schedule:
-    - cron: '41 10 * * *'   # chaque jour (~5h41, heure de Montréal)
+    - cron: '41 10,22 * * *'   # 2 fois par jour (~5h41 et ~17h41, heure de Montréal)
   workflow_dispatch:
 
 permissions:
