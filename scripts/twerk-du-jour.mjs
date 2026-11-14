@@ -54,6 +54,15 @@ for (const p of Object.values(videosProfs.profs || {})) {
   for (const v of p.videos || []) if (TWERK.test(v.titre || '')) trouves.set(v.id, p.chaineId);
 }
 
+// + les dernières vidéos des chaînes twerk approuvées (data/twerk-chaines.json)
+for (const c of extra) {
+  const id = typeof c === 'string' ? c : c.id;
+  try {
+    const r = await yt('playlistItems', { part: 'contentDetails', playlistId: 'UU' + id.slice(2), maxResults: 25 });
+    for (const it of r.items || []) trouves.set(it.contentDetails.videoId, id);
+  } catch (e) { console.error(`Chaîne ${id} : ${e.message}`); }
+}
+
 // 2. Vérification : intégrable, pas de restriction d'âge, titre twerk
 const ids = [...trouves.keys()].filter((id) => !deja.has(id));
 const ajouts = [];
