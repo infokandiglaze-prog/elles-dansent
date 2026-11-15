@@ -21,7 +21,7 @@
   .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;animation:clignote 1.2s infinite}
   @keyframes clignote{50%{opacity:.2}}
   .ecran{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(255,46,126,.45)}
-  .ecran #lecteur,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .ecran #lecteur,.ecran #lecteur-vimeo,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .son{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;font:700 18px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);border:0;border-radius:999px;padding:16px 26px;cursor:pointer}
   .barre{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px}
   .en-cours{font-weight:600}
@@ -58,6 +58,7 @@
     <div class="styles" id="styles" role="group" aria-label="Choisir les styles de clips"></div>
     <div class="ecran">
       <div id="lecteur"></div>
+      <div id="lecteur-vimeo" style="display:none"></div>
       <button class="son" id="son" type="button">🔊 Activer le son</button>
     </div>
     <div class="barre">
@@ -84,10 +85,29 @@
   const burger = document.getElementById('burger'), menu = document.getElementById('menu');
   if (burger && menu) burger.addEventListener('click', () => { const o = menu.classList.toggle('ouvert'); burger.setAttribute('aria-expanded', o); });
   const DANCEHALL = ["UCnDtPtBzMHlcV_4ury2ifqA"];
-  let tout = [], liste = [], i = 0, lecteur = null, sonActif = false, choix = new Set(), chaud = false, genreDe = {};
+  let tout = [], liste = [], i = 0, lecteur = null, vp = null, vimeoPret = null, sonActif = false, choix = new Set(), chaud = false, genreDe = {};
   const melanger = (a) => { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
   const afficher = (v) => { const e = document.getElementById('en-cours'); e.textContent = v.titre; const s = document.createElement('small'); s.textContent = v.chaine + ' · ' + v.genre + (v.vues ? ' · ' + v.vues.toLocaleString('fr-CA') + ' vues' : ''); e.appendChild(s); };
-  const jouer = () => { if (!liste.length || !lecteur) return; const v = liste[i % liste.length]; afficher(v); lecteur.loadVideoById(v.id); if (!sonActif) lecteur.mute(); };
+  const boxV = () => document.getElementById('lecteur-vimeo');
+  const chargerVimeo = () => vimeoPret || (vimeoPret = new Promise((ok, ko) => { const x = document.createElement('script'); x.src = 'https://player.vimeo.com/api/player.js'; x.onload = ok; x.onerror = ko; document.head.appendChild(x); }));
+  const jouerVimeo = (v) => chargerVimeo().then(() => {
+    if (lecteur && lecteur.pauseVideo) lecteur.pauseVideo();
+    document.getElementById('lecteur').style.visibility = 'hidden'; boxV().style.display = 'block';
+    if (!vp) {
+      vp = new Vimeo.Player(boxV(), { id: Number(v.id), autoplay: true, muted: !sonActif, title: false, byline: false, portrait: false });
+      vp.on('ended', suivant); vp.on('error', suivant);
+      const f = boxV().querySelector('iframe'); if (f) { f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0'; }
+    } else vp.loadVideo(Number(v.id)).then(() => { vp.setMuted(!sonActif); return vp.play(); }).catch(suivant);
+  }).catch(suivant);
+  const jouer = () => {
+    if (!liste.length) return; const v = liste[i % liste.length];
+    afficher(v);
+    if (v.source === 'vimeo') { jouerVimeo(v); return; }
+    if (!lecteur) return;
+    if (vp) { vp.pause().catch(() => {}); }
+    boxV().style.display = 'none'; document.getElementById('lecteur').style.visibility = 'visible';
+    lecteur.loadVideoById(v.id); if (!sonActif) lecteur.mute();
+  };
   const suivant = () => { i++; if (i >= liste.length) { i = 0; if (!chaud) melanger(liste); } jouer(); };
   // Construit la liste à lire selon les styles cochés (plusieurs possibles) et le mode « chaud »
   const construire = (relancer) => {
@@ -115,14 +135,16 @@
   Promise.all([
     fetch('data/clips.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] })),
     fetch('data/twerk.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] })),
-    fetch('data/clips-chaines.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => [])
-  ]).then(([c, t, ch]) => {
+    fetch('data/clips-chaines.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => []),
+    fetch('data/vimeo.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] }))
+  ]).then(([c, t, ch, vm]) => {
     ch.forEach((x) => { if (x && x.genre) genreDe[x.id] = x.genre; });
     DANCEHALL.forEach((id) => { genreDe[id] = genreDe[id] || 'Dancehall'; });
     const vus = new Set();
     tout = [...(c.videos || []), ...(t.videos || []).filter((v) => DANCEHALL.includes(v.chaineId))]
       .filter((v) => v.id && !vus.has(v.id) && vus.add(v.id))
       .map((v) => ({ ...v, genre: genreDe[v.chaineId] || 'Autres' }));
+    (vm.videos || []).filter((v) => v && /^\d+$/.test(String(v.id))).forEach((v) => tout.push({ ...v, id: String(v.id), source: 'vimeo', chaine: v.chaine || 'Vimeo', genre: v.genre || 'Autres', vues: v.vues || 0 }));
     puces(); construire(false);
     const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
   });
@@ -137,7 +159,7 @@
       }
     });
   };
-  document.getElementById('son').addEventListener('click', (e) => { sonActif = true; if (lecteur) { lecteur.unMute(); lecteur.setVolume(100); lecteur.playVideo(); } e.currentTarget.remove(); });
+  document.getElementById('son').addEventListener('click', (e) => { sonActif = true; if (lecteur) { lecteur.unMute(); lecteur.setVolume(100); if (!vp || boxV().style.display === 'none') lecteur.playVideo(); } if (vp) { vp.setMuted(false); vp.setVolume(1); } e.currentTarget.remove(); });
   document.getElementById('suivant').addEventListener('click', suivant);
   document.getElementById('plein').addEventListener('click', () => { const el = document.querySelector('.ecran'); (el.requestFullscreen || el.webkitRequestFullscreen || (() => {})).call(el); });
 </script>
