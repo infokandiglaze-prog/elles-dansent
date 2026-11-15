@@ -48,16 +48,12 @@
       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav id="menu" aria-label="Navigation principale">
-      <a href="profs.html#nouveautes">Nouveautés</a>
-      <a href="profs.html#styles">Styles</a>
-      <a href="profs.html#profs">Les profs</a>
-      <a href="twerk.html">Twerk du jour</a>
-      <a href="clips.html">Clips</a>
-      <a href="blog.html">Blog</a>
-      <a href="ambassadrices.html" aria-current="page">Ambassadrices</a>
         <a href="./" class="nav-hot">Challenge</a>
-      <a href="./#partenaire" class="btn btn-or">Je suis prof</a>
-    </nav>
+        <a href="profs.html">Profs</a>
+        <a href="twerk.html">Twerk</a>
+        <a href="clips.html">Clips</a>
+        <a href="ambassadrices.html" aria-current="page">Ambassadrices</a>
+      </nav>
   </div>
 </header>
 
@@ -80,7 +76,8 @@
   <div class="wrap foot-bas">
     <span>© <span id="annee"></span> Babe Killa</span>
     <a href="./#ambassadrice">Deviens ambassadrice</a>
-  </div>
+    <a href="blog.html">Blog</a>
+    </div>
 <div class="wrap socials" aria-label="Babe Killa sur les réseaux"><span>Suis Babe Killa</span><a href="https://www.instagram.com/babek.officiel/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@babekingc6r" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/@BabeKing-c6r" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/babekilla01" target="_blank" rel="noopener">X</a></div>
 </footer>
 <script>
@@ -100,7 +97,7 @@
         '<p class="amb-bio">' + esc(a.bio) + '</p>' +
         (a.chaine ? '<div class="amb-liens"><a class="btn" href="https://www.youtube.com/channel/' + esc(a.chaine) + '" target="_blank" rel="noopener">Sa chaîne YouTube</a></div>' : '') +
         (clips.length ? '<h3>Ses clips</h3><div class="grille">' + clips.map(carte).join('') + '</div>' : '') +
-        (shorts.length ? '<h3>Ses vidéos de danse</h3><div class="grille verticale">' + shorts.map(carte).join('') + '</div>' : '') +
+        (shorts.length ? '<h3>Ses shorts</h3><div class="grille verticale">' + shorts.map(carte).join('') + '</div>' : '') +
         '</section>';
     }).join('') || '<p>Bientôt nos premières ambassadrices.</p>';
   }).catch(() => { document.getElementById('liste').innerHTML = '<p>Impossible de charger les ambassadrices.</p>'; });
