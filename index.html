@@ -77,6 +77,18 @@
 .fc-msg.ok{color:#7CF5B0}
 @media (max-width:760px){.fc-grille{grid-template-columns:1fr}}
 </style>
+<style>
+  [data-membres]{display:none}
+  body.est-membre [data-membres]{display:block}
+  body.est-membre [data-visiteurs]{display:none}
+  .virus{text-align:center}
+  .virus h2 em{font-style:normal;color:var(--or)}
+  .virus-compte{display:flex;justify-content:center;gap:14px;margin:22px 0;flex-wrap:wrap}
+  .virus-compte div{min-width:78px;padding:12px 10px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.03)}
+  .virus-compte b{display:block;font-size:30px;font-weight:800}
+  .virus-compte span{font-size:12px;opacity:.7;text-transform:uppercase;letter-spacing:.08em}
+  .inscr ul{list-style:none;padding:0;margin:18px 0 26px;display:grid;gap:8px}
+</style>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -107,11 +119,23 @@
   <p class="lead">Chaque mois, une nouvelle chanson de Babe K et un nouveau défi de danse. Et pour les profs de danse : de la musique libre à utiliser dans leurs cours, sans blocage de droits d'auteur.</p>
   <div class="mu-cta">
     <a href="#challenge" class="btn btn-or">Participer au challenge</a>
-    <a href="#partenaire" class="btn btn-ghost2">Je suis prof de danse</a>
+    <a href="https://distrokid.com/hyperfollow/babekilla/virus" target="_blank" rel="noopener" class="btn btn-ghost2">Pré-enregistrer VIRUS</a>
   </div>
 </section>
 
-<section class="mu-sec" id="videos-babek">
+<section class="mu-sec virus" id="virus">
+  <div class="wrap">
+    <p class="kicker">Nouveau single · 20 novembre 2026</p>
+    <h2><em>VIRUS</em> — Babe Killa</h2>
+    <p class="lead">Le prochain son de Babe K sort le 20 novembre. Pré-enregistre-le sur Spotify pour l'avoir dès la sortie, et prépare ta choré pour le challenge.</p>
+    <div class="virus-compte" id="virus-compte" aria-live="polite"></div>
+    <p><a class="btn btn-or" href="https://distrokid.com/hyperfollow/babekilla/virus" target="_blank" rel="noopener">Pré-enregistrer sur Spotify</a></p>
+  </div>
+</section>
+
+
+
+<section class="mu-sec" id="videos-babek" data-membres>
   <div class="wrap">
     <p class="kicker">Les vidéos de Babe K</p>
     <h2>Regarde <em>Babe K</em> en action</h2>
@@ -168,7 +192,24 @@
   </div>
 </section>
 
-<section class="mu-sec" id="musique">
+<section class="mu-sec inscr" id="inscription" data-visiteurs>
+  <div class="wrap">
+    <p class="kicker">Réservé aux membres</p>
+    <h2>Le reste du site est réservé aux <em>membres</em>.</h2>
+    <p class="lead">Inscris-toi gratuitement (18 ans et plus) pour débloquer :</p>
+    <ul>
+      <li>💃🏾 Le répertoire des profs de danse</li>
+      <li>🍑 Twerk du jour : les nouvelles vidéos chaque jour</li>
+      <li>🎬 Les clips dancehall, soca et rap</li>
+      <li>👑 Nos ambassadrices et la musique de Babe K</li>
+    </ul>
+    <p><button type="button" class="btn btn-or" id="btn-inscription">Je m'inscris gratuitement</button></p>
+  </div>
+</section>
+
+
+
+<section class="mu-sec" id="musique" data-membres>
   <div class="wrap">
     <p class="kicker">Musique libre pour danseuses</p>
     <h2>Toute la musique de <em>Babe K</em></h2>
@@ -187,7 +228,7 @@
   </div>
 </section>
 
-<section class="mu-sec" id="ambassadrice">
+<section class="mu-sec" id="ambassadrice" data-membres>
   <div class="wrap">
     <p class="kicker">Programme ambassadrice</p>
     <h2>Deviens <em>ambassadrice Babe K</em>.</h2>
@@ -215,7 +256,7 @@
   </div>
 </section>
 
-<section class="mu-sec" id="partenaire">
+<section class="mu-sec" id="partenaire" data-membres>
   <div class="wrap">
     <p class="kicker">Programme partenaire</p>
     <h2>Profs de danse : utilisez la musique de <em>Babe K</em> gratuitement.</h2>
@@ -294,6 +335,24 @@ f.addEventListener('submit', async (e) => {
   } catch (err) { dire('Oups, l\'envoi n\'a pas marché. Réessaie dans un instant.'); }
   btn.disabled = false;
 });
+</script>
+<script>
+  (function () {
+    const fin = new Date('2026-11-20T00:00:00-05:00').getTime();
+    const boite = document.getElementById('virus-compte');
+    const maj = () => {
+      const r = Math.max(0, fin - Date.now());
+      if (!boite) return;
+      if (r === 0) { boite.textContent = 'VIRUS est disponible maintenant !'; return; }
+      const j = Math.floor(r / 864e5), h = Math.floor(r / 36e5) % 24, m = Math.floor(r / 6e4) % 60, s = Math.floor(r / 1e3) % 60;
+      boite.replaceChildren(...[[j, 'jours'], [h, 'heures'], [m, 'min'], [s, 'sec']].map(([n, t]) => { const d = document.createElement('div'); const b = document.createElement('b'); b.textContent = n; const sp = document.createElement('span'); sp.textContent = t; d.append(b, sp); return d; }));
+    };
+    maj(); setInterval(maj, 1000);
+    const suivre = () => { const B = window.BabeK; if (!B || !B.A) return false; B.A.onAuthStateChanged(B.auth, (u) => document.body.classList.toggle('est-membre', !!u)); return true; };
+    if (!suivre()) window.addEventListener('babek-pret', suivre, { once: true });
+    const btn = document.getElementById('btn-inscription');
+    if (btn) btn.addEventListener('click', () => { if (window.BabeK && window.BabeK.ouvrir) window.BabeK.ouvrir(); else location.href = 'profs.html'; });
+  })();
 </script>
 </body>
 </html>
