@@ -349,7 +349,7 @@ f.addEventListener('submit', async (e) => {
     };
     maj(); setInterval(maj, 1000);
     const suivre = () => { const B = window.BabeK; if (!B || !B.A) return false; B.A.onAuthStateChanged(B.auth, (u) => document.body.classList.toggle('est-membre', !!u)); return true; };
-    if (!suivre()) window.addEventListener('babek-pret', suivre, { once: true });
+    if (!suivre()) { let n = 0; const t = setInterval(() => { if (suivre() || ++n > 60) clearInterval(t); }, 250); }
     const btn = document.getElementById('btn-inscription');
     if (btn) btn.addEventListener('click', () => { if (window.BabeK && window.BabeK.ouvrir) window.BabeK.ouvrir(); else location.href = 'profs.html'; });
   })();
