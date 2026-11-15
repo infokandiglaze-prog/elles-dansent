@@ -1,0 +1,58 @@
+{
+  "ambassadrices": [
+    {
+      "id": "ranet",
+      "nom": "Ranet",
+      "pays": "Ukraine",
+      "bio": "Chanteuse ukrainienne d'ethno-pop. Elle danse dans ses clips et partage ses chorégraphies avec sa communauté.",
+      "chaine": "UCd5djqvnpog3E-RxEr2X4jg",
+      "videos": [
+        {
+          "id": "wDkyzewRm0k",
+          "titre": "Це все не те (clip)",
+          "type": "clip"
+        },
+        {
+          "id": "-Vm6YLoVF6g",
+          "titre": "Танцюй — « Danse » (clip)",
+          "type": "clip"
+        },
+        {
+          "id": "xpiaIZV7MCY",
+          "titre": "Mont Blanc (clip)",
+          "type": "clip"
+        },
+        {
+          "id": "47tmnyC4I8k",
+          "titre": "Падаю в небо (clip)",
+          "type": "clip"
+        },
+        {
+          "id": "l-5L_E5L8ts",
+          "titre": "Luvin u",
+          "type": "short"
+        },
+        {
+          "id": "--nrU7o5HcY",
+          "titre": "Танцюй, танцюй",
+          "type": "short"
+        },
+        {
+          "id": "52Pk8gIMaa8",
+          "titre": "Who run the world?",
+          "type": "short"
+        },
+        {
+          "id": "Hvjg-9MiqE8",
+          "titre": "Did you dance today?",
+          "type": "short"
+        },
+        {
+          "id": "6_-QQBnQTS8",
+          "titre": "Танцюй разом з нами",
+          "type": "short"
+        }
+      ]
+    }
+  ]
+}
