@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Babe Killa TV — clips dancehall en continu</title>
+<meta name="description" content="Babe Killa TV : les clips dancehall, soca et rap du site, en continu, comme une chaîne de télé.">
+<meta name="theme-color" content="#07050A">
+<link rel="icon" href="media/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=6">
+<script src="agegate.js"></script>
+<style>
+  .tv{padding:28px 0 60px}
+  .tv-tete{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .tv-tete h1{font-weight:800;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em}
+  .live{display:inline-flex;align-items:center;gap:8px;background:#FF2E7E;color:#fff;font:700 13px/1 Inter,sans-serif;padding:7px 12px;border-radius:999px;letter-spacing:.08em}
+  .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;animation:clignote 1.2s infinite}
+  @keyframes clignote{50%{opacity:.2}}
+  .ecran{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(255,46,126,.45)}
+  .ecran #lecteur,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .son{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;font:700 18px Inter,sans-serif;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);border:0;border-radius:999px;padding:16px 26px;cursor:pointer}
+  .barre{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .en-cours{font-weight:600}
+  .en-cours small{display:block;opacity:.65;font-weight:400}
+  .tv-btns{display:flex;gap:10px}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="nav scrolled" id="nav">
+  <div class="wrap nav-in">
+    <a href="./" class="logo" aria-label="Babe Killa, accueil">
+      <img class="logo-img" src="media/logo.svg" alt="" width="42" height="42">
+      <span>Babe Killa</span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="menu" aria-label="Navigation principale">
+        <a href="./" class="nav-hot">Challenge</a>
+        <a href="tv.html" aria-current="page">TV</a>
+        <a href="profs.html">Profs</a>
+        <a href="twerk.html">Twerk</a>
+        <a href="clips.html">Clips</a>
+      </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="wrap tv">
+    <div class="tv-tete"><span class="live">EN DIRECT</span><h1>Babe Killa TV</h1></div>
+    <div class="ecran">
+      <div id="lecteur"></div>
+      <button class="son" id="son" type="button">🔊 Activer le son</button>
+    </div>
+    <div class="barre">
+      <div class="en-cours" id="en-cours">Chargement de la chaîne…</div>
+      <div class="tv-btns">
+        <button class="btn" id="suivant" type="button">Clip suivant ⏭</button>
+        <button class="btn btn-or" id="plein" type="button">Plein écran</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="foot">
+  <div class="wrap foot-bas">
+    <span>© <span id="annee"></span> Babe Killa</span>
+    <a href="./">Le Challenge</a>
+    <a href="blog.html">Blog</a>
+    </div>
+<div class="wrap socials" aria-label="Babe Killa sur les réseaux"><span>Suis Babe Killa</span><a href="https://www.instagram.com/babek.officiel/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@babekingc6r" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/@BabeKing-c6r" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/babekilla01" target="_blank" rel="noopener">X</a></div>
+</footer>
+<script>
+  document.getElementById('annee').textContent = new Date().getFullYear();
+  const burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  if (burger && menu) burger.addEventListener('click', () => { const o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
+  const DANCEHALL = ["UCnDtPtBzMHlcV_4ury2ifqA"];
+  let liste = [], i = 0, lecteur = null, sonActif = false;
+  const melanger = (a) => { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
+  const afficher = (v) => { const e = document.getElementById('en-cours'); e.textContent = v.titre; const s = document.createElement('small'); s.textContent = v.chaine; e.appendChild(s); };
+  const jouer = () => { if (!liste.length || !lecteur) return; const v = liste[i % liste.length]; afficher(v); lecteur.loadVideoById(v.id); if (!sonActif) lecteur.mute(); };
+  const suivant = () => { i++; if (i >= liste.length) { i = 0; melanger(liste); } jouer(); };
+  Promise.all([
+    fetch('data/clips.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] })),
+    fetch('data/twerk.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] }))
+  ]).then(([c, t]) => {
+    const vus = new Set();
+    liste = [...(c.videos || []), ...(t.videos || []).filter((v) => DANCEHALL.includes(v.chaineId))].filter((v) => v.id && !vus.has(v.id) && vus.add(v.id));
+    melanger(liste);
+    const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
+  });
+  window.onYouTubeIframeAPIReady = () => {
+    lecteur = new YT.Player('lecteur', {
+      host: 'https://www.youtube-nocookie.com',
+      playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0, modestbranding: 1 },
+      events: {
+        onReady: () => jouer(),
+        onStateChange: (e) => { if (e.data === YT.PlayerState.ENDED) suivant(); },
+        onError: () => suivant()
+      }
+    });
+  };
+  document.getElementById('son').addEventListener('click', (e) => { sonActif = true; if (lecteur) { lecteur.unMute(); lecteur.setVolume(100); lecteur.playVideo(); } e.currentTarget.remove(); });
+  document.getElementById('suivant').addEventListener('click', suivant);
+  document.getElementById('plein').addEventListener('click', () => { const el = document.querySelector('.ecran'); (el.requestFullscreen || el.webkitRequestFullscreen || (() => {})).call(el); });
+</script>
+<script src="auth-config.js?v=2"></script>
+<script type="module" src="membre.js?v=3"></script>
+</body>
+</html>
