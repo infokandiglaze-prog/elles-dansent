@@ -68,6 +68,7 @@
     </form>
     <label class="tri">Trier par
       <select id="tri">
+        <option value="hasard" selected>Au hasard</option>
         <option value="date">Plus récentes</option>
         <option value="vues">Plus vues</option>
       </select>
@@ -111,7 +112,7 @@ function afficher() {
   const t = $('#q').value.toLowerCase().trim();
   const tri = $('#tri').value;
   const liste = videos.filter((v) => (genre === 'Tous' || (genreDe[v.chaineId] || 'Autres') === genre) && (!t || `${v.titre} ${v.chaine}`.toLowerCase().includes(t)))
-    .sort((a, b) => tri === 'vues' ? b.vues - a.vues : (b.date || '').localeCompare(a.date || ''));
+    .sort((a, b) => tri === 'hasard' ? 0 : tri === 'vues' ? b.vues - a.vues : (b.date || '').localeCompare(a.date || ''));
   $('#vids').innerHTML = liste.length ? liste.map((v) => `
     <button type="button" class="vcard" data-id="${esc(v.id)}">
       <span class="vthumb" style="background-image:url('${esc(v.miniature)}')">${(Date.now() - new Date(v.date)) < 2 * 864e5 ? '<span class="badge-neuf">Nouveau</span>' : ''}</span>
@@ -133,7 +134,7 @@ function ouvrir(id) {
 
 async function demarrer() {
   const d = await (await fetch('data/clips.json', { cache: 'no-store' })).json();
-  videos = d.videos || [];
+  videos = d.videos || []; for (let k = videos.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [videos[k], videos[j]] = [videos[j], videos[k]]; }
   try { const ch = await (await fetch('data/clips-chaines.json', { cache: 'no-store' })).json(); ch.forEach((c) => { if (c && c.genre) genreDe[c.id] = c.genre; }); } catch (e) {}
   const genres = ['Tous', 'Dancehall', 'Soca & Carnaval', 'Reggaeton & Latino', 'Autres'].filter((g) => g === 'Tous' || videos.some((v) => (genreDe[v.chaineId] || 'Autres') === g));
   $('#genres').innerHTML = genres.map((g) => `<button type="button" class="genre${g === genre ? ' actif' : ''}" data-g="${g}">${g}</button>`).join('');
