@@ -178,5 +178,18 @@
     "id": "UC-yXuc1__OzjwpsJPlxYUCQ",
     "nom": "WORLDSTARHIPHOP",
     "genre": "WorldStar"
+  },
+  {
+    "id": "UCEJFz7QINlpcUoeYGUAvVDA",
+    "nom": "Little Smoking",
+    "genre": "Reggaeton & Latino",
+    "toutClip": true,
+    "populaires": true
+  },
+  {
+    "id": "UCAh8Uih7I8bSyK0zcejz6yA",
+    "nom": "Metrika (Madre Fundadora)",
+    "genre": "Reggaeton & Latino",
+    "populaires": true
   }
 ]

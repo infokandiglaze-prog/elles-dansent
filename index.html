@@ -27,6 +27,11 @@
   .en-cours{font-weight:600}
   .en-cours small{display:block;opacity:.65;font-weight:400}
   .tv-btns{display:flex;gap:10px}
+  .styles{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
+  .style{cursor:pointer;font:600 14px/1 Inter,sans-serif;color:#cfc6d6;background:transparent;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 16px;transition:all .2s}
+  .style:hover{border-color:#FF2E7E;color:#fff}
+  .style[aria-pressed="true"]{color:#fff;border-color:transparent;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 8px 24px -8px rgba(255,46,126,.7)}
+  .style small{opacity:.7;font-weight:500;margin-left:4px}
 </style>
 </head>
 <body>
@@ -50,6 +55,7 @@
 <main id="contenu">
   <section class="wrap tv">
     <div class="tv-tete"><span class="live">EN DIRECT</span><h1>Chill TV</h1></div>
+    <div class="styles" id="styles" role="group" aria-label="Choisir les styles de clips"></div>
     <div class="ecran">
       <div id="lecteur"></div>
       <button class="son" id="son" type="button">🔊 Activer le son</button>
@@ -78,18 +84,46 @@
   const burger = document.getElementById('burger'), menu = document.getElementById('menu');
   if (burger && menu) burger.addEventListener('click', () => { const o = menu.classList.toggle('ouvert'); burger.setAttribute('aria-expanded', o); });
   const DANCEHALL = ["UCnDtPtBzMHlcV_4ury2ifqA"];
-  let liste = [], i = 0, lecteur = null, sonActif = false;
+  let tout = [], liste = [], i = 0, lecteur = null, sonActif = false, choix = new Set(), chaud = false, genreDe = {};
   const melanger = (a) => { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
-  const afficher = (v) => { const e = document.getElementById('en-cours'); e.textContent = v.titre; const s = document.createElement('small'); s.textContent = v.chaine; e.appendChild(s); };
+  const afficher = (v) => { const e = document.getElementById('en-cours'); e.textContent = v.titre; const s = document.createElement('small'); s.textContent = v.chaine + ' · ' + v.genre + (v.vues ? ' · ' + v.vues.toLocaleString('fr-CA') + ' vues' : ''); e.appendChild(s); };
   const jouer = () => { if (!liste.length || !lecteur) return; const v = liste[i % liste.length]; afficher(v); lecteur.loadVideoById(v.id); if (!sonActif) lecteur.mute(); };
-  const suivant = () => { i++; if (i >= liste.length) { i = 0; melanger(liste); } jouer(); };
+  const suivant = () => { i++; if (i >= liste.length) { i = 0; if (!chaud) melanger(liste); } jouer(); };
+  // Construit la liste à lire selon les styles cochés (plusieurs possibles) et le mode « chaud »
+  const construire = (relancer) => {
+    let l = tout.filter((v) => !choix.size || choix.has(v.genre));
+    if (chaud) l = [...l].sort((a, b) => (b.vues || 0) - (a.vues || 0)).slice(0, 40);
+    else melanger(l);
+    liste = l; i = 0;
+    if (relancer) jouer();
+  };
+  const puces = () => {
+    const cnt = {}; tout.forEach((v) => { cnt[v.genre] = (cnt[v.genre] || 0) + 1; });
+    const ordre = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]);
+    const box = document.getElementById('styles');
+    box.innerHTML = [`<button type="button" class="style" data-g="__tous" aria-pressed="${!choix.size && !chaud}">Tous</button>`,
+      `<button type="button" class="style" data-g="__chaud" aria-pressed="${chaud}">🔥 Les plus chauds</button>`,
+      ...ordre.map((g) => `<button type="button" class="style" data-g="${g.replace(/"/g, '&quot;')}" aria-pressed="${choix.has(g)}">${g}<small>${cnt[g]}</small></button>`)].join('');
+    box.querySelectorAll('.style').forEach((b) => b.addEventListener('click', () => {
+      const g = b.dataset.g;
+      if (g === '__tous') { choix.clear(); chaud = false; }
+      else if (g === '__chaud') chaud = !chaud;
+      else if (choix.has(g)) choix.delete(g); else choix.add(g);
+      puces(); construire(true);
+    }));
+  };
   Promise.all([
     fetch('data/clips.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] })),
-    fetch('data/twerk.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] }))
-  ]).then(([c, t]) => {
+    fetch('data/twerk.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] })),
+    fetch('data/clips-chaines.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => [])
+  ]).then(([c, t, ch]) => {
+    ch.forEach((x) => { if (x && x.genre) genreDe[x.id] = x.genre; });
+    DANCEHALL.forEach((id) => { genreDe[id] = genreDe[id] || 'Dancehall'; });
     const vus = new Set();
-    liste = [...(c.videos || []), ...(t.videos || []).filter((v) => DANCEHALL.includes(v.chaineId))].filter((v) => v.id && !vus.has(v.id) && vus.add(v.id));
-    melanger(liste);
+    tout = [...(c.videos || []), ...(t.videos || []).filter((v) => DANCEHALL.includes(v.chaineId))]
+      .filter((v) => v.id && !vus.has(v.id) && vus.add(v.id))
+      .map((v) => ({ ...v, genre: genreDe[v.chaineId] || 'Autres' }));
+    puces(); construire(false);
     const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
   });
   window.onYouTubeIframeAPIReady = () => {

@@ -41,6 +41,9 @@ const approuvees = new Set([
 ]);
 const deja = new Set(fil.videos.map((v) => v.id));
 const idsExtra = new Set(extra.map((c) => (typeof c === 'string' ? c : c.id)));
+// Chaînes 100 % clips musicaux de confiance : pas de filtre sur le titre (toutClip)
+const toutClip = new Set(extra.filter((c) => c && c.toutClip).map((c) => c.id));
+const titreOk = (titre, chaineId) => toutClip.has(chaineId) || (!EXCLURE.test(titre || '') && TWERK.test(titre || ''));
 
 // 1. Recherche des vidéos publiées ces 3 derniers jours
 const depuis = new Date(Date.now() - 3 * 864e5).toISOString();
@@ -65,6 +68,15 @@ for (const c of extra) {
   } catch (e) { console.error(`Chaîne ${id} : ${e.message}`); }
 }
 
+// + les clips les plus vus des chaînes marquées "populaires" (les plus chauds)
+for (const c of extra) {
+  if (!c || !c.populaires) continue;
+  try {
+    const r = await yt('search', { part: 'snippet', channelId: c.id, type: 'video', order: 'viewCount', videoEmbeddable: 'true', maxResults: 30 });
+    for (const it of r.items || []) trouves.set(it.id.videoId, c.id);
+  } catch (e) { console.error(`Populaires ${c.id} : ${e.message}`); }
+}
+
 // 2. Vérification : intégrable, pas de restriction d'âge, titre twerk
 const ids = [...trouves.keys()].filter((id) => !deja.has(id));
 const ajouts = [];
@@ -76,8 +88,11 @@ for (let i = 0; i < ids.length; i += 50) {
     if (v.contentDetails?.contentRating?.ytRating === 'ytAgeRestricted') continue;
     if (v.snippet?.madeForKids) continue;
     // Seulement des clips musicaux officiels : titre de clip obligatoire, vidéos hors sujet exclues
-    if (EXCLURE.test(v.snippet.title)) continue;
-    if (!TWERK.test(idsExtra.has(v.snippet.channelId) ? v.snippet.title : `${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
+    if (toutClip.has(v.snippet.channelId)) { /* chaîne de confiance */ }
+    else {
+      if (EXCLURE.test(v.snippet.title)) continue;
+      if (!TWERK.test(idsExtra.has(v.snippet.channelId) ? v.snippet.title : `${v.snippet.title} ${(v.snippet.tags || []).join(' ')}`)) continue;
+    }
     const video = {
       id: v.id,
       titre: v.snippet.title,
@@ -96,7 +111,7 @@ for (let i = 0; i < ids.length; i += 50) {
   }
 }
 
-fil.videos = [...ajouts, ...fil.videos.filter((v) => approuvees.has(v.chaineId) && !EXCLURE.test(v.titre || '') && TWERK.test(v.titre || ''))]
+fil.videos = [...ajouts, ...fil.videos.filter((v) => approuvees.has(v.chaineId) && titreOk(v.titre, v.chaineId))]
   .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
   .slice(0, MAX_FIL);
 fil.maj = new Date().toISOString();
