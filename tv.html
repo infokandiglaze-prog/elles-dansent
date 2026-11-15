@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<meta name="babek-reserve" content="membres">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Babe Killa TV — clips dancehall en continu</title>
-<meta name="description" content="Babe Killa TV : les clips dancehall, soca et rap du site, en continu, comme une chaîne de télé.">
+<title>Afro Diaspora Media TV — clips dancehall en continu</title>
+<meta name="description" content="Afro Diaspora Media TV : les clips dancehall, soca et rap du site, en continu, comme une chaîne de télé.">
 <meta name="theme-color" content="#07050A">
 <link rel="icon" href="media/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,26 +34,25 @@
 
 <header class="nav scrolled" id="nav">
   <div class="wrap nav-in">
-    <a href="./" class="logo" aria-label="Babe Killa, accueil">
-      <img class="logo-img" src="media/logo.svg" alt="" width="42" height="42">
-      <span>Babe Killa</span>
+    <a href="./" class="logo" aria-label="Afro Diaspora Media, accueil">
+      <span>Afro Diaspora Media</span>
     </a>
     <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav id="menu" aria-label="Navigation principale">
-        <a href="./" class="nav-hot">Challenge</a>
-        <a href="tv.html" aria-current="page">TV</a>
-        <a href="profs.html">Profs</a>
+        <a href="./">Profs</a>
         <a href="twerk.html">Twerk</a>
         <a href="clips.html">Clips</a>
+        <a href="tv.html" aria-current="page">TV</a>
+        <a href="https://infokandiglaze-prog.github.io/babe-killa-music/" class="nav-hot">Musique</a>
       </nav>
   </div>
 </header>
 
 <main id="contenu">
   <section class="wrap tv">
-    <div class="tv-tete"><span class="live">EN DIRECT</span><h1>Babe Killa TV</h1></div>
+    <div class="tv-tete"><span class="live">EN DIRECT</span><h1>Afro Diaspora Media TV</h1></div>
     <div class="ecran">
       <div id="lecteur"></div>
       <button class="son" id="son" type="button">🔊 Activer le son</button>
@@ -70,16 +70,16 @@
 
 <footer class="foot">
   <div class="wrap foot-bas">
-    <span>© <span id="annee"></span> Babe Killa</span>
-    <a href="./">Le Challenge</a>
+    <span>© <span id="annee"></span> Afro Diaspora Media</span>
+    <a href="./">Les profs</a>
     <a href="blog.html">Blog</a>
     </div>
-<div class="wrap socials" aria-label="Babe Killa sur les réseaux"><span>Suis Babe Killa</span><a href="https://www.instagram.com/babek.officiel/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@babekingc6r" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/@BabeKing-c6r" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/babekilla01" target="_blank" rel="noopener">X</a></div>
+<div class="wrap socials" aria-label="La musique"><span>La musique</span><a href="https://infokandiglaze-prog.github.io/babe-killa-music/">Afro Diaspora Media x Lollipop Queen</a></div>
 </footer>
 <script>
   document.getElementById('annee').textContent = new Date().getFullYear();
   const burger = document.getElementById('burger'), menu = document.getElementById('menu');
-  if (burger && menu) burger.addEventListener('click', () => { const o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
+  if (burger && menu) burger.addEventListener('click', () => { const o = menu.classList.toggle('ouvert'); burger.setAttribute('aria-expanded', o); });
   const DANCEHALL = ["UCnDtPtBzMHlcV_4ury2ifqA"];
   let liste = [], i = 0, lecteur = null, sonActif = false;
   const melanger = (a) => { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
