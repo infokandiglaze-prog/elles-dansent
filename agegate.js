@@ -35,7 +35,7 @@
       '<div class="boite">' +
         '<div class="badge" aria-hidden="true">18+</div>' +
         '<h2 id="porte-age-titre">Site réservé aux adultes</h2>' +
-        '<p>Babe Killa présente des vidéos de danse au contenu suggestif (twerk, wine, dancehall…). ' +
+        '<p>Ce site présente des vidéos de danse au contenu suggestif (twerk, wine, dancehall…). ' +
         'Tu dois avoir 18 ans ou plus pour entrer.</p>' +
         '<div class="actions">' +
           '<button type="button" class="oui">J\'ai 18 ans ou plus — Entrer</button>' +
