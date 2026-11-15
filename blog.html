@@ -4,7 +4,7 @@
 <meta name="babek-reserve" content="membres">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Le blog — Babe Killa</title>
+<title>Le blog — Afro Diaspora Media</title>
 <meta name="description" content="Clips, tendances et inspirations danse : les vidéos qui font bouger la culture afro et caribéenne, avec un petit article pour chacune.">
 <meta name="theme-color" content="#07050A">
 <link rel="icon" href="media/logo.svg">
@@ -44,19 +44,18 @@
 
 <header class="nav scrolled" id="nav">
   <div class="wrap nav-in">
-    <a href="./" class="logo" aria-label="Babe Killa, accueil">
-      <img class="logo-img" src="media/logo.svg" alt="" width="42" height="42">
-      <span>Babe Killa</span>
+    <a href="./" class="logo" aria-label="Afro Diaspora Media, accueil">
+      <span>Afro Diaspora Media</span>
     </a>
     <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
       <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav id="menu" aria-label="Navigation principale">
-        <a href="./" class="nav-hot">Challenge</a>
-        <a href="tv.html">TV</a>
-        <a href="profs.html">Profs</a>
+        <a href="./">Profs</a>
         <a href="twerk.html">Twerk</a>
         <a href="clips.html">Clips</a>
+        <a href="tv.html">TV</a>
+        <a href="https://infokandiglaze-prog.github.io/babe-killa-music/" class="nav-hot">Musique</a>
       </nav>
   </div>
 </header>
@@ -67,10 +66,10 @@
 
 <footer class="foot">
   <div class="wrap foot-bas">
-    <span>© <span id="annee"></span> Babe Killa</span>
+    <span>© <span id="annee"></span> Afro Diaspora Media</span>
     <a href="./">Retour au répertoire</a>
   </div>
-<div class="wrap socials" aria-label="Babe Killa sur les réseaux"><span>Suis Babe Killa</span><a href="https://www.instagram.com/babek.officiel/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@babekingc6r" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/@BabeKing-c6r" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/babekilla01" target="_blank" rel="noopener">X</a></div>
+<div class="wrap socials" aria-label="La musique"><span>La musique</span><a href="https://infokandiglaze-prog.github.io/babe-killa-music/">Afro Diaspora Media x Lollipop Queen</a></div>
 </footer>
 
 <script>
@@ -80,7 +79,7 @@ const dateFr = (d) => new Date(d + 'T12:00:00').toLocaleDateString('fr-CA', { da
 const PLAY = '<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#07050A"/></svg>';
 
 function liste(articles) {
-  document.title = 'Le blog — Babe Killa';
+  document.title = 'Le blog — Afro Diaspora Media';
   $('#vue').innerHTML = `
     <section class="blog-hero">
       <p class="kicker">Le blog</p>
@@ -102,7 +101,7 @@ function liste(articles) {
 }
 
 function article(a) {
-  document.title = a.titre + ' — Babe Killa';
+  document.title = a.titre + ' — Afro Diaspora Media';
   const style = (a.styles || [])[0];
   $('#vue').innerHTML = `
     <article class="article">
@@ -114,7 +113,7 @@ function article(a) {
       <div class="corps">${(a.texte || []).map((p) => `<p>${esc(p)}</p>`).join('')}</div>
       <div class="encadre">
         <div><h3>Envie d'apprendre à danser comme ça ?</h3><p>Trouve une prof ${style ? 'de ' + esc(style.toLowerCase()) + ' ' : ''}dans le répertoire.</p></div>
-        <a class="btn btn-or" href="profs.html#profs">Voir les profs</a>
+        <a class="btn btn-or" href="./#profs">Voir les profs</a>
       </div>
       <p class="source">Vidéo : chaîne YouTube officielle de l'artiste. Tous droits réservés à leurs auteurs.</p>
     </article>`;
