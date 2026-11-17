@@ -1,200 +1,116 @@
 [
   {
-    "id": "UCRCurJProQ_FhLmUWCVeFiQ",
-    "nom": "Sugaarrbbaby",
-    "genre": "Reggaeton & Latino"
-  },
-  {
-    "id": "UCqhJ-ZgHynhSg0gBRazs-Mw",
-    "nom": "PEARJA",
-    "genre": "Autres"
-  },
-  {
-    "id": "UChSff_mx1n57Hf-k4zFXIjg",
-    "nom": "Shenseea",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCT6AGQcdyWhQ5CdS0tZxNPg",
-    "nom": "Spice",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCmcrTPKYzbw2fQHiAjWg4_g",
-    "nom": "Jada Kingdom",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UC69OX2oRgC-v7SIZxXh5S4Q",
-    "nom": "Stalk Ashley",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCQvUkx9rDOdFqN5NkWS1X6w",
-    "nom": "Patrice Roberts",
-    "genre": "Soca & Carnaval"
-  },
-  {
-    "id": "UCOmsTYJVfBzF9RKfeWrS39Q",
-    "nom": "Nadia Batson",
-    "genre": "Soca & Carnaval"
-  },
-  {
-    "id": "UCnT8nswNwCCCAl20Tmj32Dw",
-    "nom": "Destra Garcia",
-    "genre": "Soca & Carnaval"
-  },
-  {
-    "id": "UCAz_arPYFMtZ54emSy4aD0Q",
-    "nom": "Alison Hinds",
-    "genre": "Soca & Carnaval"
-  },
-  {
-    "id": "UCKrdjiuS66yXOdEZ_cOD_TA",
-    "nom": "Megan Thee Stallion",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCxMAbVFmxKUVGAll0WVGpFw",
-    "nom": "Cardi B",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCMKv9a5OeqElzuWy1WOR0kA",
-    "nom": "City Girls",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UC9bZ9eWvF0eXVqrxK9ve7Nw",
-    "nom": "GloRilla",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UC28rc3PHWPJib68G-VqpJ3w",
-    "nom": "Sexyy Red",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCRQ6wJbGwbF9Wmvp5HfT7Pg",
-    "nom": "Latto",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UC2FCUwThC0RAzaQoI0TtpLA",
-    "nom": "Saweetie",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCJTqwQj5iTHYrko04PbGI9w",
-    "nom": "Ice Spice",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UC3jOd7GUMhpgJRBhiLzuLsg",
-    "nom": "Nicki Minaj",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCylw9yLlhFVX_vIdjc6DjGQ",
-    "nom": "Flo Milli",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCiHc6oRZnXXZHZlaxbNkfQg",
-    "nom": "Coi Leray",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCksiqtuWYtN2YluvAQnV2dQ",
-    "nom": "Doechii",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCx5D4Lkkp8aIUBsTfiLpb-g",
-    "nom": "Kash Doll",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCzliE133pF8KhDiNKnIJ_dA",
-    "nom": "BIA",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCecMENbFygVpGpg68jMfTHw",
-    "nom": "Lady Leshurr",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCzy7njbz3FflpLaD6IwbyRw",
-    "nom": "Stefflon Don",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCQtwhYJgWwA0bR_mFs4pG_A",
-    "nom": "Yanique Curvy Diva",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UC6CunA9hH9h-AGtr-TOTntg",
-    "nom": "Shaneil Muir",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCRyypRj4VTSd911UBlMFvVA",
-    "nom": "Ishawna",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCU4chay3eK6n2226XNqJHTA",
-    "nom": "Pamputtae",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCkD-PSAzM0ICyWQHB4kd5pA",
-    "nom": "Lisa Hyper",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCf-ts5-A9w4jSxXA2LL-1VA",
-    "nom": "Tifa",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCgRyGg4DStCTALavIsGSNVQ",
-    "nom": "Tina (HoodCelebrityy)",
-    "genre": "Dancehall"
-  },
-  {
-    "id": "UCYqCWu-7jGLtMSVzbKrNKYQ",
-    "nom": "Rubi Rose",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UCBpxvYZivHHl-llzZinQwbA",
-    "nom": "Katja Krasavice",
-    "genre": "Rap & Hip-hop"
-  },
-  {
-    "id": "UC-yXuc1__OzjwpsJPlxYUCQ",
-    "nom": "WORLDSTARHIPHOP",
-    "genre": "WorldStar"
-  },
-  {
-    "id": "UCEJFz7QINlpcUoeYGUAvVDA",
-    "nom": "Little Smoking",
-    "genre": "Reggaeton & Latino",
-    "toutClip": true,
-    "populaires": true
-  },
-  {
-    "id": "UCAh8Uih7I8bSyK0zcejz6yA",
-    "nom": "Metrika (Madre Fundadora)",
-    "genre": "Reggaeton & Latino",
-    "populaires": true
-  },
-  {
-    "id": "@ElleBlumeOfficial",
+    "id": "UCe96HqfegSVKoRWz34zKlHA",
     "nom": "Elle Blume",
-    "genre": "Twerk & Danse"
+    "genre": "Twerk & Danse",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_k..."
+  },
+  {
+    "id": "UCnu27Txxn4F8nHTBrpymnTQ",
+    "nom": "Foxy Roxy",
+    "genre": "Twerk",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_mbqKzB7BqN8rW3QJk9t-a8e7..."
+  },
+  {
+    "id": "UCHizJ5AKbXnUgkCAGj_Up-g",
+    "nom": "Twerk with Tinze",
+    "genre": "Twerk",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCQ8pgXWecNrjpBgvUFVqv_w",
+    "nom": "Nastya Nass",
+    "genre": "Twerk",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_k..."
+  },
+  {
+    "id": "UCX5HNI74PQfEQcYYjZxxTqw",
+    "nom": "Lexy Panterra",
+    "genre": "Twerk",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCbbjWKK2B9qiht32Vmmo4_A",
+    "nom": "OBSESSION TWERK CAMP",
+    "genre": "Twerk & Dancehall",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCstA4bx8rormEVZi2akzAnQ",
+    "nom": "High Heels Tutorials",
+    "genre": "Heels Dance",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UC3j0NBFog-U6h4g6RYXUkEw",
+    "nom": "Hip Shake Fitness",
+    "genre": "Danse Fitness & Twerk",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCwsfVLl7VSe5Q-8uDQ-DhNg",
+    "nom": "Mei Twerk Class",
+    "genre": "Twerk",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCYtB2zN5HknDLkn61JSoupg",
+    "nom": "HEELS STUDIO",
+    "genre": "Heels Dance",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCfDTo454uAhxlEI3-064Bww",
+    "nom": "TWERK N SWEAT",
+    "genre": "Twerk Fitness",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UC7Ul2k3EhfIHE2RFvjoMorA",
+    "nom": "QNL NETWORK by Aliya Janell",
+    "genre": "Heels & Hip Hop",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UC2IoyvRMJ40-yXw78X-gEFQ",
+    "nom": "Nadia Pérez",
+    "genre": "Twerk",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCt4pi0fPp7QFWXlcfbbVFPA",
+    "nom": "Aprende Pole Dance con Vanessa Veron",
+    "genre": "Pole Dance",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCRkndWYUXuO_53Pw8HFAAeA",
+    "nom": "Paula Piretti • Pole Dance",
+    "genre": "Pole Dance",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UC9xQt3Y3z98CQ2UI_VXGggg",
+    "nom": "Lola Grace",
+    "genre": "Pole Dance & Exotic",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCqB0lbEQt76iQ9S48pHWn6w",
+    "nom": "Julia Pajula",
+    "genre": "Exotic Pole Dance",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCdI1s3Gdxa7fY6zmjP47mvw",
+    "nom": "Coach LuluFit",
+    "genre": "Twerk Fitness",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
+  },
+  {
+    "id": "UCofamdcz0yUh4EiTDC-9ehg",
+    "nom": "andrearyff",
+    "genre": "Pole Dance",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_m..."
   }
 ]
