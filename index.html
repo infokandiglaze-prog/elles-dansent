@@ -141,9 +141,10 @@
     ch.forEach((x) => { if (x && x.genre) genreDe[x.id] = x.genre; });
     DANCEHALL.forEach((id) => { genreDe[id] = genreDe[id] || 'Dancehall'; });
     const vus = new Set();
-    tout = [...(c.videos || []), ...(t.videos || []).filter((v) => DANCEHALL.includes(v.chaineId))]
-      .filter((v) => v.id && !vus.has(v.id) && vus.add(v.id))
-      .map((v) => ({ ...v, genre: genreDe[v.chaineId] || 'Autres' }));
+    const clipsVideos = (c.videos || []).map((v) => ({ ...v, genre: genreDe[v.chaineId] || 'Autres' }));
+    const twerkVideos = (t.videos || []).map((v) => ({ ...v, genre: genreDe[v.chaineId] || 'Twerk & Danse' }));
+    tout = [...clipsVideos, ...twerkVideos]
+      .filter((v) => v.id && !vus.has(v.id) && vus.add(v.id));
     (vm.videos || []).filter((v) => v && /^\d+$/.test(String(v.id))).forEach((v) => tout.push({ ...v, id: String(v.id), source: 'vimeo', chaine: v.chaine || 'Vimeo', genre: v.genre || 'Autres', vues: v.vues || 0 }));
     puces(); construire(false);
     const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
