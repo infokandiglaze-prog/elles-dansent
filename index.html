@@ -77,13 +77,6 @@
     <a href="./" class="logo" aria-label="Chill TV, accueil">
       <span>Chill TV</span>
     </a>
-    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
-      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <nav id="menu" aria-label="Navigation principale">
-        <a href="./" aria-current="page" class="nav-hot">TV</a>
-        <a href="clips.html">Clips</a>
-    </nav>
   </div>
 </header>
 
@@ -123,7 +116,6 @@
 <footer class="foot">
   <div class="wrap foot-bas">
     <span>© <span id="annee"></span> Chill TV</span>
-    <a href="clips.html">Tous les clips</a>
   </div>
   <div class="wrap socials" aria-label="La musique">
     <span>La musique</span>
@@ -220,7 +212,7 @@
     const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
     setTimeout(() => { if (!lecteur) messageLecteur("Le lecteur YouTube n'a pas pu se charger. Vérifie ta connexion ou désactive ton bloqueur de publicités, puis recharge la page."); }, 10000);
   });
-  const messageLecteur = (txt) => { const e = document.querySelector('.ecran'); if (e.querySelector('.message-lecteur')) return; const d = document.createElement('div'); d.className = 'message-lecteur'; d.innerHTML = `<span>${esc(txt)}</span><a class="btn btn-or" href="clips.html">Voir tous les clips</a>`; e.appendChild(d); };
+  const messageLecteur = (txt) => { const e = document.querySelector('.ecran'); if (e.querySelector('.message-lecteur')) return; const d = document.createElement('div'); d.className = 'message-lecteur'; d.innerHTML = `<span>${esc(txt)}</span>`; e.appendChild(d); };
   window.onYouTubeIframeAPIReady = () => {
     lecteur = new YT.Player('lecteur', {
       host: 'https://www.youtube-nocookie.com',
