@@ -62,6 +62,21 @@
 .vmeta-chaine{color:rgba(255,255,255,.85);font-weight:500}
 
 .vide{grid-column:1/-1;padding:80px 20px;text-align:center;color:rgba(255,255,255,.5);font-size:17px;background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.1);border-radius:20px}
+
+/* --- Refonte UX : chargement progressif, mobile, accessibilité --- */
+.compte{margin:-8px 0 18px;color:rgba(255,255,255,.55);font-size:13.5px}
+.plus-wrap{display:flex;justify-content:center;padding:8px 0 90px}
+.genres .genre small{opacity:.7;font-weight:500;margin-left:6px}
+@media (hover:none){.vids{perspective:none}.vcard:hover{transform:none}.vcard:hover .vthumb-img{transform:none}.vthumb-play{opacity:.9;transform:scale(1)}}
+@media (max-width:700px){
+  .th-hero{padding:36px 0 14px}
+  .vids{grid-template-columns:1fr;gap:18px}
+  .genres{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 20px;padding:2px 16px 8px;scrollbar-width:none}
+  .genres::-webkit-scrollbar{display:none}
+  .genre{flex:0 0 auto}
+  .outils{padding:12px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.vcard:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -106,7 +121,10 @@
   </div>
   <div class="genres" id="genres" role="group" aria-label="Filtrer par style"></div>
 
+  <p class="compte" id="compte" aria-live="polite"></p>
   <div class="vids" id="vids"></div>
+  <div class="plus-wrap"><button type="button" class="btn btn-or" id="plus" hidden>Voir plus de clips</button></div>
+  <div id="sentinelle" aria-hidden="true"></div>
 </main>
 
 <footer class="foot">
@@ -137,18 +155,15 @@ let videos = [];
 let genreDe = {};
 let genre = 'Tous';
 
-function afficher() {
-  const t = $('#q').value.toLowerCase().trim();
-  const tri = $('#tri').value;
-  const liste = videos.filter((v) => (genre === 'Tous' || (genreDe[v.chaineId] || 'Autres') === genre) && (!t || `${v.titre} ${v.chaine}`.toLowerCase().includes(t)))
-    .sort((a, b) => tri === 'hasard' ? 0 : tri === 'vues' ? b.vues - a.vues : (b.date || '').localeCompare(a.date || ''));
-  $('#vids').innerHTML = liste.length ? liste.map((v) => {
-    const isNew = (Date.now() - new Date(v.date)) < 3 * 864e5;
-    const thumb = esc(v.miniature || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`);
-    return `
+const PAGE = 24;
+let courante = [], affiches = 0;
+const carte = (v) => {
+  const isNew = (Date.now() - new Date(v.date)) < 3 * 864e5;
+  const thumb = esc(v.miniature || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`);
+  return `
     <button type="button" class="vcard" data-id="${esc(v.id)}">
       <div class="vthumb">
-        <img class="vthumb-img" src="${thumb}" alt="${esc(v.titre)}" loading="lazy">
+        <img class="vthumb-img" src="${thumb}" alt="" loading="lazy" decoding="async">
         ${isNew ? '<span class="badge-neuf">Nouveau</span>' : ''}
         <div class="vthumb-play">
           <div class="vthumb-play-btn">
@@ -161,17 +176,35 @@ function afficher() {
         <span class="vmeta"><span class="vmeta-chaine">${esc(v.chaine)}</span> · ${vuesFr(v.vues || 0)} · ${quand(v.date)}</span>
       </div>
     </button>`;
-  }).join('') : '<p class="vide">Aucun clip ne correspond à cette recherche.</p>';
-
-  $('#vids').querySelectorAll('.vcard').forEach((b) => {
-    b.addEventListener('click', () => ouvrir(b.dataset.id));
-    b.addEventListener('mousemove', (e) => {
-      const rect = b.getBoundingClientRect();
-      b.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-      b.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-    });
-  });
+};
+function plus() {
+  const suite = courante.slice(affiches, affiches + PAGE);
+  if (!suite.length) return;
+  $('#vids').insertAdjacentHTML('beforeend', suite.map(carte).join(''));
+  affiches += suite.length;
+  $('#plus').hidden = affiches >= courante.length;
 }
+function afficher() {
+  const t = $('#q').value.toLowerCase().trim();
+  const tri = $('#tri').value;
+  courante = videos.filter((v) => (genre === 'Tous' || (genreDe[v.chaineId] || 'Autres') === genre) && (!t || `${v.titre} ${v.chaine}`.toLowerCase().includes(t)));
+  if (tri === 'vues') courante.sort((a, b) => (b.vues || 0) - (a.vues || 0));
+  else if (tri === 'date') courante.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  affiches = 0;
+  $('#vids').innerHTML = '';
+  $('#compte').textContent = courante.length ? `${courante.length} clip${courante.length > 1 ? 's' : ''}${genre !== 'Tous' ? ' · ' + genre : ''}${t ? ' pour « ' + $('#q').value.trim() + ' »' : ''}` : '';
+  if (!courante.length) { $('#plus').hidden = true; $('#vids').innerHTML = '<p class="vide">Aucun clip ne correspond à cette recherche.</p>'; return; }
+  plus();
+}
+$('#vids').addEventListener('click', (e) => { const b = e.target.closest('.vcard'); if (b) ouvrir(b.dataset.id); });
+$('#vids').addEventListener('mousemove', (e) => {
+  const b = e.target.closest('.vcard'); if (!b) return;
+  const r = b.getBoundingClientRect();
+  b.style.setProperty('--mouse-x', `${e.clientX - r.left}px`);
+  b.style.setProperty('--mouse-y', `${e.clientY - r.top}px`);
+});
+$('#plus').addEventListener('click', plus);
+if ('IntersectionObserver' in window) new IntersectionObserver((en) => { if (en[0].isIntersecting) plus(); }, { rootMargin: '700px' }).observe($('#sentinelle'));
 
 function ouvrir(id) {
   const v = videos.find((x) => x.id === id);
@@ -198,12 +231,13 @@ async function demarrer() {
 
     const genresUniques = new Set();
     videos.forEach((v) => genresUniques.add(genreDe[v.chaineId] || 'Autres'));
-    const genres = ['Tous', ...Array.from(genresUniques).sort()];
+    const nb = {}; videos.forEach((v) => { const g = genreDe[v.chaineId] || 'Autres'; nb[g] = (nb[g] || 0) + 1; });
+    const genres = ['Tous', ...Array.from(genresUniques).sort((a, b) => nb[b] - nb[a])];
 
-    $('#genres').innerHTML = genres.map((g) => `<button type="button" class="genre${g === genre ? ' actif' : ''}" data-g="${g}">${g}</button>`).join('');
+    $('#genres').innerHTML = genres.map((g) => `<button type="button" class="genre${g === genre ? ' actif' : ''}" data-g="${g}" aria-pressed="${g === genre}">${g}<small>${g === 'Tous' ? videos.length : nb[g]}</small></button>`).join('');
     $('#genres').querySelectorAll('.genre').forEach((b) => b.addEventListener('click', () => {
       genre = b.dataset.g;
-      $('#genres').querySelectorAll('.genre').forEach((x) => x.classList.toggle('actif', x === b));
+      $('#genres').querySelectorAll('.genre').forEach((x) => { x.classList.toggle('actif', x === b); x.setAttribute('aria-pressed', x === b); });
       afficher();
     }));
 
@@ -217,7 +251,7 @@ async function demarrer() {
   }
 }
 
-$('#q').addEventListener('input', afficher);
+let delai; $('#q').addEventListener('input', () => { clearTimeout(delai); delai = setTimeout(afficher, 180); });
 $('#tri').addEventListener('change', afficher);
 $('#fermer').addEventListener('click', () => $('#fiche').close());
 $('#fiche').addEventListener('close', () => { $('#lecteur').innerHTML = ''; });
