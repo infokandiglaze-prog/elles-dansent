@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-17T18:38:04.527Z",
+  "maj": "2026-11-18T02:56:13.585Z",
   "profs": {
     "foxy-roxy": {
       "chaineId": "UCnu27Txxn4F8nHTBrpymnTQ",
@@ -158,6 +158,12 @@
       "avatar": "https://yt3.ggpht.com/Nu5ZITGEAt24OzM82Ym7nIHmddmlq8_DMpXFapceE8l_BzcwbOimdF9VvVbOyh6W3fVJFGzF_A=s240-c-k-c0x00ffffff-no-rj",
       "videos": [
         {
+          "id": "HwqWNqunPxM",
+          "titre": "MIAMI🌴🇺🇸 class with y’all was a dream! #dance #choreo #miami",
+          "date": "2026-11-18T02:38:12Z",
+          "miniature": "https://i.ytimg.com/vi/HwqWNqunPxM/hqdefault.jpg"
+        },
+        {
           "id": "D4Y8co3Isj4",
           "titre": "GUADALAJARA❣️!! had so much fun with y’all! #dance #choreo #mexico",
           "date": "2026-11-14T15:57:18Z",
@@ -222,12 +228,6 @@
           "titre": "FIRE TWERK COLLAB CLASS @ London, UK / Tinze X Klaudia Karwan",
           "date": "2026-10-26T17:34:33Z",
           "miniature": "https://i.ytimg.com/vi/jeXmpLByPyM/hqdefault.jpg"
-        },
-        {
-          "id": "n2LOksNcxpE",
-          "titre": "DANCING FOR A$AP ROCKY / SOLD OUT ATHENS / TINZE - MY DAY",
-          "date": "2026-10-13T15:47:51Z",
-          "miniature": "https://i.ytimg.com/vi/n2LOksNcxpE/hqdefault.jpg"
         }
       ]
     },
@@ -3144,12 +3144,6 @@
       "avatar": "https://yt3.ggpht.com/UqoxPkIQf_AQ6nUkSYg-34wYVy06HL92GqZ2UkB1SH7aw0s11flOGXSERN9fOECaEJR8vNiUJA=s240-c-k-c0x00ffffff-no-rj",
       "videos": [
         {
-          "id": "dwqUwzg03oo",
-          "titre": "⭐️BOOTY WORK⭐️ Choreography by Brinn Nicole | A Pumpfidence Visual | T-Pain",
-          "date": "2026-11-17T04:00:34Z",
-          "miniature": "https://i.ytimg.com/vi/dwqUwzg03oo/hqdefault.jpg"
-        },
-        {
           "id": "uu-X_9eip94",
           "titre": "HOUSEWIFE | Tate McRae | Brinn Nicole Choreography Visual",
           "date": "2026-10-22T18:11:11Z",
@@ -3214,6 +3208,12 @@
           "titre": "“LIKE WHAT U SEE” BY NOA KIREL | BRINN NICOLE BEGINNER PUMPFIDENCE CHOREOGRAPHY | HEELS CLASS VIDEO",
           "date": "2025-03-14T18:11:07Z",
           "miniature": "https://i.ytimg.com/vi/hXRiqoveKWA/hqdefault.jpg"
+        },
+        {
+          "id": "880vqaiioD8",
+          "titre": "BEYONCÉ | GREEN LIGHT | BEGINNER PUMPFIDENCE | BRINN NICOLE CHOREOGRAPHY",
+          "date": "2024-12-07T19:11:07Z",
+          "miniature": "https://i.ytimg.com/vi/880vqaiioD8/hqdefault.jpg"
         }
       ]
     },
