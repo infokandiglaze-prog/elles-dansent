@@ -27,7 +27,7 @@
   .style[aria-pressed="true"]{color:#fff;border-color:transparent;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 6px 20px -4px rgba(255,46,126,.75)}
   .style small{font-size:11.5px;opacity:.8;background:rgba(0,0,0,.25);padding:2px 7px;border-radius:999px;font-weight:600}
   .ecran{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:24px;overflow:hidden;border:1px solid rgba(255,46,126,.25);box-shadow:0 30px 90px -25px rgba(255,46,126,.45),0 0 0 1px rgba(255,255,255,.05)}
-  .ecran #lecteur,.ecran #lecteur-vimeo,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .ecran #lecteur,.ecran #lecteur-vimeo,.ecran #lecteur-embed,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .son{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;font:700 16px/1 Inter,sans-serif;letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);border:0;border-radius:999px;padding:18px 32px;cursor:pointer;box-shadow:0 12px 40px rgba(255,46,126,.8);display:inline-flex;align-items:center;gap:12px;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
   .son:hover{transform:translate(-50%,-50%) scale(1.06);box-shadow:0 16px 50px rgba(255,46,126,.95)}
   .barre{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;padding:20px 24px;background:var(--carte);border:1px solid var(--ligne);border-radius:20px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
@@ -43,7 +43,7 @@
   .en-cours{font-size:16px;flex:1 1 280px;min-width:0;overflow-wrap:anywhere}
   .tv-btns{flex-wrap:wrap}
   .styles-bar{margin:22px 0 4px}
-  .styles-bar h2,.asuivre h2,.nsfw h2{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muet);margin:0 0 12px;font-family:Inter,sans-serif}
+  .styles-bar h2,.asuivre h2{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muet);margin:0 0 12px;font-family:Inter,sans-serif}
   .asuivre{margin-top:26px}
   .rail{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x proximity;scrollbar-width:thin}
   .suiv{flex:0 0 220px;scroll-snap-align:start;text-align:left;cursor:pointer;background:var(--carte);border:1px solid var(--ligne);border-radius:16px;padding:10px;color:var(--texte);font-family:inherit;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s}
@@ -52,11 +52,6 @@
   .suiv-t{font-size:13.5px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .suiv-m{font-size:12px;color:var(--muet)}
   .message-lecteur{position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;background:rgba(7,5,10,.92);font-weight:600}
-  .nsfw{margin-top:36px;padding:22px;border:1px solid rgba(255,46,126,.35);border-radius:20px;background:rgba(255,46,126,.06)}
-  .nsfw p{margin:0 0 14px;color:var(--doux);max-width:62ch}
-  .nsfw-ecran{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden}
-  .nsfw-ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .nsfw-ouvrir{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(7,5,10,.92);color:#fff;border:0;cursor:pointer;font:700 16px/1.3 Inter,sans-serif}
   @media (max-width:700px){
     .wrap.tv{padding-left:12px;padding-right:12px}
     .ecran{border-radius:16px}
@@ -96,6 +91,7 @@
     <div class="ecran">
       <div id="lecteur"></div>
       <div id="lecteur-vimeo" style="display:none"></div>
+      <div id="lecteur-embed" style="display:none"></div>
       <button class="son" id="son" type="button">🔊 Activer le son</button>
     </div>
     <div class="barre">
@@ -114,13 +110,6 @@
       <h2>À suivre</h2>
       <div class="rail" id="rail"></div>
     </div>
-    <section class="nsfw" id="nsfw" aria-labelledby="nsfw-titre">
-      <h2 id="nsfw-titre">NSFW · 18+</h2>
-      <p>Section séparée du flux principal. Le lecteur officiel ne se charge qu’après confirmation.</p>
-      <div class="nsfw-ecran">
-        <button class="nsfw-ouvrir" id="nsfw-ouvrir" type="button">Afficher le lecteur 18+</button>
-      </div>
-    </section>
   </section>
 </main>
 
@@ -145,9 +134,30 @@
   let erreurs = 0;
   const afficher = (v) => { const e = document.getElementById('en-cours'); e.textContent = v.titre; const s = document.createElement('small'); s.textContent = v.chaine + ' · ' + v.genre + (v.vues ? ' · ' + v.vues.toLocaleString('fr-CA') + ' vues' : ''); e.appendChild(s); };
   const boxV = () => document.getElementById('lecteur-vimeo');
+  const boxE = () => document.getElementById('lecteur-embed');
+  const masquerSon = (cache) => { const b = document.getElementById('son'); if (b) b.style.display = cache ? 'none' : ''; };
+  const viderEmbed = () => { const b = boxE(); b.style.display = 'none'; b.replaceChildren(); };
   const chargerVimeo = () => vimeoPret || (vimeoPret = new Promise((ok, ko) => { const x = document.createElement('script'); x.src = 'https://player.vimeo.com/api/player.js'; x.onload = ok; x.onerror = ko; document.head.appendChild(x); }));
+  const jouerEmbed = (v) => {
+    if (lecteur && lecteur.pauseVideo) lecteur.pauseVideo();
+    if (vp) vp.pause().catch(() => {});
+    document.getElementById('lecteur').style.visibility = 'hidden';
+    boxV().style.display = 'none';
+    masquerSon(true);
+    const box = boxE();
+    box.style.display = 'block';
+    box.replaceChildren();
+    const f = document.createElement('iframe');
+    f.src = 'https://www.pornhub.com/embed/' + encodeURIComponent(v.id);
+    f.setAttribute('allowfullscreen', '');
+    f.setAttribute('scrolling', 'no');
+    f.title = v.titre;
+    box.appendChild(f);
+  };
   const jouerVimeo = (v) => chargerVimeo().then(() => {
     if (lecteur && lecteur.pauseVideo) lecteur.pauseVideo();
+    viderEmbed();
+    masquerSon(false);
     document.getElementById('lecteur').style.visibility = 'hidden'; boxV().style.display = 'block';
     if (!vp) {
       vp = new Vimeo.Player(boxV(), { id: Number(v.id), autoplay: true, muted: !sonActif, title: false, byline: false, portrait: false });
@@ -160,8 +170,8 @@
     const n = Math.min(10, liste.length - 1); let h = '';
     for (let k = 1; k <= n; k++) {
       const idx = (i + k) % liste.length, v = liste[idx];
-      const img = v.source === 'vimeo' ? (v.miniature || '') : (v.miniature || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`);
-      h += `<button type="button" class="suiv" data-i="${idx}"><span class="suiv-img" style="background-image:url('${esc(img)}')"></span><span class="suiv-t">${esc(v.titre)}</span><span class="suiv-m">${esc(v.chaine)}</span></button>`;
+      const img = v.miniature || (v.source === 'vimeo' || v.source === 'embed' ? '' : `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`);
+      h += `<button type="button" class="suiv" data-i="${idx}"><span class="suiv-img"${img ? ` style="background-image:url('${esc(img)}')"` : ''}></span><span class="suiv-t">${esc(v.titre)}</span><span class="suiv-m">${esc(v.chaine)}</span></button>`;
     }
     box.innerHTML = h || '<span class="compteur">Aucun autre clip dans cette sélection.</span>';
   };
@@ -169,9 +179,12 @@
     if (!liste.length) { document.getElementById('en-cours').textContent = 'Aucun clip dans cette sélection.'; rail(); return; }
     const v = liste[i % liste.length];
     afficher(v); rail();
+    if (v.source === 'embed') { jouerEmbed(v); return; }
     if (v.source === 'vimeo') { jouerVimeo(v); return; }
     if (!lecteur) return;
     if (vp) { vp.pause().catch(() => {}); }
+    viderEmbed();
+    masquerSon(false);
     boxV().style.display = 'none'; document.getElementById('lecteur').style.visibility = 'visible';
     lecteur.loadVideoById(v.id); if (!sonActif) lecteur.mute();
   };
@@ -215,6 +228,7 @@
     tout = [...clipsVideos, ...twerkVideos]
       .filter((v) => v.id && !vus.has(v.id) && vus.add(v.id));
     (vm.videos || []).filter((v) => v && /^\d+$/.test(String(v.id))).forEach((v) => tout.push({ ...v, id: String(v.id), source: 'vimeo', chaine: v.chaine || 'Vimeo', genre: v.genre || 'Autres', vues: v.vues || 0 }));
+    tout.push({ id: '6ae5ad3393226', source: 'embed', titre: 'Clip 18+', chaine: 'Pornhub', genre: 'Twerk & Danse', vues: 0, miniature: '' });
     try {
       const sv = JSON.parse(localStorage.getItem('chilltv_styles') || 'null');
       if (sv) { const ok = new Set(tout.map((v) => v.genre)); (sv.choix || []).forEach((g) => ok.has(g) && choix.add(g)); chaud = !!sv.chaud; }
@@ -246,16 +260,6 @@
     else if (e.key === 'f' || e.key === 'F') pleinEcran(); else if (e.key === 'm' || e.key === 'M') { const b = document.getElementById('son'); if (b) b.click(); }
   });
   document.getElementById('plein').addEventListener('click', pleinEcran);
-  document.getElementById('nsfw-ouvrir').addEventListener('click', (e) => {
-    const box = e.currentTarget.parentElement;
-    e.currentTarget.remove();
-    const f = document.createElement('iframe');
-    f.src = 'https://www.pornhub.com/embed/6ae5ad3393226';
-    f.setAttribute('allowfullscreen', '');
-    f.setAttribute('scrolling', 'no');
-    f.title = 'Lecteur NSFW';
-    box.appendChild(f);
-  });
 </script>
 <script src="auth-config.js?v=2"></script>
 <script type="module" src="membre.js?v=3"></script>
