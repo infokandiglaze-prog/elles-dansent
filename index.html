@@ -26,6 +26,7 @@
   .style:hover{border-color:rgba(255,46,126,.5);color:#fff;background:rgba(255,46,126,.08);transform:translateY(-1px)}
   .style[aria-pressed="true"]{color:#fff;border-color:transparent;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 6px 20px -4px rgba(255,46,126,.75)}
   .style small{font-size:11.5px;opacity:.8;background:rgba(0,0,0,.25);padding:2px 7px;border-radius:999px;font-weight:600}
+  .style-18{border-color:rgba(255,46,126,.55);color:#ffb3cf}
   .ecran{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:24px;overflow:hidden;border:1px solid rgba(255,46,126,.25);box-shadow:0 30px 90px -25px rgba(255,46,126,.45),0 0 0 1px rgba(255,255,255,.05)}
   .ecran #lecteur,.ecran #lecteur-vimeo,.ecran #lecteur-embed,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .son{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;font:700 16px/1 Inter,sans-serif;letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);border:0;border-radius:999px;padding:18px 32px;cursor:pointer;box-shadow:0 12px 40px rgba(255,46,126,.8);display:inline-flex;align-items:center;gap:12px;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
@@ -190,8 +191,14 @@
   };
   const precedent = () => { if (!liste.length) return; i = (i - 1 + liste.length) % liste.length; jouer(); };
   const suivant = () => { i++; if (i >= liste.length) { i = 0; if (!chaud) melanger(liste); } jouer(); };
+  const dansSelection = (v) => {
+    if (v.adulte) return choix.has('18+');
+    if (!choix.size) return true;
+    if (choix.size === 1 && choix.has('18+')) return false;
+    return choix.has(v.genre);
+  };
   const construire = (relancer) => {
-    let l = tout.filter((v) => !choix.size || choix.has(v.genre));
+    let l = tout.filter(dansSelection);
     if (chaud) l = [...l].sort((a, b) => (b.vues || 0) - (a.vues || 0)).slice(0, 40);
     else melanger(l);
     liste = l; i = 0; erreurs = 0;
@@ -201,11 +208,12 @@
   };
   const puces = () => {
     const cnt = {}; tout.forEach((v) => { cnt[v.genre] = (cnt[v.genre] || 0) + 1; });
-    const ordre = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]);
+    const ordre = Object.keys(cnt).filter((g) => g !== '18+').sort((a, b) => cnt[b] - cnt[a]);
+    if (cnt['18+']) ordre.push('18+');
     const box = document.getElementById('styles');
     box.innerHTML = [`<button type="button" class="style" data-g="__tous" aria-pressed="${!choix.size && !chaud}">Tous</button>`,
       `<button type="button" class="style" data-g="__chaud" aria-pressed="${chaud}">🔥 Les plus chauds</button>`,
-      ...ordre.map((g) => `<button type="button" class="style" data-g="${g.replace(/"/g, '&quot;')}" aria-pressed="${choix.has(g)}">${g}<small>${cnt[g]}</small></button>`)].join('');
+      ...ordre.map((g) => `<button type="button" class="style${g === '18+' ? ' style-18' : ''}" data-g="${g.replace(/"/g, '&quot;')}" aria-pressed="${choix.has(g)}">${g === '18+' ? '18+' : g}<small>${cnt[g]}</small></button>`)].join('');
     box.querySelectorAll('.style').forEach((b) => b.addEventListener('click', () => {
       const g = b.dataset.g;
       if (g === '__tous') { choix.clear(); chaud = false; }
@@ -228,7 +236,7 @@
     tout = [...clipsVideos, ...twerkVideos]
       .filter((v) => v.id && !vus.has(v.id) && vus.add(v.id));
     (vm.videos || []).filter((v) => v && /^\d+$/.test(String(v.id))).forEach((v) => tout.push({ ...v, id: String(v.id), source: 'vimeo', chaine: v.chaine || 'Vimeo', genre: v.genre || 'Autres', vues: v.vues || 0 }));
-    tout.push({ id: '6ae5ad3393226', source: 'embed', titre: 'Clip 18+', chaine: 'Pornhub', genre: 'Twerk & Danse', vues: 0, miniature: '' });
+    tout.push({ id: '6ae5ad3393226', source: 'embed', titre: 'Clip 18+', chaine: 'Pornhub', genre: '18+', adulte: true, vues: 0, miniature: '' });
     try {
       const sv = JSON.parse(localStorage.getItem('chilltv_styles') || 'null');
       if (sv) { const ok = new Set(tout.map((v) => v.genre)); (sv.choix || []).forEach((g) => ok.has(g) && choix.add(g)); chaud = !!sv.chaud; }
