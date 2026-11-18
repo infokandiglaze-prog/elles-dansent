@@ -35,7 +35,6 @@
   .en-cours small{display:block;opacity:.65;font-weight:500;font-size:13.5px;margin-top:4px;color:var(--doux)}
   .tv-btns{display:flex;align-items:center;gap:10px}
 
-  /* --- Refonte UX : lecteur d'abord, styles dessous, file « À suivre » --- */
   .wrap.tv{padding-top:22px;padding-bottom:64px}
   .tv-tete{margin-bottom:16px}
   .tv-titre-group h1{font-size:clamp(26px,4vw,44px)}
@@ -44,7 +43,7 @@
   .en-cours{font-size:16px;flex:1 1 280px;min-width:0;overflow-wrap:anywhere}
   .tv-btns{flex-wrap:wrap}
   .styles-bar{margin:22px 0 4px}
-  .styles-bar h2,.asuivre h2{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muet);margin:0 0 12px;font-family:Inter,sans-serif}
+  .styles-bar h2,.asuivre h2,.nsfw h2{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muet);margin:0 0 12px;font-family:Inter,sans-serif}
   .asuivre{margin-top:26px}
   .rail{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x proximity;scrollbar-width:thin}
   .suiv{flex:0 0 220px;scroll-snap-align:start;text-align:left;cursor:pointer;background:var(--carte);border:1px solid var(--ligne);border-radius:16px;padding:10px;color:var(--texte);font-family:inherit;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s}
@@ -53,6 +52,11 @@
   .suiv-t{font-size:13.5px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .suiv-m{font-size:12px;color:var(--muet)}
   .message-lecteur{position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;background:rgba(7,5,10,.92);font-weight:600}
+  .nsfw{margin-top:36px;padding:22px;border:1px solid rgba(255,46,126,.35);border-radius:20px;background:rgba(255,46,126,.06)}
+  .nsfw p{margin:0 0 14px;color:var(--doux);max-width:62ch}
+  .nsfw-ecran{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden}
+  .nsfw-ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .nsfw-ouvrir{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(7,5,10,.92);color:#fff;border:0;cursor:pointer;font:700 16px/1.3 Inter,sans-serif}
   @media (max-width:700px){
     .wrap.tv{padding-left:12px;padding-right:12px}
     .ecran{border-radius:16px}
@@ -110,6 +114,13 @@
       <h2>À suivre</h2>
       <div class="rail" id="rail"></div>
     </div>
+    <section class="nsfw" id="nsfw" aria-labelledby="nsfw-titre">
+      <h2 id="nsfw-titre">NSFW · 18+</h2>
+      <p>Section séparée du flux principal. Le lecteur officiel ne se charge qu’après confirmation.</p>
+      <div class="nsfw-ecran">
+        <button class="nsfw-ouvrir" id="nsfw-ouvrir" type="button">Afficher le lecteur 18+</button>
+      </div>
+    </section>
   </section>
 </main>
 
@@ -235,6 +246,16 @@
     else if (e.key === 'f' || e.key === 'F') pleinEcran(); else if (e.key === 'm' || e.key === 'M') { const b = document.getElementById('son'); if (b) b.click(); }
   });
   document.getElementById('plein').addEventListener('click', pleinEcran);
+  document.getElementById('nsfw-ouvrir').addEventListener('click', (e) => {
+    const box = e.currentTarget.parentElement;
+    e.currentTarget.remove();
+    const f = document.createElement('iframe');
+    f.src = 'https://www.pornhub.com/embed/6ae5ad3393226';
+    f.setAttribute('allowfullscreen', '');
+    f.setAttribute('scrolling', 'no');
+    f.title = 'Lecteur NSFW';
+    box.appendChild(f);
+  });
 </script>
 <script src="auth-config.js?v=2"></script>
 <script type="module" src="membre.js?v=3"></script>
