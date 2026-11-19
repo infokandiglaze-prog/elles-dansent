@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-19T02:37:19.145Z",
+  "maj": "2026-11-19T18:20:56.948Z",
   "profs": {
     "foxy-roxy": {
       "chaineId": "UCnu27Txxn4F8nHTBrpymnTQ",
@@ -1086,6 +1086,12 @@
           "miniature": "https://i.ytimg.com/vi/-OdJOstow24/hqdefault.jpg"
         },
         {
+          "id": "qTj8mIEW0as",
+          "titre": "Tickets available via the direct link pinned in comments! www.chrisschoreo.com",
+          "date": "2026-11-19T12:00:19Z",
+          "miniature": "https://i.ytimg.com/vi/qTj8mIEW0as/hqdefault.jpg"
+        },
+        {
           "id": "XyjKWOvX1Yk",
           "titre": "Would you like to join me LIVE tomorrow Nov 7th for Dancing at 10am? Tap the link in comments",
           "date": "2026-11-07T00:10:46Z",
@@ -1144,12 +1150,6 @@
           "titre": "Need More info? www.chrisschoreo.com",
           "date": "2026-09-10T15:38:49Z",
           "miniature": "https://i.ytimg.com/vi/O2pJNbBZMGo/hqdefault.jpg"
-        },
-        {
-          "id": "tBjnkZeSJ-Q",
-          "titre": "CARNIVAL ORIGINS × AC HOTEL | ALL INFO including retreat costs are on www.chrisschoreo.com",
-          "date": "2026-09-01T16:37:03Z",
-          "miniature": "https://i.ytimg.com/vi/tBjnkZeSJ-Q/hqdefault.jpg"
         }
       ]
     },
@@ -2455,9 +2455,9 @@
     },
     "flory-z": {
       "chaineId": "UCrySZ0sbVRQJViRhXwMkUBg",
-      "chaineNom": "Flory Z FloraZalo ",
+      "chaineNom": "Flory Z ",
       "chaineUrl": "https://www.youtube.com/@floryzflorazalo6497",
-      "avatar": "https://yt3.ggpht.com/9Fe4DESLcFn2hWrAn4R0z7DAe8ZVnJ2l-rO1GRxi_p6_IKc-p6asy3igzJaXMoMmmWaHR_hy7Q=s240-c-k-c0x00ffffff-no-rj",
+      "avatar": "https://yt3.ggpht.com/Ncl8d8pe502hDxsPwDc2XgZxRdTgPZWUsRh26CPrVSKQgCZAi7HkM8BBNQFFPE8Kr0jQpqhC_g=s240-c-k-c0x00ffffff-no-rj",
       "videos": [
         {
           "id": "mcAx26M6OpY",
@@ -2699,12 +2699,6 @@
       "chaineUrl": "https://www.youtube.com/@lola.thealchemist",
       "avatar": "https://yt3.ggpht.com/A5qXKLgzagJ6F_a6-knBUtJjDi2-XwWXVoKk77QrNxSyB1bjLHcOV3OpvtxDXcKm7vYsxGby6A=s240-c-k-c0x00ffffff-no-rj",
       "videos": [
-        {
-          "id": "uhntvdqI6nU",
-          "titre": "Sculpt and whine with Lola || Triceps & abductors",
-          "date": "2026-11-18T23:43:02Z",
-          "miniature": "https://i.ytimg.com/vi/uhntvdqI6nU/hqdefault.jpg"
-        },
         {
           "id": "h_VdMtARblM",
           "titre": "Sculpt and whine with Lola || push up & whine (with equipment)",
