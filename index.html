@@ -237,6 +237,7 @@
       .filter((v) => v.id && !vus.has(v.id) && vus.add(v.id));
     (vm.videos || []).filter((v) => v && /^\d+$/.test(String(v.id))).forEach((v) => tout.push({ ...v, id: String(v.id), source: 'vimeo', chaine: v.chaine || 'Vimeo', genre: v.genre || 'Autres', vues: v.vues || 0 }));
     tout.push({ id: '6ae5ad3393226', source: 'embed', titre: 'Clip 18+', chaine: 'Pornhub', genre: '18+', adulte: true, vues: 0, miniature: '' });
+    tout.push({ id: '68bd8eedd39fd', source: 'embed', titre: 'Baudroie', chaine: 'Pornhub', genre: '18+', adulte: true, vues: 0, miniature: '' });
     try {
       const sv = JSON.parse(localStorage.getItem('chilltv_styles') || 'null');
       if (sv) { const ok = new Set(tout.map((v) => v.genre)); (sv.choix || []).forEach((g) => ok.has(g) && choix.add(g)); chaud = !!sv.chaud; }
