@@ -28,14 +28,17 @@
   .style small{font-size:11.5px;opacity:.8;background:rgba(0,0,0,.25);padding:2px 7px;border-radius:999px;font-weight:600}
   .style-18{border-color:rgba(255,46,126,.55);color:#ffb3cf}
   .ecran{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:24px;overflow:hidden;border:1px solid rgba(255,46,126,.25);box-shadow:0 30px 90px -25px rgba(255,46,126,.45),0 0 0 1px rgba(255,255,255,.05)}
-  .ecran #lecteur,.ecran #lecteur-vimeo,.ecran #lecteur-embed,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .ecran-slot{position:absolute;inset:0}
+  .ecran #lecteur,.ecran #lecteur-b,.ecran #lecteur-vimeo,.ecran #lecteur-vimeo-b,.ecran #lecteur-embed,.ecran #lecteur-embed-b,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .ecran.duo{aspect-ratio:auto;display:flex;flex-direction:column;gap:14px;background:transparent;border:0;box-shadow:none;overflow:visible}
+  .ecran.duo .ecran-slot{position:relative;inset:auto;width:100%;aspect-ratio:16/9;border-radius:24px;overflow:hidden;border:1px solid rgba(255,46,126,.25);box-shadow:0 24px 70px -28px rgba(255,46,126,.45);background:#000}
+  .badge-style{position:absolute;left:12px;top:12px;z-index:8;font:700 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 10px;pointer-events:none}
   .son{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;font:700 16px/1 Inter,sans-serif;letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);border:0;border-radius:999px;padding:18px 32px;cursor:pointer;box-shadow:0 12px 40px rgba(255,46,126,.8);display:inline-flex;align-items:center;gap:12px;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
   .son:hover{transform:translate(-50%,-50%) scale(1.06);box-shadow:0 16px 50px rgba(255,46,126,.95)}
   .barre{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;padding:20px 24px;background:var(--carte);border:1px solid var(--ligne);border-radius:20px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
   .en-cours{font-weight:700;font-size:17px;line-height:1.35;max-width:680px;letter-spacing:-.01em}
   .en-cours small{display:block;opacity:.65;font-weight:500;font-size:13.5px;margin-top:4px;color:var(--doux)}
   .tv-btns{display:flex;align-items:center;gap:10px}
-
   .wrap.tv{padding-top:22px;padding-bottom:64px}
   .tv-tete{margin-bottom:16px}
   .tv-titre-group h1{font-size:clamp(26px,4vw,44px)}
@@ -55,7 +58,7 @@
   .message-lecteur{position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;background:rgba(7,5,10,.92);font-weight:600}
   @media (max-width:700px){
     .wrap.tv{padding-left:12px;padding-right:12px}
-    .ecran{border-radius:16px}
+    .ecran,.ecran.duo .ecran-slot{border-radius:16px}
     .live{font-size:11px;padding:6px 11px}
     .styles{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -12px;padding:2px 12px 8px;scroll-snap-type:x proximity;scroll-padding-left:12px}
     .styles::-webkit-scrollbar{display:none}
@@ -89,11 +92,20 @@
       </div>
       <span class="compteur" id="compteur" aria-live="polite"></span>
     </div>
-    <div class="ecran">
-      <div id="lecteur"></div>
-      <div id="lecteur-vimeo" style="display:none"></div>
-      <div id="lecteur-embed" style="display:none"></div>
-      <button class="son" id="son" type="button">🔊 Activer le son</button>
+    <div class="ecran" id="zone">
+      <div class="ecran-slot" id="slot-a">
+        <div id="lecteur"></div>
+        <div id="lecteur-vimeo" style="display:none"></div>
+        <div id="lecteur-embed" style="display:none"></div>
+        <span class="badge-style" id="badge-a" hidden></span>
+        <button class="son" id="son" type="button">🔊 Activer le son</button>
+      </div>
+      <div class="ecran-slot" id="slot-b" hidden>
+        <div id="lecteur-b"></div>
+        <div id="lecteur-vimeo-b" style="display:none"></div>
+        <div id="lecteur-embed-b" style="display:none"></div>
+        <span class="badge-style" id="badge-b"></span>
+      </div>
     </div>
     <div class="barre">
       <div class="en-cours" id="en-cours" aria-live="polite">Chargement de la chaîne…</div>
@@ -129,23 +141,44 @@
   const burger = document.getElementById('burger'), menu = document.getElementById('menu');
   if (burger && menu) burger.addEventListener('click', () => { const o = menu.classList.toggle('ouvert'); burger.setAttribute('aria-expanded', o); });
   const DANCEHALL = ["UCnDtPtBzMHlcV_4ury2ifqA"];
-  let tout = [], liste = [], i = 0, lecteur = null, vp = null, vimeoPret = null, sonActif = false, choix = new Set(), chaud = false, genreDe = {};
+  let tout = [], liste = [], i = 0, lecteur = null, lecteurB = null, vp = null, vpB = null, vimeoPret = null, sonActif = false, choix = new Set(), chaud = false, genreDe = {}, duo = null, ytPret = false;
   const melanger = (a) => { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
   const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   let erreurs = 0;
-  const afficher = (v) => { const e = document.getElementById('en-cours'); e.textContent = v.titre; const s = document.createElement('small'); s.textContent = v.chaine + ' · ' + v.genre + (v.vues ? ' · ' + v.vues.toLocaleString('fr-CA') + ' vues' : ''); e.appendChild(s); };
-  const boxV = () => document.getElementById('lecteur-vimeo');
-  const boxE = () => document.getElementById('lecteur-embed');
-  const masquerSon = (cache) => { const b = document.getElementById('son'); if (b) b.style.display = cache ? 'none' : ''; };
-  const viderEmbed = () => { const b = boxE(); b.style.display = 'none'; b.replaceChildren(); };
+  const estDuo = () => choix.size === 2 && !chaud;
+  const zone = () => document.getElementById('zone');
+  const el = (id) => document.getElementById(id);
+  const ids = (cote) => cote === 'b'
+    ? { yt: 'lecteur-b', v: 'lecteur-vimeo-b', e: 'lecteur-embed-b', badge: 'badge-b' }
+    : { yt: 'lecteur', v: 'lecteur-vimeo', e: 'lecteur-embed', badge: 'badge-a' };
+  const getYt = (cote) => cote === 'b' ? lecteurB : lecteur;
+  const getVp = (cote) => cote === 'b' ? vpB : vp;
+  const afficher = (v, extra) => {
+    const e = el('en-cours');
+    e.textContent = extra || v.titre;
+    const s = document.createElement('small');
+    s.textContent = extra ? extra : (v.chaine + ' · ' + v.genre + (v.vues ? ' · ' + v.vues.toLocaleString('fr-CA') + ' vues' : ''));
+    if (!extra) e.appendChild(s);
+    else { s.textContent = extra; e.textContent = 'Deux styles en même temps'; e.appendChild(s); }
+  };
+  const masquerSon = (cache) => { const b = el('son'); if (b) b.style.display = cache ? 'none' : ''; };
+  const viderEmbed = (cote) => { const b = el(ids(cote).e); b.style.display = 'none'; b.replaceChildren(); };
   const chargerVimeo = () => vimeoPret || (vimeoPret = new Promise((ok, ko) => { const x = document.createElement('script'); x.src = 'https://player.vimeo.com/api/player.js'; x.onload = ok; x.onerror = ko; document.head.appendChild(x); }));
-  const jouerEmbed = (v) => {
-    if (lecteur && lecteur.pauseVideo) lecteur.pauseVideo();
-    if (vp) vp.pause().catch(() => {});
-    document.getElementById('lecteur').style.visibility = 'hidden';
-    boxV().style.display = 'none';
-    masquerSon(true);
-    const box = boxE();
+  const finDe = (cote) => { if (duo) avancerDuo(cote); else suivant(); };
+  const arreter = (cote) => {
+    const p = getYt(cote); if (p && p.stopVideo) { try { p.stopVideo(); } catch (e) {} }
+    const v = getVp(cote); if (v) v.pause().catch(() => {});
+    viderEmbed(cote);
+    el(ids(cote).v).style.display = 'none';
+    el(ids(cote).yt).style.visibility = 'hidden';
+  };
+  const jouerEmbed = (cote, v) => {
+    const p = getYt(cote); if (p && p.pauseVideo) p.pauseVideo();
+    const vv = getVp(cote); if (vv) vv.pause().catch(() => {});
+    el(ids(cote).yt).style.visibility = 'hidden';
+    el(ids(cote).v).style.display = 'none';
+    if (cote === 'a' && !duo) masquerSon(true);
+    const box = el(ids(cote).e);
     box.style.display = 'block';
     box.replaceChildren();
     const f = document.createElement('iframe');
@@ -155,62 +188,148 @@
     f.title = v.titre;
     box.appendChild(f);
   };
-  const jouerVimeo = (v) => chargerVimeo().then(() => {
-    if (lecteur && lecteur.pauseVideo) lecteur.pauseVideo();
-    viderEmbed();
-    masquerSon(false);
-    document.getElementById('lecteur').style.visibility = 'hidden'; boxV().style.display = 'block';
-    if (!vp) {
-      vp = new Vimeo.Player(boxV(), { id: Number(v.id), autoplay: true, muted: !sonActif, title: false, byline: false, portrait: false });
-      vp.on('ended', suivant); vp.on('error', suivant);
-      const f = boxV().querySelector('iframe'); if (f) { f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0'; }
-    } else vp.loadVideo(Number(v.id)).then(() => { vp.setMuted(!sonActif); return vp.play(); }).catch(suivant);
-  }).catch(suivant);
+  const assurerVimeo = (cote, v) => chargerVimeo().then(() => {
+    const p = getYt(cote); if (p && p.pauseVideo) p.pauseVideo();
+    viderEmbed(cote);
+    if (cote === 'a') masquerSon(false);
+    el(ids(cote).yt).style.visibility = 'hidden';
+    const box = el(ids(cote).v);
+    box.style.display = 'block';
+    let player = getVp(cote);
+    if (!player) {
+      player = new Vimeo.Player(box, { id: Number(v.id), autoplay: true, muted: !sonActif, title: false, byline: false, portrait: false });
+      player.on('ended', () => finDe(cote));
+      player.on('error', () => finDe(cote));
+      if (cote === 'b') vpB = player; else vp = player;
+      const f = box.querySelector('iframe'); if (f) f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
+    } else player.loadVideo(Number(v.id)).then(() => { player.setMuted(!sonActif); return player.play(); }).catch(() => finDe(cote));
+  }).catch(() => finDe(cote));
+  const jouerYt = (cote, v) => {
+    const p = getYt(cote);
+    if (!p || !p.loadVideoById) return;
+    const vv = getVp(cote); if (vv) vv.pause().catch(() => {});
+    viderEmbed(cote);
+    if (cote === 'a') masquerSon(false);
+    el(ids(cote).v).style.display = 'none';
+    el(ids(cote).yt).style.visibility = 'visible';
+    p.loadVideoById(v.id);
+    if (!sonActif) p.mute();
+  };
+  const jouerDans = (cote, v) => {
+    if (!v) return;
+    const b = el(ids(cote).badge);
+    if (duo) { b.hidden = false; b.textContent = v.genre; } else b.hidden = true;
+    if (v.source === 'embed') jouerEmbed(cote, v);
+    else if (v.source === 'vimeo') assurerVimeo(cote, v);
+    else jouerYt(cote, v);
+  };
+  const titreDuo = () => {
+    const lignes = duo.map((d) => {
+      const v = d.liste[d.i % Math.max(d.liste.length, 1)];
+      return v ? `${d.genre} — ${v.titre}` : `${d.genre} — aucun clip`;
+    });
+    const e = el('en-cours');
+    e.textContent = 'Deux styles en même temps';
+    const s = document.createElement('small');
+    s.textContent = lignes.join('  ·  ');
+    e.appendChild(s);
+  };
+  const carte = (v, idx, cote) => {
+    const img = v.miniature || (v.source === 'vimeo' || v.source === 'embed' ? '' : `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`);
+    return `<button type="button" class="suiv" data-i="${idx}" data-cote="${cote || ''}"><span class="suiv-img"${img ? ` style="background-image:url('${esc(img)}')"` : ''}></span><span class="suiv-t">${esc(v.titre)}</span><span class="suiv-m">${esc(cote ? v.genre + ' · ' + v.chaine : v.chaine)}</span></button>`;
+  };
   const rail = () => {
-    const box = document.getElementById('rail'); if (!box) return;
+    const box = el('rail'); if (!box) return;
+    if (duo) {
+      let h = '';
+      duo.forEach((d, n) => {
+        const cote = n === 0 ? 'a' : 'b';
+        for (let k = 1; k <= Math.min(4, Math.max(d.liste.length - 1, 0)); k++) {
+          const idx = (d.i + k) % d.liste.length;
+          h += carte(d.liste[idx], idx, cote);
+        }
+      });
+      box.innerHTML = h || '<span class="compteur">Aucun autre clip dans cette sélection.</span>';
+      return;
+    }
     const n = Math.min(10, liste.length - 1); let h = '';
     for (let k = 1; k <= n; k++) {
-      const idx = (i + k) % liste.length, v = liste[idx];
-      const img = v.miniature || (v.source === 'vimeo' || v.source === 'embed' ? '' : `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`);
-      h += `<button type="button" class="suiv" data-i="${idx}"><span class="suiv-img"${img ? ` style="background-image:url('${esc(img)}')"` : ''}></span><span class="suiv-t">${esc(v.titre)}</span><span class="suiv-m">${esc(v.chaine)}</span></button>`;
+      const idx = (i + k) % liste.length;
+      h += carte(liste[idx], idx, '');
     }
     box.innerHTML = h || '<span class="compteur">Aucun autre clip dans cette sélection.</span>';
   };
+  const avancerDuo = (cote, delta) => {
+    const n = cote === 'b' ? 1 : 0;
+    const d = duo && duo[n];
+    if (!d || !d.liste.length) return;
+    const pas = delta || 1;
+    d.i = (d.i + pas + d.liste.length) % d.liste.length;
+    jouerDans(cote, d.liste[d.i]);
+    titreDuo(); rail();
+  };
+  const jouerDuo = () => {
+    if (!duo) return;
+    zone().classList.add('duo');
+    el('slot-b').hidden = false;
+    duo.forEach((d, n) => {
+      const cote = n === 0 ? 'a' : 'b';
+      if (!d.liste.length) { arreter(cote); return; }
+      jouerDans(cote, d.liste[d.i % d.liste.length]);
+    });
+    titreDuo(); rail();
+  };
   const jouer = () => {
-    if (!liste.length) { document.getElementById('en-cours').textContent = 'Aucun clip dans cette sélection.'; rail(); return; }
+    if (duo) { jouerDuo(); return; }
+    if (!liste.length) { el('en-cours').textContent = 'Aucun clip dans cette sélection.'; rail(); return; }
     const v = liste[i % liste.length];
     afficher(v); rail();
-    if (v.source === 'embed') { jouerEmbed(v); return; }
-    if (v.source === 'vimeo') { jouerVimeo(v); return; }
-    if (!lecteur) return;
-    if (vp) { vp.pause().catch(() => {}); }
-    viderEmbed();
-    masquerSon(false);
-    boxV().style.display = 'none'; document.getElementById('lecteur').style.visibility = 'visible';
-    lecteur.loadVideoById(v.id); if (!sonActif) lecteur.mute();
+    arreter('b');
+    jouerDans('a', v);
   };
-  const precedent = () => { if (!liste.length) return; i = (i - 1 + liste.length) % liste.length; jouer(); };
-  const suivant = () => { i++; if (i >= liste.length) { i = 0; if (!chaud) melanger(liste); } jouer(); };
+  const precedent = () => {
+    if (duo) { avancerDuo('a', -1); avancerDuo('b', -1); return; }
+    if (!liste.length) return; i = (i - 1 + liste.length) % liste.length; jouer();
+  };
+  const suivant = () => {
+    if (duo) { avancerDuo('a', 1); avancerDuo('b', 1); return; }
+    i++; if (i >= liste.length) { i = 0; if (!chaud) melanger(liste); } jouer();
+  };
   const dansSelection = (v) => {
     if (v.adulte) return choix.has('18+');
     if (!choix.size) return true;
     if (choix.size === 1 && choix.has('18+')) return false;
     return choix.has(v.genre);
   };
+  const clipsDuGenre = (g) => tout.filter((v) => v.adulte ? g === '18+' : v.genre === g);
+  const sauver = () => { try { localStorage.setItem('chilltv_styles', JSON.stringify({ choix: [...choix], chaud })); } catch (e) {} };
   const construire = (relancer) => {
+    sauver();
+    if (estDuo()) {
+      duo = [...choix].map((g) => ({ genre: g, liste: chaud ? clipsDuGenre(g) : melanger(clipsDuGenre(g)), i: 0 }));
+      zone().classList.add('duo');
+      el('slot-b').hidden = false;
+      el('compteur').textContent = duo.map((d) => `${d.genre} · ${d.liste.length}`).join('  +  ') + ' · les deux en même temps';
+      if (relancer || ytPret) jouerDuo(); else { titreDuo(); rail(); }
+      return;
+    }
+    duo = null;
+    zone().classList.remove('duo');
+    el('slot-b').hidden = true;
+    el('badge-a').hidden = true;
+    arreter('b');
     let l = tout.filter(dansSelection);
     if (chaud) l = [...l].sort((a, b) => (b.vues || 0) - (a.vues || 0)).slice(0, 40);
     else melanger(l);
     liste = l; i = 0; erreurs = 0;
-    document.getElementById('compteur').textContent = `${liste.length} clip${liste.length > 1 ? 's' : ''} en lecture${chaud ? ' · du plus vu au moins vu' : ' · ordre aléatoire'}`;
-    try { localStorage.setItem('chilltv_styles', JSON.stringify({ choix: [...choix], chaud })); } catch (e) {}
+    el('compteur').textContent = `${liste.length} clip${liste.length > 1 ? 's' : ''} en lecture${chaud ? ' · du plus vu au moins vu' : ' · ordre aléatoire'}`;
     if (relancer) jouer(); else if (liste.length) { afficher(liste[0]); rail(); }
   };
   const puces = () => {
     const cnt = {}; tout.forEach((v) => { cnt[v.genre] = (cnt[v.genre] || 0) + 1; });
     const ordre = Object.keys(cnt).filter((g) => g !== '18+').sort((a, b) => cnt[b] - cnt[a]);
     if (cnt['18+']) ordre.push('18+');
-    const box = document.getElementById('styles');
+    const box = el('styles');
     box.innerHTML = [`<button type="button" class="style" data-g="__tous" aria-pressed="${!choix.size && !chaud}">Tous</button>`,
       `<button type="button" class="style" data-g="__chaud" aria-pressed="${chaud}">🔥 Les plus chauds</button>`,
       ...ordre.map((g) => `<button type="button" class="style${g === '18+' ? ' style-18' : ''}" data-g="${g.replace(/"/g, '&quot;')}" aria-pressed="${choix.has(g)}">${g === '18+' ? '18+' : g}<small>${cnt[g]}</small></button>`)].join('');
@@ -247,28 +366,41 @@
     setTimeout(() => { if (!lecteur) messageLecteur("Le lecteur YouTube n'a pas pu se charger. Vérifie ta connexion ou désactive ton bloqueur de publicités, puis recharge la page."); }, 10000);
   });
   const messageLecteur = (txt) => { const e = document.querySelector('.ecran'); if (e.querySelector('.message-lecteur')) return; const d = document.createElement('div'); d.className = 'message-lecteur'; d.innerHTML = `<span>${esc(txt)}</span>`; e.appendChild(d); };
+  const evenementsYt = (cote) => ({
+    onReady: () => { ytPret = true; if (duo) jouerDuo(); else if (cote === 'a') jouer(); },
+    onStateChange: (e) => {
+      if (e.data === YT.PlayerState.PLAYING) erreurs = 0;
+      if (e.data === YT.PlayerState.ENDED) { if (duo) avancerDuo(cote); else if (cote === 'a') suivant(); }
+    },
+    onError: () => { if (duo) { avancerDuo(cote); return; } if (++erreurs > 10) { messageLecteur('Trop de clips indisponibles à la suite. Change de style ou recharge la page.'); return; } suivant(); }
+  });
   window.onYouTubeIframeAPIReady = () => {
-    lecteur = new YT.Player('lecteur', {
-      host: 'https://www.youtube-nocookie.com',
-      playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0, modestbranding: 1 },
-      events: {
-        onReady: () => jouer(),
-        onStateChange: (e) => { if (e.data === YT.PlayerState.PLAYING) erreurs = 0; if (e.data === YT.PlayerState.ENDED) suivant(); },
-        onError: () => { if (++erreurs > 10) { messageLecteur('Trop de clips indisponibles à la suite. Change de style ou recharge la page.'); return; } suivant(); }
-      }
-    });
+    const base = { host: 'https://www.youtube-nocookie.com', playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0, modestbranding: 1 } };
+    lecteur = new YT.Player('lecteur', { ...base, events: evenementsYt('a') });
+    lecteurB = new YT.Player('lecteur-b', { ...base, events: evenementsYt('b') });
   };
-  document.getElementById('son').addEventListener('click', (e) => { sonActif = true; if (lecteur) { lecteur.unMute(); lecteur.setVolume(100); if (!vp || boxV().style.display === 'none') lecteur.playVideo(); } if (vp) { vp.setMuted(false); vp.setVolume(1); } e.currentTarget.remove(); });
-  document.getElementById('suivant').addEventListener('click', suivant);
-  document.getElementById('precedent').addEventListener('click', precedent);
-  document.getElementById('rail').addEventListener('click', (e) => { const b = e.target.closest('.suiv'); if (b) { i = Number(b.dataset.i); jouer(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
-  const pleinEcran = () => { const el = document.querySelector('.ecran'); (el.requestFullscreen || el.webkitRequestFullscreen || (() => {})).call(el); };
+  el('son').addEventListener('click', (e) => {
+    sonActif = true;
+    [lecteur, lecteurB].forEach((p) => { if (p && p.unMute) { p.unMute(); p.setVolume(100); p.playVideo(); } });
+    [vp, vpB].forEach((p) => { if (p) { p.setMuted(false); p.setVolume(1); p.play().catch(() => {}); } });
+    e.currentTarget.remove();
+  });
+  el('suivant').addEventListener('click', suivant);
+  el('precedent').addEventListener('click', precedent);
+  el('rail').addEventListener('click', (e) => {
+    const b = e.target.closest('.suiv'); if (!b) return;
+    const idx = Number(b.dataset.i);
+    if (duo && b.dataset.cote) { const n = b.dataset.cote === 'b' ? 1 : 0; duo[n].i = idx; jouerDans(b.dataset.cote, duo[n].liste[idx]); titreDuo(); rail(); }
+    else { i = idx; jouer(); }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  const pleinEcran = () => { const node = document.querySelector('.ecran'); (node.requestFullscreen || node.webkitRequestFullscreen || (() => {})).call(node); };
   addEventListener('keydown', (e) => {
     if (/INPUT|TEXTAREA|SELECT/.test(e.target.tagName) || e.metaKey || e.ctrlKey || e.altKey) return;
     if (e.key === 'ArrowRight') suivant(); else if (e.key === 'ArrowLeft') precedent();
-    else if (e.key === 'f' || e.key === 'F') pleinEcran(); else if (e.key === 'm' || e.key === 'M') { const b = document.getElementById('son'); if (b) b.click(); }
+    else if (e.key === 'f' || e.key === 'F') pleinEcran(); else if (e.key === 'm' || e.key === 'M') { const b = el('son'); if (b) b.click(); }
   });
-  document.getElementById('plein').addEventListener('click', pleinEcran);
+  el('plein').addEventListener('click', pleinEcran);
 </script>
 <script src="auth-config.js?v=2"></script>
 <script type="module" src="membre.js?v=3"></script>
