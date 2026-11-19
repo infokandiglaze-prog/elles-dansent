@@ -1,408 +1,47 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta name="babek-reserve" content="membres">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chill TV — Streaming Clips Dancehall, Twerk & Rap</title>
-<meta name="description" content="Chill TV : La chaîne de streaming continu des meilleurs clips dancehall, twerk, soca et rap.">
+<meta name="robots" content="noindex">
+<title>Chill TV — Maintenance</title>
 <meta name="theme-color" content="#07050A">
-<link rel="icon" href="media/logo.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
-<script src="agegate.js"></script>
 <style>
-  .tv-tete{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
-  .tv-titre-group{display:flex;align-items:center;gap:14px}
-  .tv-titre-group h1{font-weight:800;font-size:clamp(30px,4.5vw,52px);letter-spacing:-.03em;margin:0}
-  .live{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);color:#fff;font:700 12px/1 Inter,sans-serif;padding:7px 14px;border-radius:999px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 20px rgba(255,46,126,.55)}
-  .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;animation:clignote 1.2s cubic-bezier(.4,0,.2,1) infinite}
-  @keyframes clignote{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.75)}}
-  .styles-bar{margin-bottom:22px}
-  .styles{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-  .style{cursor:pointer;font:600 13.5px/1 Inter,sans-serif;color:var(--doux);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:10px 18px;transition:all .25s var(--ease);display:inline-flex;align-items:center;gap:6px}
-  .style:hover{border-color:rgba(255,46,126,.5);color:#fff;background:rgba(255,46,126,.08);transform:translateY(-1px)}
-  .style[aria-pressed="true"]{color:#fff;border-color:transparent;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);box-shadow:0 6px 20px -4px rgba(255,46,126,.75)}
-  .style small{font-size:11.5px;opacity:.8;background:rgba(0,0,0,.25);padding:2px 7px;border-radius:999px;font-weight:600}
-  .style-18{border-color:rgba(255,46,126,.55);color:#ffb3cf}
-  .ecran{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:24px;overflow:hidden;border:1px solid rgba(255,46,126,.25);box-shadow:0 30px 90px -25px rgba(255,46,126,.45),0 0 0 1px rgba(255,255,255,.05)}
-  .ecran-slot{position:absolute;inset:0}
-  .ecran #lecteur,.ecran #lecteur-b,.ecran #lecteur-vimeo,.ecran #lecteur-vimeo-b,.ecran #lecteur-embed,.ecran #lecteur-embed-b,.ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .ecran.duo{aspect-ratio:auto;display:flex;flex-direction:column;gap:14px;background:transparent;border:0;box-shadow:none;overflow:visible}
-  .ecran.duo .ecran-slot{position:relative;inset:auto;width:100%;aspect-ratio:16/9;border-radius:24px;overflow:hidden;border:1px solid rgba(255,46,126,.25);box-shadow:0 24px 70px -28px rgba(255,46,126,.45);background:#000}
-  .badge-style{position:absolute;left:12px;top:12px;z-index:8;font:700 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 10px;pointer-events:none}
-  .son{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;font:700 16px/1 Inter,sans-serif;letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#FF2E7E,#FF4D3D);border:0;border-radius:999px;padding:18px 32px;cursor:pointer;box-shadow:0 12px 40px rgba(255,46,126,.8);display:inline-flex;align-items:center;gap:12px;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
-  .son:hover{transform:translate(-50%,-50%) scale(1.06);box-shadow:0 16px 50px rgba(255,46,126,.95)}
-  .barre{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;padding:20px 24px;background:var(--carte);border:1px solid var(--ligne);border-radius:20px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
-  .en-cours{font-weight:700;font-size:17px;line-height:1.35;max-width:680px;letter-spacing:-.01em}
-  .en-cours small{display:block;opacity:.65;font-weight:500;font-size:13.5px;margin-top:4px;color:var(--doux)}
-  .tv-btns{display:flex;align-items:center;gap:10px}
-  .wrap.tv{padding-top:22px;padding-bottom:64px}
-  .tv-tete{margin-bottom:16px}
-  .tv-titre-group h1{font-size:clamp(26px,4vw,44px)}
-  .compteur{color:var(--muet);font-size:13.5px;font-weight:500}
-  .barre{margin-top:14px;padding:16px 20px}
-  .en-cours{font-size:16px;flex:1 1 280px;min-width:0;overflow-wrap:anywhere}
-  .tv-btns{flex-wrap:wrap}
-  .styles-bar{margin:22px 0 4px}
-  .styles-bar h2,.asuivre h2{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muet);margin:0 0 12px;font-family:Inter,sans-serif}
-  .asuivre{margin-top:26px}
-  .rail{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x proximity;scrollbar-width:thin}
-  .suiv{flex:0 0 220px;scroll-snap-align:start;text-align:left;cursor:pointer;background:var(--carte);border:1px solid var(--ligne);border-radius:16px;padding:10px;color:var(--texte);font-family:inherit;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s}
-  .suiv:hover{border-color:rgba(255,46,126,.5);transform:translateY(-3px)}
-  .suiv-img{display:block;aspect-ratio:16/9;border-radius:10px;background:#1a1220 center/cover no-repeat}
-  .suiv-t{font-size:13.5px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .suiv-m{font-size:12px;color:var(--muet)}
-  .message-lecteur{position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;background:rgba(7,5,10,.92);font-weight:600}
-  @media (max-width:700px){
-    .wrap.tv{padding-left:12px;padding-right:12px}
-    .ecran,.ecran.duo .ecran-slot{border-radius:16px}
-    .live{font-size:11px;padding:6px 11px}
-    .styles{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -12px;padding:2px 12px 8px;scroll-snap-type:x proximity;scroll-padding-left:12px}
-    .styles::-webkit-scrollbar{display:none}
-    .style{flex:0 0 auto;scroll-snap-align:start;padding:11px 16px}
-    .son{padding:14px 22px;font-size:15px;white-space:nowrap}
-    .barre{flex-direction:column;align-items:stretch;gap:12px}
-    .en-cours{flex:0 0 auto}
-    .tv-btns .btn{flex:1 1 0;padding:0 10px}
-    .suiv{flex-basis:170px}
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    background: #07050A;
+    color: #fff;
+    font-family: Inter, system-ui, sans-serif;
+    text-align: center;
   }
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  main { max-width: 520px; }
+  p.badge {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #FF2E7E, #FF4D3D);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  h1 { margin: 0 0 12px; font-size: clamp(32px, 6vw, 48px); letter-spacing: -.03em; }
+  p { margin: 0; color: rgba(255,255,255,.72); font-size: 17px; line-height: 1.5; }
 </style>
 </head>
 <body>
-<a class="skip" href="#contenu">Aller au contenu</a>
-
-<header class="nav scrolled" id="nav">
-  <div class="wrap nav-in">
-    <a href="./" class="logo" aria-label="Chill TV, accueil">
-      <span>Chill TV</span>
-    </a>
-  </div>
-</header>
-
-<main id="contenu">
-  <section class="wrap tv">
-    <div class="tv-tete">
-      <div class="tv-titre-group">
-        <span class="live">EN DIRECT</span>
-        <h1>Chill TV</h1>
-      </div>
-      <span class="compteur" id="compteur" aria-live="polite"></span>
-    </div>
-    <div class="ecran" id="zone">
-      <div class="ecran-slot" id="slot-a">
-        <div id="lecteur"></div>
-        <div id="lecteur-vimeo" style="display:none"></div>
-        <div id="lecteur-embed" style="display:none"></div>
-        <span class="badge-style" id="badge-a" hidden></span>
-        <button class="son" id="son" type="button">🔊 Activer le son</button>
-      </div>
-      <div class="ecran-slot" id="slot-b" hidden>
-        <div id="lecteur-b"></div>
-        <div id="lecteur-vimeo-b" style="display:none"></div>
-        <div id="lecteur-embed-b" style="display:none"></div>
-        <span class="badge-style" id="badge-b"></span>
-      </div>
-    </div>
-    <div class="barre">
-      <div class="en-cours" id="en-cours" aria-live="polite">Chargement de la chaîne…</div>
-      <div class="tv-btns">
-        <button class="btn btn-ghost" id="precedent" type="button" aria-label="Clip précédent">⏮ Précédent</button>
-        <button class="btn btn-ghost" id="suivant" type="button" aria-label="Clip suivant">Suivant ⏭</button>
-        <button class="btn btn-or" id="plein" type="button">Plein écran</button>
-      </div>
-    </div>
-    <div class="styles-bar">
-      <h2>Choisis tes styles</h2>
-      <div class="styles" id="styles" role="group" aria-label="Choisir les styles de clips"></div>
-    </div>
-    <div class="asuivre">
-      <h2>À suivre</h2>
-      <div class="rail" id="rail"></div>
-    </div>
-  </section>
+<main>
+  <p class="badge">Maintenance</p>
+  <h1>Chill TV</h1>
+  <p>Le site est temporairement indisponible. Merci de revenir plus tard.</p>
 </main>
-
-<footer class="foot">
-  <div class="wrap foot-bas">
-    <span>© <span id="annee"></span> Chill TV</span>
-  </div>
-  <div class="wrap socials" aria-label="La musique">
-    <span>La musique</span>
-    <a href="https://infokandiglaze-prog.github.io/babe-killa-music/">Chill TV x Lollipop Queen</a>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('annee').textContent = new Date().getFullYear();
-  const burger = document.getElementById('burger'), menu = document.getElementById('menu');
-  if (burger && menu) burger.addEventListener('click', () => { const o = menu.classList.toggle('ouvert'); burger.setAttribute('aria-expanded', o); });
-  const DANCEHALL = ["UCnDtPtBzMHlcV_4ury2ifqA"];
-  let tout = [], liste = [], i = 0, lecteur = null, lecteurB = null, vp = null, vpB = null, vimeoPret = null, sonActif = false, choix = new Set(), chaud = false, genreDe = {}, duo = null, ytPret = false;
-  const melanger = (a) => { for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
-  const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  let erreurs = 0;
-  const estDuo = () => choix.size === 2 && !chaud;
-  const zone = () => document.getElementById('zone');
-  const el = (id) => document.getElementById(id);
-  const ids = (cote) => cote === 'b'
-    ? { yt: 'lecteur-b', v: 'lecteur-vimeo-b', e: 'lecteur-embed-b', badge: 'badge-b' }
-    : { yt: 'lecteur', v: 'lecteur-vimeo', e: 'lecteur-embed', badge: 'badge-a' };
-  const getYt = (cote) => cote === 'b' ? lecteurB : lecteur;
-  const getVp = (cote) => cote === 'b' ? vpB : vp;
-  const afficher = (v, extra) => {
-    const e = el('en-cours');
-    e.textContent = extra || v.titre;
-    const s = document.createElement('small');
-    s.textContent = extra ? extra : (v.chaine + ' · ' + v.genre + (v.vues ? ' · ' + v.vues.toLocaleString('fr-CA') + ' vues' : ''));
-    if (!extra) e.appendChild(s);
-    else { s.textContent = extra; e.textContent = 'Deux styles en même temps'; e.appendChild(s); }
-  };
-  const masquerSon = (cache) => { const b = el('son'); if (b) b.style.display = cache ? 'none' : ''; };
-  const viderEmbed = (cote) => { const b = el(ids(cote).e); b.style.display = 'none'; b.replaceChildren(); };
-  const chargerVimeo = () => vimeoPret || (vimeoPret = new Promise((ok, ko) => { const x = document.createElement('script'); x.src = 'https://player.vimeo.com/api/player.js'; x.onload = ok; x.onerror = ko; document.head.appendChild(x); }));
-  const finDe = (cote) => { if (duo) avancerDuo(cote); else suivant(); };
-  const arreter = (cote) => {
-    const p = getYt(cote); if (p && p.stopVideo) { try { p.stopVideo(); } catch (e) {} }
-    const v = getVp(cote); if (v) v.pause().catch(() => {});
-    viderEmbed(cote);
-    el(ids(cote).v).style.display = 'none';
-    el(ids(cote).yt).style.visibility = 'hidden';
-  };
-  const jouerEmbed = (cote, v) => {
-    const p = getYt(cote); if (p && p.pauseVideo) p.pauseVideo();
-    const vv = getVp(cote); if (vv) vv.pause().catch(() => {});
-    el(ids(cote).yt).style.visibility = 'hidden';
-    el(ids(cote).v).style.display = 'none';
-    if (cote === 'a' && !duo) masquerSon(true);
-    const box = el(ids(cote).e);
-    box.style.display = 'block';
-    box.replaceChildren();
-    const f = document.createElement('iframe');
-    f.src = 'https://www.pornhub.com/embed/' + encodeURIComponent(v.id);
-    f.setAttribute('allowfullscreen', '');
-    f.setAttribute('scrolling', 'no');
-    f.title = v.titre;
-    box.appendChild(f);
-  };
-  const assurerVimeo = (cote, v) => chargerVimeo().then(() => {
-    const p = getYt(cote); if (p && p.pauseVideo) p.pauseVideo();
-    viderEmbed(cote);
-    if (cote === 'a') masquerSon(false);
-    el(ids(cote).yt).style.visibility = 'hidden';
-    const box = el(ids(cote).v);
-    box.style.display = 'block';
-    let player = getVp(cote);
-    if (!player) {
-      player = new Vimeo.Player(box, { id: Number(v.id), autoplay: true, muted: !sonActif, title: false, byline: false, portrait: false });
-      player.on('ended', () => finDe(cote));
-      player.on('error', () => finDe(cote));
-      if (cote === 'b') vpB = player; else vp = player;
-      const f = box.querySelector('iframe'); if (f) f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
-    } else player.loadVideo(Number(v.id)).then(() => { player.setMuted(!sonActif); return player.play(); }).catch(() => finDe(cote));
-  }).catch(() => finDe(cote));
-  const jouerYt = (cote, v) => {
-    const p = getYt(cote);
-    if (!p || !p.loadVideoById) return;
-    const vv = getVp(cote); if (vv) vv.pause().catch(() => {});
-    viderEmbed(cote);
-    if (cote === 'a') masquerSon(false);
-    el(ids(cote).v).style.display = 'none';
-    el(ids(cote).yt).style.visibility = 'visible';
-    p.loadVideoById(v.id);
-    if (!sonActif) p.mute();
-  };
-  const jouerDans = (cote, v) => {
-    if (!v) return;
-    const b = el(ids(cote).badge);
-    if (duo) { b.hidden = false; b.textContent = v.genre; } else b.hidden = true;
-    if (v.source === 'embed') jouerEmbed(cote, v);
-    else if (v.source === 'vimeo') assurerVimeo(cote, v);
-    else jouerYt(cote, v);
-  };
-  const titreDuo = () => {
-    const lignes = duo.map((d) => {
-      const v = d.liste[d.i % Math.max(d.liste.length, 1)];
-      return v ? `${d.genre} — ${v.titre}` : `${d.genre} — aucun clip`;
-    });
-    const e = el('en-cours');
-    e.textContent = 'Deux styles en même temps';
-    const s = document.createElement('small');
-    s.textContent = lignes.join('  ·  ');
-    e.appendChild(s);
-  };
-  const carte = (v, idx, cote) => {
-    const img = v.miniature || (v.source === 'vimeo' || v.source === 'embed' ? '' : `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`);
-    return `<button type="button" class="suiv" data-i="${idx}" data-cote="${cote || ''}"><span class="suiv-img"${img ? ` style="background-image:url('${esc(img)}')"` : ''}></span><span class="suiv-t">${esc(v.titre)}</span><span class="suiv-m">${esc(cote ? v.genre + ' · ' + v.chaine : v.chaine)}</span></button>`;
-  };
-  const rail = () => {
-    const box = el('rail'); if (!box) return;
-    if (duo) {
-      let h = '';
-      duo.forEach((d, n) => {
-        const cote = n === 0 ? 'a' : 'b';
-        for (let k = 1; k <= Math.min(4, Math.max(d.liste.length - 1, 0)); k++) {
-          const idx = (d.i + k) % d.liste.length;
-          h += carte(d.liste[idx], idx, cote);
-        }
-      });
-      box.innerHTML = h || '<span class="compteur">Aucun autre clip dans cette sélection.</span>';
-      return;
-    }
-    const n = Math.min(10, liste.length - 1); let h = '';
-    for (let k = 1; k <= n; k++) {
-      const idx = (i + k) % liste.length;
-      h += carte(liste[idx], idx, '');
-    }
-    box.innerHTML = h || '<span class="compteur">Aucun autre clip dans cette sélection.</span>';
-  };
-  const avancerDuo = (cote, delta) => {
-    const n = cote === 'b' ? 1 : 0;
-    const d = duo && duo[n];
-    if (!d || !d.liste.length) return;
-    const pas = delta || 1;
-    d.i = (d.i + pas + d.liste.length) % d.liste.length;
-    jouerDans(cote, d.liste[d.i]);
-    titreDuo(); rail();
-  };
-  const jouerDuo = () => {
-    if (!duo) return;
-    zone().classList.add('duo');
-    el('slot-b').hidden = false;
-    duo.forEach((d, n) => {
-      const cote = n === 0 ? 'a' : 'b';
-      if (!d.liste.length) { arreter(cote); return; }
-      jouerDans(cote, d.liste[d.i % d.liste.length]);
-    });
-    titreDuo(); rail();
-  };
-  const jouer = () => {
-    if (duo) { jouerDuo(); return; }
-    if (!liste.length) { el('en-cours').textContent = 'Aucun clip dans cette sélection.'; rail(); return; }
-    const v = liste[i % liste.length];
-    afficher(v); rail();
-    arreter('b');
-    jouerDans('a', v);
-  };
-  const precedent = () => {
-    if (duo) { avancerDuo('a', -1); avancerDuo('b', -1); return; }
-    if (!liste.length) return; i = (i - 1 + liste.length) % liste.length; jouer();
-  };
-  const suivant = () => {
-    if (duo) { avancerDuo('a', 1); avancerDuo('b', 1); return; }
-    i++; if (i >= liste.length) { i = 0; if (!chaud) melanger(liste); } jouer();
-  };
-  const dansSelection = (v) => {
-    if (v.adulte) return choix.has('18+');
-    if (!choix.size) return true;
-    if (choix.size === 1 && choix.has('18+')) return false;
-    return choix.has(v.genre);
-  };
-  const clipsDuGenre = (g) => tout.filter((v) => v.adulte ? g === '18+' : v.genre === g);
-  const sauver = () => { try { localStorage.setItem('chilltv_styles', JSON.stringify({ choix: [...choix], chaud })); } catch (e) {} };
-  const construire = (relancer) => {
-    sauver();
-    if (estDuo()) {
-      duo = [...choix].map((g) => ({ genre: g, liste: chaud ? clipsDuGenre(g) : melanger(clipsDuGenre(g)), i: 0 }));
-      zone().classList.add('duo');
-      el('slot-b').hidden = false;
-      el('compteur').textContent = duo.map((d) => `${d.genre} · ${d.liste.length}`).join('  +  ') + ' · les deux en même temps';
-      if (relancer || ytPret) jouerDuo(); else { titreDuo(); rail(); }
-      return;
-    }
-    duo = null;
-    zone().classList.remove('duo');
-    el('slot-b').hidden = true;
-    el('badge-a').hidden = true;
-    arreter('b');
-    let l = tout.filter(dansSelection);
-    if (chaud) l = [...l].sort((a, b) => (b.vues || 0) - (a.vues || 0)).slice(0, 40);
-    else melanger(l);
-    liste = l; i = 0; erreurs = 0;
-    el('compteur').textContent = `${liste.length} clip${liste.length > 1 ? 's' : ''} en lecture${chaud ? ' · du plus vu au moins vu' : ' · ordre aléatoire'}`;
-    if (relancer) jouer(); else if (liste.length) { afficher(liste[0]); rail(); }
-  };
-  const puces = () => {
-    const cnt = {}; tout.forEach((v) => { cnt[v.genre] = (cnt[v.genre] || 0) + 1; });
-    const ordre = Object.keys(cnt).filter((g) => g !== '18+').sort((a, b) => cnt[b] - cnt[a]);
-    if (cnt['18+']) ordre.push('18+');
-    const box = el('styles');
-    box.innerHTML = [`<button type="button" class="style" data-g="__tous" aria-pressed="${!choix.size && !chaud}">Tous</button>`,
-      `<button type="button" class="style" data-g="__chaud" aria-pressed="${chaud}">🔥 Les plus chauds</button>`,
-      ...ordre.map((g) => `<button type="button" class="style${g === '18+' ? ' style-18' : ''}" data-g="${g.replace(/"/g, '&quot;')}" aria-pressed="${choix.has(g)}">${g === '18+' ? '18+' : g}<small>${cnt[g]}</small></button>`)].join('');
-    box.querySelectorAll('.style').forEach((b) => b.addEventListener('click', () => {
-      const g = b.dataset.g;
-      if (g === '__tous') { choix.clear(); chaud = false; }
-      else if (g === '__chaud') chaud = !chaud;
-      else if (choix.has(g)) choix.delete(g); else choix.add(g);
-      puces(); construire(true);
-    }));
-  };
-  Promise.all([
-    fetch('data/clips.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] })),
-    fetch('data/twerk.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] })),
-    fetch('data/clips-chaines.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => []),
-    fetch('data/vimeo.json', { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ videos: [] }))
-  ]).then(([c, t, ch, vm]) => {
-    ch.forEach((x) => { if (x && x.genre) genreDe[x.id] = x.genre; });
-    DANCEHALL.forEach((id) => { genreDe[id] = genreDe[id] || 'Dancehall'; });
-    const vus = new Set();
-    const clipsVideos = (c.videos || []).map((v) => ({ ...v, genre: genreDe[v.chaineId] || 'Autres' }));
-    const twerkVideos = (t.videos || []).map((v) => ({ ...v, genre: genreDe[v.chaineId] || 'Twerk & Danse' }));
-    tout = [...clipsVideos, ...twerkVideos]
-      .filter((v) => v.id && !vus.has(v.id) && vus.add(v.id));
-    (vm.videos || []).filter((v) => v && /^\d+$/.test(String(v.id))).forEach((v) => tout.push({ ...v, id: String(v.id), source: 'vimeo', chaine: v.chaine || 'Vimeo', genre: v.genre || 'Autres', vues: v.vues || 0 }));
-    tout.push({ id: '6ae5ad3393226', source: 'embed', titre: 'Clip 18+', chaine: 'Pornhub', genre: '18+', adulte: true, vues: 0, miniature: '' });
-    tout.push({ id: '68bd8eedd39fd', source: 'embed', titre: 'Baudroie', chaine: 'Pornhub', genre: '18+', adulte: true, vues: 0, miniature: '' });
-    try {
-      const sv = JSON.parse(localStorage.getItem('chilltv_styles') || 'null');
-      if (sv) { const ok = new Set(tout.map((v) => v.genre)); (sv.choix || []).forEach((g) => ok.has(g) && choix.add(g)); chaud = !!sv.chaud; }
-    } catch (e) {}
-    puces(); construire(false);
-    const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
-    setTimeout(() => { if (!lecteur) messageLecteur("Le lecteur YouTube n'a pas pu se charger. Vérifie ta connexion ou désactive ton bloqueur de publicités, puis recharge la page."); }, 10000);
-  });
-  const messageLecteur = (txt) => { const e = document.querySelector('.ecran'); if (e.querySelector('.message-lecteur')) return; const d = document.createElement('div'); d.className = 'message-lecteur'; d.innerHTML = `<span>${esc(txt)}</span>`; e.appendChild(d); };
-  const evenementsYt = (cote) => ({
-    onReady: () => { ytPret = true; if (duo) jouerDuo(); else if (cote === 'a') jouer(); },
-    onStateChange: (e) => {
-      if (e.data === YT.PlayerState.PLAYING) erreurs = 0;
-      if (e.data === YT.PlayerState.ENDED) { if (duo) avancerDuo(cote); else if (cote === 'a') suivant(); }
-    },
-    onError: () => { if (duo) { avancerDuo(cote); return; } if (++erreurs > 10) { messageLecteur('Trop de clips indisponibles à la suite. Change de style ou recharge la page.'); return; } suivant(); }
-  });
-  window.onYouTubeIframeAPIReady = () => {
-    const base = { host: 'https://www.youtube-nocookie.com', playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0, modestbranding: 1 } };
-    lecteur = new YT.Player('lecteur', { ...base, events: evenementsYt('a') });
-    lecteurB = new YT.Player('lecteur-b', { ...base, events: evenementsYt('b') });
-  };
-  el('son').addEventListener('click', (e) => {
-    sonActif = true;
-    [lecteur, lecteurB].forEach((p) => { if (p && p.unMute) { p.unMute(); p.setVolume(100); p.playVideo(); } });
-    [vp, vpB].forEach((p) => { if (p) { p.setMuted(false); p.setVolume(1); p.play().catch(() => {}); } });
-    e.currentTarget.remove();
-  });
-  el('suivant').addEventListener('click', suivant);
-  el('precedent').addEventListener('click', precedent);
-  el('rail').addEventListener('click', (e) => {
-    const b = e.target.closest('.suiv'); if (!b) return;
-    const idx = Number(b.dataset.i);
-    if (duo && b.dataset.cote) { const n = b.dataset.cote === 'b' ? 1 : 0; duo[n].i = idx; jouerDans(b.dataset.cote, duo[n].liste[idx]); titreDuo(); rail(); }
-    else { i = idx; jouer(); }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  const pleinEcran = () => { const node = document.querySelector('.ecran'); (node.requestFullscreen || node.webkitRequestFullscreen || (() => {})).call(node); };
-  addEventListener('keydown', (e) => {
-    if (/INPUT|TEXTAREA|SELECT/.test(e.target.tagName) || e.metaKey || e.ctrlKey || e.altKey) return;
-    if (e.key === 'ArrowRight') suivant(); else if (e.key === 'ArrowLeft') precedent();
-    else if (e.key === 'f' || e.key === 'F') pleinEcran(); else if (e.key === 'm' || e.key === 'M') { const b = el('son'); if (b) b.click(); }
-  });
-  el('plein').addEventListener('click', pleinEcran);
-</script>
-<script src="auth-config.js?v=2"></script>
-<script type="module" src="membre.js?v=3"></script>
 </body>
 </html>
