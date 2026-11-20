@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-19T18:20:56.948Z",
+  "maj": "2026-11-20T02:22:19.405Z",
   "profs": {
     "foxy-roxy": {
       "chaineId": "UCnu27Txxn4F8nHTBrpymnTQ",
@@ -158,6 +158,12 @@
       "avatar": "https://yt3.ggpht.com/Nu5ZITGEAt24OzM82Ym7nIHmddmlq8_DMpXFapceE8l_BzcwbOimdF9VvVbOyh6W3fVJFGzF_A=s240-c-k-c0x00ffffff-no-rj",
       "videos": [
         {
+          "id": "6ehVpuN2Q4o",
+          "titre": "Miami has been treating me good🌴❤️ #dance #miami #florida",
+          "date": "2026-11-19T19:29:14Z",
+          "miniature": "https://i.ytimg.com/vi/6ehVpuN2Q4o/hqdefault.jpg"
+        },
+        {
           "id": "FoHwgP5ZkjA",
           "titre": "DANCING FOR A$AP ROCKY IN ZAGREB - 48 HOURS IN MY LIFE",
           "date": "2026-11-18T19:29:22Z",
@@ -222,12 +228,6 @@
           "titre": "BBY WOW DANCE CHALLENGE ❤️‍🔥 #dance #choreo #mexico # #losangeles",
           "date": "2026-11-02T16:20:38Z",
           "miniature": "https://i.ytimg.com/vi/WAyQPcTWrrs/hqdefault.jpg"
-        },
-        {
-          "id": "pm5nFlekiX4",
-          "titre": "BBY WOW - NEW DANCE ALERT ❤️‍🔥 #choreo #dance #losangeles",
-          "date": "2026-10-31T15:58:55Z",
-          "miniature": "https://i.ytimg.com/vi/pm5nFlekiX4/hqdefault.jpg"
         }
       ]
     },
