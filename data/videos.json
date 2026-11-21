@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-21T02:23:18.366Z",
+  "maj": "2026-11-21T16:50:03.269Z",
   "profs": {
     "foxy-roxy": {
       "chaineId": "UCnu27Txxn4F8nHTBrpymnTQ",
@@ -155,7 +155,7 @@
       "chaineId": "UCHizJ5AKbXnUgkCAGj_Up-g",
       "chaineNom": "Twerk with Tinze",
       "chaineUrl": "https://www.youtube.com/@tinze",
-      "avatar": "https://yt3.ggpht.com/Nu5ZITGEAt24OzM82Ym7nIHmddmlq8_DMpXFapceE8l_BzcwbOimdF9VvVbOyh6W3fVJFGzF_A=s240-c-k-c0x00ffffff-no-rj",
+      "avatar": "https://yt3.ggpht.com/XCwTBczouyWAfWRtt2B6uH6OcE89U0_TgPVdVtY24dWr4OonKk-ZqZ_YAcrMHkhtx8Ka21S0Mw=s240-c-k-c0x00ffffff-no-rj",
       "videos": [
         {
           "id": "HBp6s6e3gkU",
@@ -2464,7 +2464,80 @@
       "chaineNom": "Flory Z ",
       "chaineUrl": "https://www.youtube.com/@floryzflorazalo6497",
       "avatar": "https://yt3.ggpht.com/Ncl8d8pe502hDxsPwDc2XgZxRdTgPZWUsRh26CPrVSKQgCZAi7HkM8BBNQFFPE8Kr0jQpqhC_g=s240-c-k-c0x00ffffff-no-rj",
-      "videos": []
+      "videos": [
+        {
+          "id": "mcAx26M6OpY",
+          "titre": "FLORY Z feat TAF LA RÉFÉRENCE-MAPOUKA Décalé",
+          "date": "2026-03-31T11:33:24Z",
+          "miniature": "https://i.ytimg.com/vi/mcAx26M6OpY/hqdefault.jpg"
+        },
+        {
+          "id": "4cSADlDeGzs",
+          "titre": "FLORY Z FLORAZALO danse le M’miebi MAPOUKA #movie #danse #edit",
+          "date": "2026-02-24T15:43:33Z",
+          "miniature": "https://i.ytimg.com/vi/4cSADlDeGzs/hqdefault.jpg"
+        },
+        {
+          "id": "ZUkOj2KZIng",
+          "titre": "FLORY Z Florazalo danse le Mapouka à Tempo émission de divertissement ivoirienne",
+          "date": "2026-02-17T07:03:01Z",
+          "miniature": "https://i.ytimg.com/vi/ZUkOj2KZIng/hqdefault.jpg"
+        },
+        {
+          "id": "58ins4WHWIY",
+          "titre": "FLORY Z Flora Zalo en  Spectacle à Payerne en Suisse #music #edit #movie #Mapouka",
+          "date": "2026-01-03T13:46:21Z",
+          "miniature": "https://i.ytimg.com/vi/58ins4WHWIY/hqdefault.jpg"
+        },
+        {
+          "id": "k2hXDodK3eI",
+          "titre": "FLORY Z MAPOUKA VIVE LA CÔTE D’IVOIRE- (UNITÉ PAIX )",
+          "date": "2025-02-17T14:42:23Z",
+          "miniature": "https://i.ytimg.com/vi/k2hXDodK3eI/hqdefault.jpg"
+        },
+        {
+          "id": "okZDfGk-q54",
+          "titre": "ALBUM RENAISSANCE  DU PUR MAPOUKA TRADITI-MODERNE #flora #newmusic #dance #abonnetoi #flory",
+          "date": "2025-01-28T09:36:39Z",
+          "miniature": "https://i.ytimg.com/vi/okZDfGk-q54/hqdefault.jpg"
+        },
+        {
+          "id": "RgGpM0VmcMY",
+          "titre": "FLORY Z ACTE 2- MAPOUKA (BIAMA VENTILATEUR )",
+          "date": "2025-01-20T08:43:49Z",
+          "miniature": "https://i.ytimg.com/vi/RgGpM0VmcMY/hqdefault.jpg"
+        },
+        {
+          "id": "Pf6L-gkjlfE",
+          "titre": "FLORY Z- ACTE 1 MAPOUKA ( BIAMA VENTILATEUR )",
+          "date": "2024-12-27T16:40:16Z",
+          "miniature": "https://i.ytimg.com/vi/Pf6L-gkjlfE/hqdefault.jpg"
+        },
+        {
+          "id": "tKFXPA0IuKo",
+          "titre": "FLORY Z Flora zalo en prestation MAPOUKA à Agora Reccord Guiness",
+          "date": "2024-12-19T14:19:49Z",
+          "miniature": "https://i.ytimg.com/vi/tKFXPA0IuKo/hqdefault.jpg"
+        },
+        {
+          "id": "phlBpXktYI8",
+          "titre": "FLORY Z FloraZalo danse le Mapouka  à Vridi Canal Côte d’Ivoire",
+          "date": "2024-11-25T11:46:05Z",
+          "miniature": "https://i.ytimg.com/vi/phlBpXktYI8/hqdefault.jpg"
+        },
+        {
+          "id": "ug8pjDqwyk4",
+          "titre": "Mon New Single le Biama MAPOUKA ventilateur",
+          "date": "2024-11-25T11:42:25Z",
+          "miniature": "https://i.ytimg.com/vi/ug8pjDqwyk4/hqdefault.jpg"
+        },
+        {
+          "id": "le7rb-D9KvI",
+          "titre": "FLORY Z FloraZalo danse le Mapouka à Payerne en Suisse",
+          "date": "2024-10-01T03:59:19Z",
+          "miniature": "https://i.ytimg.com/vi/le7rb-D9KvI/hqdefault.jpg"
+        }
+      ]
     },
     "kasia-jukowska": {
       "chaineId": "UCFMV_BbD2Bk6SFR7H0NenBQ",
